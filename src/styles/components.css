@@ -1,0 +1,124 @@
+/**
+ * Component usage reference — copy patterns for implementation
+ * Not imported automatically; reference for developers.
+ */
+
+/*
+  ═══════════════════════════════════════════════════════════════════
+  BUTTON HIERARCHY
+  ═══════════════════════════════════════════════════════════════════
+
+  Primary action (1 per viewport section):
+    <button class="btn-primary">Get Free Quotes</button>
+
+  Secondary action:
+    <button class="btn-secondary">How It Works</button>
+
+  Tertiary / nav:
+    <button class="btn-ghost">View All Services</button>
+
+  High-contrast hero CTA (Vercel-style):
+    <button class="btn-accent">Get Free Quotes</button>
+
+  Destructive:
+    <button class="btn-destructive">Remove</button>
+
+  Text link:
+    <a class="btn-link" href="#">Learn about vetting →</a>
+
+  Button group (hero):
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+      <button class="btn-primary btn-lg">Get Free Quotes</button>
+      <button class="btn-secondary btn-lg">How It Works</button>
+    </div>
+
+  Icon button (mobile header):
+    <button class="btn-ghost btn-sm touch-target" aria-label="Call us">
+      <PhoneIcon class="h-5 w-5" />
+    </button>
+
+
+  ═══════════════════════════════════════════════════════════════════
+  FORM PATTERNS (Stripe-style quote form)
+  ═══════════════════════════════════════════════════════════════════
+
+  Single field:
+    <div class="form-group">
+      <label class="form-label form-label-required" for="postal">Postal Code</label>
+      <input id="postal" class="form-input" placeholder="T5K 2M5" />
+      <p class="form-helper">We serve Edmonton and the Capital Region</p>
+    </div>
+
+  Error state:
+    <div class="form-group">
+      <label class="form-label" for="phone">Phone</label>
+      <input id="phone" class="form-input form-input-error" aria-invalid="true" />
+      <p class="form-error">Please enter a valid phone number</p>
+    </div>
+
+  Multi-step progress:
+    <div class="flex items-center gap-2">
+      <div class="h-1 flex-1 rounded-pill bg-brand-600" />
+      <div class="h-1 flex-1 rounded-pill bg-brand-600" />
+      <div class="h-1 flex-1 rounded-pill bg-ink-200" />
+      <div class="h-1 flex-1 rounded-pill bg-ink-200" />
+    </div>
+
+  Select:
+    <select class="form-select">
+      <option>Handyman</option>
+    </select>
+
+
+  ═══════════════════════════════════════════════════════════════════
+  CARD PATTERNS
+  ═══════════════════════════════════════════════════════════════════
+
+  Service card (grid):
+    <article class="card-interactive card-body group">
+      <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl
+                  bg-brand-50 text-brand-700 transition-colors
+                  group-hover:bg-brand-100">
+        <Icon class="h-6 w-6" />
+      </div>
+      <h3 class="text-heading-sm text-ink-900">Handyman</h3>
+      <p class="mt-2 text-body-sm text-ink-500">Repairs, installs, and odd jobs</p>
+    </article>
+
+  Testimonial card:
+    <blockquote class="card card-body">
+      <div class="flex gap-1 text-warning-500">★★★★★</div>
+      <p class="mt-4 text-body-md text-ink-700">"Matched with a great plumber in 24 hours."</p>
+      <footer class="mt-6 flex items-center gap-3">
+        <div class="h-10 w-10 rounded-full bg-ink-100" />
+        <div>
+          <cite class="text-label-md not-italic text-ink-900">Sarah M.</cite>
+          <p class="text-caption text-ink-500">Terwillegar, Edmonton</p>
+        </div>
+      </footer>
+    </blockquote>
+
+  Trust stat card:
+    <div class="card-elevated card-body text-center">
+      <p class="font-mono text-display-sm text-ink-900">847+</p>
+      <p class="mt-1 text-body-sm text-ink-500">Homeowners matched</p>
+    </div>
+
+
+  ═══════════════════════════════════════════════════════════════════
+  MOBILE STICKY CTA
+  ═══════════════════════════════════════════════════════════════════
+
+  <div class="mobile-sticky-cta">
+    <a href="tel:+17805551234" class="btn-secondary btn-md flex-1 touch-target">
+      Call (780) 555-1234
+    </a>
+    <a href="/get-a-quote" class="btn-primary btn-md flex-[1.4] touch-target">
+      Get Free Quotes
+    </a>
+  </div>
+
+  Add pb-sticky-cta to main content wrapper on mobile:
+    pb-[calc(var(--sticky-cta-height)+env(safe-area-inset-bottom))] md:pb-0
+
+*/

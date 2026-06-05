@@ -1,0 +1,34 @@
+# Image assets
+
+Organize all static images by category. Use WebP/AVIF sources; Next.js Image handles optimization.
+
+```
+public/images/
+├── brand/
+│   ├── logo.svg
+│   ├── logo.png
+│   └── favicon.ico
+├── og/
+│   ├── default.jpg          # 1200×630 — fallback OG image
+│   ├── services/            # Per-service OG images
+│   └── locations/           # Per-location OG images
+├── heroes/
+│   └── home-hero.webp
+├── services/
+│   └── {slug}.webp          # Service card thumbnails
+├── projects/
+│   └── {slug}.webp          # Project gallery
+├── locations/
+│   └── {slug}.webp          # Location page headers
+└── placeholders/
+    └── blur.webp              # Optional LQIP base64 source
+```
+
+## Rules
+
+- **Naming:** kebab-case, match content slug (`handyman.webp`, `sherwood-park.webp`)
+- **Hero images:** max 1920px wide, 16:9 or 4:3
+- **OG images:** exactly 1200×630px
+- **Alt text:** always set in data layer, never empty
+- **Priority:** `priority={true}` only for above-fold LCP image (hero)
+- **Remote images:** add hostname to `next.config.ts` `remotePatterns`

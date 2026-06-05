@@ -1,0 +1,10 @@
+export { HeroSection } from "./hero-section";
+export { TrustIndicatorsSection } from "./trust-indicators-section";
+export { ServicesSection } from "./services-section";
+export { HowItWorksSection } from "./how-it-works-section";
+export { WhyChooseUsSection } from "./why-choose-us-section";
+export { FeaturedProjectsSection } from "./featured-projects-section";
+export { TestimonialsSection } from "./testimonials-section";
+export { ServiceAreasSection } from "./service-areas-section";
+export { FaqSection } from "./faq-section";
+export { LeadFormSection } from "./lead-form-section";
