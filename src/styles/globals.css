@@ -4,53 +4,53 @@
 
 /* ─── Design Tokens (CSS Custom Properties) ─────────────────────── */
 :root {
-  /* Ink — primary text & neutrals */
-  --color-ink-950: #0a0f14;
-  --color-ink-900: #111827;
-  --color-ink-700: #374151;
-  --color-ink-500: #6b7280;
-  --color-ink-400: #9ca3af;
-  --color-ink-200: #e5e7eb;
-  --color-ink-100: #f3f4f6;
-  --color-ink-50: #f9fafb;
+  /* Ink — warm stone neutrals */
+  --color-ink-950: #0c0a09;
+  --color-ink-900: #1c1917;
+  --color-ink-700: #44403c;
+  --color-ink-500: #78716c;
+  --color-ink-400: #a8a29e;
+  --color-ink-200: #e7e5e4;
+  --color-ink-100: #f5f5f4;
+  --color-ink-50: #fafaf9;
 
   /* Surface */
   --color-surface-0: #ffffff;
-  --color-surface-50: #fafbfc;
-  --color-surface-100: #f4f6f8;
+  --color-surface-50: #fafaf9;
+  --color-surface-100: #f5f5f4;
 
-  /* Brand — deep teal (trust + modern, not contractor-orange) */
-  --color-brand-700: #0f766e;
-  --color-brand-600: #0d9488;
+  /* Brand — deep teal (trustworthy, professional) */
+  --color-brand-700: #0d6b64;
+  --color-brand-600: #0f766e;
   --color-brand-500: #14b8a6;
   --color-brand-100: #ccfbf1;
   --color-brand-50: #f0fdfa;
 
-  /* Accent — indigo for data/links (Linear-inspired) */
-  --color-accent-600: #4f46e5;
-  --color-accent-500: #6366f1;
+  /* Accent — aligned with brand */
+  --color-accent-600: #0f766e;
+  --color-accent-500: #14b8a6;
 
   /* Semantic */
-  --color-success: #059669;
-  --color-warning: #d97706;
-  --color-error: #dc2626;
+  --color-success: #047857;
+  --color-warning: #b45309;
+  --color-error: #b91c1c;
 
   /* Borders */
-  --color-border: #e5e7eb;
-  --color-border-subtle: #eceef1;
+  --color-border: #e7e5e4;
+  --color-border-subtle: #eceae8;
 
   /* Motion */
   --duration-instant: 100ms;
   --duration-fast: 150ms;
-  --duration-normal: 200ms;
-  --duration-slow: 300ms;
+  --duration-normal: 250ms;
+  --duration-slow: 350ms;
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Radius */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.625rem;
-  --radius-lg: 0.75rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 0.875rem;
   --radius-xl: 1rem;
   --radius-2xl: 1.25rem;
   --radius-pill: 9999px;
@@ -58,15 +58,15 @@
   /* Layout */
   --header-height: 4rem;
   --header-height-mobile: 3.5rem;
-  --sticky-cta-height: 4.5rem;
-  --container-padding: 1.5rem;
-  --section-gap: 5rem;
+  --sticky-cta-height: 4.75rem;
+  --container-padding: 1.25rem;
+  --section-gap: 5.5rem;
 }
 
 @media (min-width: 1024px) {
   :root {
     --container-padding: 2rem;
-    --section-gap: 7.5rem;
+    --section-gap: 8rem;
   }
 }
 
@@ -80,7 +80,7 @@
   }
 
   body {
-    @apply bg-surface-50 font-sans text-body-md text-ink-700;
+    @apply bg-surface-50 font-sans text-body-md text-ink-600;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
@@ -115,7 +115,7 @@
 
   /* Default link styles — exclude button-styled anchors */
   a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-ghost):not(.btn-accent):not(.btn-destructive) {
-    @apply text-brand-700 transition-colors duration-fast ease-out;
+    @apply text-brand-700 transition-colors duration-normal ease-out;
   }
 
   a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-ghost):not(.btn-accent):not(.btn-destructive):hover {
@@ -123,7 +123,7 @@
   }
 
   :focus-visible {
-    @apply outline-none ring-[3px] ring-brand-500/25 ring-offset-2 ring-offset-surface-0;
+    @apply outline-none ring-[3px] ring-brand-500/20 ring-offset-2 ring-offset-surface-0;
   }
 
   ::selection {
@@ -147,53 +147,53 @@
   /* ── Buttons ── */
   .btn {
     @apply inline-flex items-center justify-center gap-2
-      rounded-lg font-medium transition-all duration-fast ease-out
+      rounded-xl font-medium transition-colors duration-normal ease-out
       focus-visible:outline-none focus-visible:ring-[3px]
-      focus-visible:ring-brand-500/25 focus-visible:ring-offset-2
+      focus-visible:ring-brand-500/20 focus-visible:ring-offset-2
       disabled:pointer-events-none disabled:opacity-50;
   }
 
   .btn-sm {
-    @apply h-9 px-3.5 text-label-sm;
+    @apply h-10 px-4 text-label-sm;
   }
 
   .btn-md {
-    @apply h-11 px-5 text-label-md;
+    @apply h-12 px-6 text-label-md;
   }
 
   .btn-lg {
-    @apply h-13 px-7 text-body-md;
+    @apply h-13 px-8 text-body-md;
   }
 
   .btn-primary {
     @apply btn btn-md bg-brand-700 text-white shadow-sm
-      hover:bg-brand-600 hover:text-white hover:shadow-md
-      active:scale-[0.98] active:bg-brand-800 active:text-white;
+      hover:bg-brand-600 hover:text-white
+      active:bg-brand-800 active:text-white;
   }
 
   .btn-secondary {
     @apply btn btn-md border border-border bg-surface-0 text-ink-900 shadow-xs
       hover:border-ink-300 hover:bg-surface-50 hover:text-ink-900
-      active:scale-[0.98] active:text-ink-900;
+      active:bg-surface-100 active:text-ink-900;
   }
 
   .btn-ghost {
     @apply btn btn-md text-ink-700
-      hover:bg-ink-100/80 hover:text-ink-900
-      active:scale-[0.98] active:text-ink-900;
+      hover:bg-ink-100/70 hover:text-ink-900
+      active:bg-ink-100 active:text-ink-900;
   }
 
   .btn-accent {
     @apply btn btn-md bg-ink-900 text-white shadow-sm
-      hover:bg-ink-800 hover:text-white hover:shadow-md
-      active:scale-[0.98] active:text-white;
+      hover:bg-ink-800 hover:text-white
+      active:bg-ink-950 active:text-white;
   }
 
   .btn-destructive {
     @apply btn btn-md bg-error-600 text-white shadow-sm
       hover:bg-error-700 hover:text-white
-      focus-visible:ring-error-500/25
-      active:scale-[0.98] active:text-white;
+      focus-visible:ring-error-500/20
+      active:bg-error-700 active:text-white;
   }
 
   .btn-link {
@@ -204,7 +204,7 @@
 
   /* ── Forms ── */
   .form-label {
-    @apply mb-1.5 block text-label-sm text-ink-700;
+    @apply mb-2 block text-label-sm text-ink-700;
   }
 
   .form-label-required::after {
@@ -213,70 +213,69 @@
   }
 
   .form-input {
-    @apply h-11 w-full rounded-lg border border-border bg-surface-0
-      px-3.5 text-body-md text-ink-900 shadow-xs
+    @apply h-12 w-full rounded-xl border border-border bg-surface-0
+      px-4 text-body-md text-ink-900 shadow-xs
       placeholder:text-ink-400
-      transition-all duration-fast ease-out
+      transition-colors duration-normal ease-out
       hover:border-ink-300
       focus:border-brand-500 focus:outline-none focus:ring-[3px]
-      focus:ring-brand-500/20
+      focus:ring-brand-500/15
       disabled:cursor-not-allowed disabled:bg-ink-50 disabled:opacity-60;
   }
 
   .form-input-error {
-    @apply border-error-500 focus:border-error-500 focus:ring-error-500/20;
+    @apply border-error-500 focus:border-error-500 focus:ring-error-500/15;
   }
 
   .form-textarea {
-    @apply form-input min-h-[7.5rem] resize-y py-3;
+    @apply form-input min-h-[8rem] resize-y py-3;
   }
 
   .form-select {
     @apply form-input appearance-none bg-[length:1.25rem]
-      bg-[right_0.75rem_center] bg-no-repeat pr-10;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+      bg-[right_0.875rem_center] bg-no-repeat pr-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2378716C'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
   }
 
   .form-checkbox {
     @apply h-[1.125rem] w-[1.125rem] rounded-sm border-border
       text-brand-700 transition-colors duration-fast
-      focus:ring-[3px] focus:ring-brand-500/25 focus:ring-offset-0;
+      focus:ring-[3px] focus:ring-brand-500/20 focus:ring-offset-0;
   }
 
   .form-helper {
-    @apply mt-1.5 text-caption text-ink-500;
+    @apply mt-2 text-caption text-ink-500;
   }
 
   .form-error {
-    @apply mt-1.5 text-caption text-error-600;
+    @apply mt-2 text-caption text-error-600;
   }
 
   .form-group {
-    @apply space-y-1.5;
+    @apply space-y-2;
   }
 
   .form-fieldset {
-    @apply space-y-4 rounded-xl border border-border-subtle bg-surface-0 p-5;
+    @apply space-y-5 rounded-2xl border border-border-subtle bg-surface-0 p-6 shadow-card;
   }
 
   /* ── Cards ── */
   .card {
     @apply rounded-2xl border border-border-subtle bg-surface-0 shadow-card
-      transition-all duration-normal ease-out;
+      transition-shadow duration-normal ease-out;
   }
 
   .card-interactive {
     @apply card cursor-pointer
-      hover:-translate-y-0.5 hover:border-ink-200 hover:shadow-card-hover
-      active:translate-y-0 active:shadow-card;
+      hover:border-ink-200 hover:shadow-card-hover;
   }
 
   .card-elevated {
-    @apply rounded-2xl bg-surface-0 shadow-elevated;
+    @apply rounded-2xl border border-border-subtle bg-surface-0 shadow-elevated;
   }
 
   .card-featured {
-    @apply card relative overflow-hidden border-brand-200 bg-gradient-brand-subtle;
+    @apply card relative overflow-hidden border-brand-100 bg-gradient-trust;
   }
 
   .card-body {
@@ -284,25 +283,25 @@
   }
 
   .card-header {
-    @apply border-b border-border-subtle px-6 py-4 md:px-8;
+    @apply border-b border-border-subtle px-6 py-5 md:px-8;
   }
 
   .card-footer {
-    @apply border-t border-border-subtle px-6 py-4 md:px-8;
+    @apply border-t border-border-subtle px-6 py-5 md:px-8;
   }
 
   /* ── Trust badges ── */
   .badge {
-    @apply inline-flex items-center gap-1.5 rounded-pill px-2.5 py-1
+    @apply inline-flex items-center gap-1.5 rounded-pill px-3 py-1
       text-label-sm font-medium;
   }
 
   .badge-brand {
-    @apply badge bg-brand-50 text-brand-800 ring-1 ring-brand-200/60;
+    @apply badge bg-brand-50 text-brand-800 ring-1 ring-brand-100;
   }
 
   .badge-neutral {
-    @apply badge bg-ink-100 text-ink-700;
+    @apply badge bg-ink-100/80 text-ink-700 ring-1 ring-ink-200/60;
   }
 
   .badge-success {
@@ -319,11 +318,11 @@
   }
 
   .section-header {
-    @apply mx-auto mb-12 max-w-narrow text-center md:mb-16;
+    @apply mx-auto mb-14 max-w-narrow text-center md:mb-16;
   }
 
   .section-eyebrow {
-    @apply mb-3 text-label-sm font-medium uppercase tracking-widest text-brand-700;
+    @apply mb-4 text-label-md font-medium text-brand-700;
   }
 
   .section-title {
@@ -331,26 +330,24 @@
   }
 
   .section-description {
-    @apply mt-4 text-body-lg text-ink-500;
+    @apply mt-5 text-body-lg text-ink-500;
   }
 
-  /* ── Mobile sticky CTA bar ── */
+  /* ── Mobile sticky contact bar ── */
   .mobile-sticky-cta {
     @apply fixed inset-x-0 bottom-0 z-sticky
-      flex items-center gap-3 border-t border-border-subtle
-      bg-surface-0/95 px-gutter py-3 shadow-sticky
-      backdrop-blur-md md:hidden;
+      flex items-stretch gap-3 border-t border-border-subtle
+      bg-surface-0/95 py-3 shadow-sticky
+      backdrop-blur-xl md:hidden;
+    padding-top: 0.75rem;
     padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
-  }
-
-  /* Hide sticky CTA while mobile nav drawer is open */
-  html[data-mobile-nav-open] .mobile-sticky-cta {
-    @apply pointer-events-none translate-y-full opacity-0;
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
   }
 
   /* ── Skeleton loading ── */
   .skeleton {
-    @apply animate-shimmer rounded-md bg-gradient-to-r
+    @apply animate-shimmer rounded-lg bg-gradient-to-r
       from-ink-100 via-ink-50 to-ink-100 bg-[length:200%_100%];
   }
 
@@ -377,7 +374,7 @@
   }
 
   .glass {
-    @apply border border-white/20 bg-white/80 backdrop-blur-xl;
+    @apply border border-white/30 bg-white/85 backdrop-blur-xl;
   }
 
   .touch-target {

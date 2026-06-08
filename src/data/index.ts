@@ -49,11 +49,11 @@ export function getServiceDetail(slug: ServiceSlug): ServiceDetail | null {
 
   return {
     ...service,
-    metaTitle: `${service.name} Edmonton | Free Quotes from Vetted Pros`,
-    metaDescription: `Need a ${service.name.toLowerCase()} in Edmonton? Get matched with up to 3 vetted, insured local pros. Free quotes, no obligation.`,
+    metaTitle: `${service.name} Edmonton | Free Quote from Our Team`,
+    metaDescription: `Need a ${service.name.toLowerCase()} in Edmonton? Our licensed, insured team handles the work directly. Free quote, no obligation.`,
     headline: `${service.pluralName} in Edmonton`,
-    subheadline: `Get matched with vetted ${service.pluralName.toLowerCase()} across Edmonton and the Capital Region.`,
-    intro: `Tell us about your project and we'll connect you with qualified ${service.pluralName.toLowerCase()} from our Edmonton network.`,
+    subheadline: `Our own ${service.pluralName.toLowerCase()} serve Edmonton and the Capital Region.`,
+    intro: `Tell us about your project and our team will provide a free quote — no middlemen, no obligation.`,
     subServices: [],
     faq: [],
     relatedSlugs: SERVICES.filter((s) => s.slug !== slug)

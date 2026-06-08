@@ -3,68 +3,67 @@ import { SERVICE_BY_SLUG } from "@/constants/services";
 import { ROUTES } from "@/constants/routes";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerGrid, StaggerItem } from "@/components/motion/stagger-grid";
-import { HoverCard } from "@/components/motion/hover-card";
-import { MagneticButton } from "@/components/motion/magnetic-button";
 
 const projectGradients: Record<string, string> = {
-  painters: "from-teal-400/30 via-brand-100 to-surface-100",
-  renovators: "from-indigo-400/20 via-brand-50 to-surface-50",
-  "deck-fence": "from-emerald-400/25 via-brand-100 to-surface-100",
-  plumbers: "from-cyan-400/20 via-brand-50 to-surface-50",
-  landscapers: "from-green-400/20 via-brand-50 to-surface-50",
-  handyman: "from-brand-400/20 via-brand-50 to-surface-50",
+  painters: "from-brand-100 via-brand-50 to-surface-100",
+  renovators: "from-surface-100 via-brand-50 to-surface-50",
+  "deck-fence": "from-brand-100 via-surface-50 to-surface-100",
+  plumbers: "from-brand-50 via-surface-100 to-surface-50",
+  landscapers: "from-brand-50 via-surface-50 to-surface-100",
+  handyman: "from-brand-100 via-brand-50 to-surface-50",
 };
 
 export function FeaturedProjectsSection() {
   const projects = getFeaturedProjects(3);
 
   return (
-    <Section className="bg-surface-0">
+    <Section className="bg-surface-50">
       <Container>
         <Reveal>
           <SectionHeader
             title="Recent projects across Edmonton"
-            description="Real work from vetted pros in our network — from quick fixes to full transformations."
+            description="Real work from our team — from quick fixes to full transformations."
           />
         </Reveal>
         <StaggerGrid className="grid gap-6 md:grid-cols-3">
           {projects.map((project) => {
             const service = SERVICE_BY_SLUG[project.serviceSlug];
             const gradient =
-              projectGradients[project.serviceSlug] ?? "from-brand-100 to-surface-100";
+              projectGradients[project.serviceSlug] ?? "from-brand-50 to-surface-100";
 
             return (
               <StaggerItem key={project.slug}>
-                <HoverCard as="article" className="group card-interactive overflow-hidden">
+                <article className="card-interactive overflow-hidden">
                   <div
-                    className={`relative aspect-[4/3] bg-gradient-to-br ${gradient} transition-transform duration-500 group-hover:scale-[1.02]`}
+                    className={`relative aspect-[4/3] bg-gradient-to-br ${gradient}`}
                   >
-                    <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(10,15,20,0.4),transparent_50%)]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,25,23,0.35),transparent_55%)]" />
                     <Badge variant="brand" className="absolute left-4 top-4">
                       {service.name}
                     </Badge>
                     <div className="absolute bottom-4 left-4 right-4">
                       <p className="text-heading-sm text-white">{project.title}</p>
-                      <p className="mt-1 text-body-sm text-white/80">{project.location}</p>
+                      <p className="mt-1 text-body-sm text-white/85">{project.location}</p>
                     </div>
                   </div>
-                  <div className="p-5">
-                    <p className="text-body-sm text-ink-500">{project.caption}</p>
+                  <div className="p-6">
+                    <p className="text-body-sm leading-relaxed text-ink-500">{project.caption}</p>
                     <p className="mt-2 text-caption text-ink-400">
-                      Matched via Edmonton Home Connect
+                      Completed by Edmonton Home Connect
                     </p>
                   </div>
-                </HoverCard>
+                </article>
               </StaggerItem>
             );
           })}
         </StaggerGrid>
-        <Reveal className="mt-12 text-center" delay={0.1}>
-          <MagneticButton href={ROUTES.quote} size="lg">
-            Get matched for your project
-          </MagneticButton>
+        <Reveal className="mt-14 text-center" delay={0.1}>
+          <Button href={ROUTES.quote} size="lg">
+            Get a quote for your project
+          </Button>
         </Reveal>
       </Container>
     </Section>

@@ -76,7 +76,7 @@ const TestimonialsSection = dynamic(
 export const metadata: Metadata = buildMetadata({
   title: "Edmonton Home Connect",
   description:
-    "Connect with vetted, insured home service professionals in Edmonton. Free matching — up to 3 quotes, no obligation.",
+    "Licensed home service contractor in Edmonton and the Capital Region. Request a free quote — our own team handles the work.",
   path: "/",
   keywords: [
     "home services Edmonton",

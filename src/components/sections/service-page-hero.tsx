@@ -5,9 +5,9 @@ import { siteConfig } from "@/config/site";
 import { TRUST_BADGES } from "@/constants/app";
 import { Badge } from "@/components/ui/badge";
 import { Icon } from "@/components/ui/icons";
+import { Button } from "@/components/ui/button";
 import { FloatingBackground } from "@/components/motion/floating-background";
 import { Reveal } from "@/components/motion/reveal";
-import { MagneticButton } from "@/components/motion/magnetic-button";
 import type { ServicePageContent } from "@/types/service-page";
 import type { Service } from "@/types/service";
 import { serviceIconName } from "@/components/ui/icons";
@@ -20,13 +20,11 @@ interface ServicePageHeroProps {
 
 export function ServicePageHero({ content, service, breadcrumbs }: ServicePageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-hero pb-16 pt-8 md:pb-20 md:pt-12">
-      <FloatingBackground grid />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(20,184,166,0.08),transparent)]" />
-
+    <section className="relative overflow-hidden bg-surface-0 pb-16 pt-10 md:pb-20 md:pt-14">
+      <FloatingBackground />
       <div className="relative mx-auto max-w-content px-gutter lg:px-gutter-lg">
         <Reveal variant="fade" immediate>
-          <nav aria-label="Breadcrumb" className="mb-8">
+          <nav aria-label="Breadcrumb" className="mb-10">
             <ol className="flex flex-wrap items-center gap-2 text-caption text-ink-500">
               {breadcrumbs.map((crumb, i) => (
                 <li key={crumb.href} className="flex items-center gap-2">
@@ -44,32 +42,34 @@ export function ServicePageHero({ content, service, breadcrumbs }: ServicePageHe
           </nav>
         </Reveal>
 
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <Reveal variant="fade-blur" immediate>
+            <Reveal variant="fade-up" immediate>
               <p className="section-eyebrow">{content.hero.eyebrow}</p>
             </Reveal>
-            <Reveal variant="fade-up" immediate delay={0.08}>
-              <h1 className="mt-3 text-balance text-display-sm text-ink-950 md:text-display-md">
+            <Reveal variant="fade-up" immediate delay={0.06}>
+              <h1 className="mt-4 text-balance text-display-sm text-ink-900 md:text-display-md">
                 {content.hero.headline}
               </h1>
             </Reveal>
-            <Reveal variant="fade-up" immediate delay={0.16}>
-              <p className="mt-4 text-body-lg text-ink-500">{content.hero.subheadline}</p>
-              <p className="mt-4 max-w-prose text-body-md text-ink-600">{content.hero.intro}</p>
+            <Reveal variant="fade-up" immediate delay={0.12}>
+              <p className="mt-5 text-body-lg text-ink-500">{content.hero.subheadline}</p>
+              <p className="mt-4 max-w-prose text-body-md leading-relaxed text-ink-600">
+                {content.hero.intro}
+              </p>
             </Reveal>
-            <Reveal variant="fade-up" immediate delay={0.24}>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <MagneticButton href="#service-quote" size="lg">
+            <Reveal variant="fade-up" immediate delay={0.18}>
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <Button href="#service-quote" size="lg">
                   Get Free Quotes
-                </MagneticButton>
-                <MagneticButton href={`tel:${siteConfig.phone.tel}`} variant="secondary" size="lg" magnetic={false}>
+                </Button>
+                <Button href={`tel:${siteConfig.phone.tel}`} variant="secondary" size="lg">
                   Call {siteConfig.phone.display}
-                </MagneticButton>
+                </Button>
               </div>
             </Reveal>
-            <Reveal variant="fade" immediate delay={0.32}>
-              <div className="mt-6 flex flex-wrap gap-2">
+            <Reveal variant="fade" immediate delay={0.24}>
+              <div className="mt-8 flex flex-wrap gap-2">
                 {TRUST_BADGES.map((badge) => (
                   <Badge key={badge} variant="neutral">
                     <Icon name="check" size={14} className="text-brand-600" />
@@ -80,13 +80,13 @@ export function ServicePageHero({ content, service, breadcrumbs }: ServicePageHe
             </Reveal>
           </div>
 
-          <Reveal variant="scale" immediate delay={0.15}>
+          <Reveal variant="fade-up" immediate delay={0.1}>
             <div className="card-elevated p-8">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-700">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-700 ring-1 ring-brand-100">
                 <Icon name={serviceIconName(service.icon)} size={32} />
               </div>
-              <h2 className="text-heading-lg text-ink-900">What we match you with</h2>
-              <ul className="mt-4 space-y-3">
+              <h2 className="text-heading-lg text-ink-900">What we offer</h2>
+              <ul className="mt-5 space-y-4">
                 {content.subServices.slice(0, 4).map((sub) => (
                   <li key={sub.name} className="flex items-start gap-3 text-body-sm text-ink-600">
                     <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand-600" />

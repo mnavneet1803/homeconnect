@@ -121,7 +121,7 @@ export const SERVICES: Service[] = [
   {
     slug: "home-maintenance",
     name: "Home Maintenance",
-    pluralName: "Home Maintenance Pros",
+    pluralName: "Home Maintenance Crew",
     shortDescription: "Seasonal upkeep and property care",
     icon: "shield-check",
     href: ROUTES.services.detail("home-maintenance"),

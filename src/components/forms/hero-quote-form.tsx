@@ -6,7 +6,7 @@ import { SERVICES } from "@/constants/services";
 import { ROUTES } from "@/constants/routes";
 import { Icon } from "@/components/ui/icons";
 import { fieldAriaProps } from "@/components/forms/form-field";
-import { MagneticButton } from "@/components/motion/magnetic-button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils/cn";
 import {
   trackFormStart,
@@ -67,7 +67,7 @@ export function HeroQuoteForm({ className }: { className?: string }) {
       onFocus={markStart}
       aria-label="Quick quote request"
     >
-      <p className="mb-4 text-heading-sm text-ink-900">Get free quotes in 2 minutes</p>
+      <p className="mb-4 text-heading-sm text-ink-900">Get a free quote in 2 minutes</p>
       <div className="space-y-3">
         <div className="form-group">
           <label htmlFor="hero-service" className="form-label form-label-required">
@@ -120,14 +120,13 @@ export function HeroQuoteForm({ className }: { className?: string }) {
           )}
         </div>
       </div>
-      <MagneticButton
+      <Button
         type="submit"
-        className="mt-4 w-full"
+        className="mt-5 w-full"
         disabled={submitting}
-        magnetic={false}
       >
-        {submitting ? "Redirecting…" : "Get Free Quotes"}
-      </MagneticButton>
+        {submitting ? "Redirecting…" : "Get Free Quote"}
+      </Button>
       <p className="mt-3 flex items-center justify-center gap-1 text-caption text-ink-400">
         <Icon name="lock" size={12} />
         Free · No obligation

@@ -6,33 +6,34 @@ import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/constants/routes";
 
 export const metadata: Metadata = buildMetadata({
-  title: "For Pros",
-  description: `Join the ${siteConfig.name} network — connect with qualified Edmonton homeowners seeking vetted home service professionals.`,
-  path: ROUTES.forPros.index,
+  title: "Join Our Team",
+  description: `Work with ${siteConfig.name} — we're a local Edmonton contractor building an in-house team of skilled tradespeople and crew members.`,
+  path: ROUTES.careers.index,
 });
 
-export default function ForProsPage() {
+export default function CareersPage() {
   return (
     <Section className="pt-16">
       <Container narrow>
         <SectionHeader
-          title="Join our Edmonton pro network"
-          description="Connect with homeowners actively seeking vetted home service professionals in the Capital Region."
+          title="Join our Edmonton team"
+          description="Edmonton Home Connect is a local contractor with our own crew. We're always interested in skilled tradespeople and reliable team members who take pride in their work."
         />
         <ul className="mt-8 space-y-3 text-body-md text-ink-600">
-          <li>• Pre-qualified leads — homeowners who describe their project upfront</li>
-          <li>• No shared leads sold to 10 contractors</li>
-          <li>• Insurance and licensing verification builds homeowner trust</li>
+          <li>• Work directly for one contractor — no lead fees or middlemen</li>
+          <li>• Steady projects across Edmonton and the Capital Region</li>
+          <li>• Licensed trades, insured crew, and accountable workmanship</li>
+          <li>• Hands-on roles in handyman, painting, plumbing, electrical, and more</li>
         </ul>
         <p className="mt-8 text-body-sm text-ink-500">
-          Pro applications opening soon. Email{" "}
+          Interested in joining our team? Email{" "}
           <a href={`mailto:${siteConfig.email}`} className="text-brand-700">
             {siteConfig.email}
           </a>{" "}
-          to express interest.
+          with your trade, experience, and availability.
         </p>
         <Button href={ROUTES.vetting} variant="secondary" className="mt-6">
-          See our vetting standards
+          See our team standards
         </Button>
       </Container>
     </Section>

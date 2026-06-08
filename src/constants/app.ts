@@ -15,25 +15,25 @@ export const TRUST_STATS = [
     decimals: 1,
   },
   {
-    count: 50,
+    count: 10,
     suffix: "+",
-    label: "Vetted pros in network",
-    key: "pros",
+    label: "Home services offered",
+    key: "services",
     decimals: 0,
   },
   {
     count: 24,
     suffix: " hr",
-    label: "Typical match time",
+    label: "Typical response time",
     key: "sla",
     decimals: 0,
   },
 ] as const;
 
 export const TRUST_BADGES = [
-  "Vetted Pros",
+  "Licensed Team",
   "Insured & WCB",
-  "Free to Use",
+  "Free Quotes",
   "Edmonton Local",
   "Google Verified",
 ] as const;
@@ -42,11 +42,11 @@ export const ANIMATION = {
   duration: {
     instant: 0.1,
     fast: 0.15,
-    normal: 0.2,
-    slow: 0.3,
-    slower: 0.45,
+    normal: 0.25,
+    slow: 0.35,
+    slower: 0.5,
   },
-  stagger: 0.05,
+  stagger: 0.06,
   maxStaggerItems: 6,
 } as const;
 
@@ -58,7 +58,7 @@ export const FORM = {
 
 export const SEO = {
   titleTemplate: "%s | Edmonton Home Connect",
-  defaultTitle: "Edmonton Home Connect — Trusted Local Home Service Pros",
+  defaultTitle: "Edmonton Home Connect — Trusted Local Home Service Contractor",
   maxDescriptionLength: 160,
   maxTitleLength: 60,
   ogImageWidth: 1200,

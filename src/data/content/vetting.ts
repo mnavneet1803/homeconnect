@@ -3,38 +3,37 @@ import { howItWorksSteps } from "@/data/content/homepage";
 export const vettingSteps = [
   {
     step: 1,
-    title: "Application & credentials",
+    title: "Licensed & credentialed",
     description:
-      "Pros submit business registration, trade licenses (where required), liability insurance certificates, and WCB clearance letters.",
+      "Our team holds required trade licenses for electrical, plumbing, and gas work. Every crew member meets Alberta credential requirements for their role.",
   },
   {
     step: 2,
     title: "Insurance verification",
     description:
-      "We verify minimum $2M general liability coverage and active WCB account status before any pro enters our matching network.",
+      "We maintain minimum $2M general liability coverage and active WCB account status for all employees and on-site work.",
   },
   {
     step: 3,
-    title: "Reference & review check",
+    title: "Training & standards",
     description:
-      "We review Google Business Profile ratings, past customer references, and complaint history. Pros below our standards are declined.",
+      "Our crew follows consistent quality checklists, safety protocols, and homeowner communication standards on every job.",
   },
   {
     step: 4,
-    title: "Ongoing monitoring",
+    title: "Ongoing quality monitoring",
     description:
-      "Insurance and license renewals are re-checked annually. Homeowner feedback after every match helps us maintain network quality.",
+      "Insurance and license renewals are kept current. Homeowner feedback after every project helps us maintain our service standards.",
   },
 ] as const;
 
 export const vettingRequirements = [
-  "Valid Alberta business registration or sole proprietorship",
+  "Valid Alberta business registration",
   "Minimum $2M general liability insurance",
   "Active WCB coverage for all employees",
   "Trade license for electricians, plumbers, and gas fitters",
-  "Google rating of 4.0+ with minimum 10 reviews (or equivalent references for new businesses)",
   "Written quotes provided before work begins",
-  "Agreement to our code of conduct and homeowner communication standards",
+  "Code of conduct and homeowner communication standards",
 ] as const;
 
 export { howItWorksSteps };

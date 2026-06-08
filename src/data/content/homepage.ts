@@ -10,43 +10,43 @@ export const howItWorksSteps: HowItWorksStep[] = [
   },
   {
     step: 2,
-    title: "We match you with vetted pros",
+    title: "We review & quote",
     description:
-      "We notify up to 3 qualified professionals from our Edmonton network — each verified for insurance and reviews.",
+      "Our team reviews your request and prepares a detailed quote — insured, licensed where required, and tailored to your project.",
     icon: "users",
   },
   {
     step: 3,
-    title: "Compare quotes & hire",
+    title: "We schedule & complete",
     description:
-      "Pros contact you directly with quotes. You choose who to hire — no pressure, no obligation.",
+      "Our crew performs the work on your timeline. One team, accountable from start to finish — no obligation until you approve the quote.",
     icon: "check-circle",
   },
 ];
 
 export const whyChooseUsBenefits: BenefitItem[] = [
   {
-    title: "Vetted Alberta pros",
+    title: "Licensed & insured team",
     description:
-      "WCB, liability insurance, and trade credentials verified before joining our network.",
+      "Our crew carries WCB and liability insurance. Licensed trades handle work that requires it.",
     icon: "shield-check",
   },
   {
-    title: "Free multi-quote matching",
+    title: "Free quotes",
     description:
-      "One request, up to 3 quotes. You pay nothing to use our platform.",
+      "Request a quote at no cost and no obligation. Upfront pricing before work begins.",
     icon: "gift",
   },
   {
     title: "Edmonton-native expertise",
     description:
-      "Pros who know local permits, climate, and housing — from Terwillegar bungalows to downtown infills.",
+      "A team that knows local permits, climate, and housing — from Terwillegar bungalows to downtown infills.",
     icon: "map-pin",
   },
   {
-    title: "No shared lead spam",
+    title: "Direct accountability",
     description:
-      "Your request goes to matched pros only — not sold to a call center list.",
+      "You work with us directly — one contractor, one team, no third-party handoffs.",
     icon: "ban",
   },
   {

@@ -55,7 +55,7 @@ export default async function ServiceLocationPage({ params }: ServiceLocationPag
     {
       id: `${page.serviceSlug}-${page.locationSlug}-schema`,
       question: `How much does ${service.name.toLowerCase()} cost in ${loc.name}?`,
-      answer: `Request free quotes from vetted ${service.pluralName.toLowerCase()} in ${loc.name}.`,
+      answer: `Every project is priced individually. Request a free custom quote from our ${service.pluralName.toLowerCase()} in ${loc.name}.`,
     },
   ];
 

@@ -16,7 +16,7 @@ import { QuoteForm, QuoteFormReassurance } from "@/components/forms/quote-form";
 import { QuoteFormSkeleton } from "@/components/skeletons";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerGrid, StaggerItem } from "@/components/motion/stagger-grid";
-import { MagneticButton } from "@/components/motion/magnetic-button";
+import { Button } from "@/components/ui/button";
 import { TestimonialCarousel } from "@/components/motion/testimonial-carousel";
 import type { ServicePageContent } from "@/types/service-page";
 import type { ServiceSlug } from "@/constants/services";
@@ -84,8 +84,8 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
         <Container>
           <Reveal>
             <SectionHeader
-              title={`Why hire ${service.pluralName.toLowerCase()} through us`}
-              description="Edmonton homeowners choose Edmonton Home Connect for vetted pros, free matching, and zero runaround."
+              title={`Why choose our ${service.pluralName.toLowerCase()}`}
+              description="Edmonton homeowners choose Edmonton Home Connect for our own licensed team, free quotes, and direct accountability."
             />
           </Reveal>
           <StaggerGrid className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -112,9 +112,8 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
               {service.name} services across the Capital Region
             </h2>
             <p className="mt-2 max-w-prose text-body-md text-ink-500">
-              We connect homeowners in Edmonton and surrounding communities with vetted{" "}
-              {service.pluralName.toLowerCase()}. Don&apos;t see your area? Submit your postal
-              code — we likely serve you.
+              Our {service.pluralName.toLowerCase()} serve Edmonton and surrounding communities
+              directly. Don&apos;t see your area? Submit your postal code — we likely serve you.
             </p>
           </Reveal>
           <StaggerGrid className="mt-6 flex flex-wrap gap-2">
@@ -142,7 +141,7 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
           <Reveal>
             <SectionHeader
               title={`${service.name} FAQ`}
-              description={`Common questions about hiring ${service.pluralName.toLowerCase()} in Edmonton.`}
+              description={`Common questions about our ${service.pluralName.toLowerCase()} in Edmonton.`}
             />
           </Reveal>
           <Reveal delay={0.08}>
@@ -163,7 +162,7 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
           <Reveal>
             <SectionHeader
               title="What Edmonton homeowners say"
-              description={`Real reviews from homeowners matched with ${service.pluralName.toLowerCase()} in our network.`}
+              description={`Real reviews from homeowners who worked with our ${service.pluralName.toLowerCase()}.`}
             />
           </Reveal>
           <TestimonialCarousel testimonials={displayTestimonials} />
@@ -171,42 +170,40 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
       </Section>
 
       {/* CTA band */}
-      <section className="bg-ink-950 py-14">
+      <section className="bg-brand-900 py-16">
         <Container className="text-center">
           <Reveal variant="fade-up">
             <h2 className="text-display-sm text-white">
-              Ready to hire {service.pluralName.toLowerCase()} in Edmonton?
+              Need {service.pluralName.toLowerCase()} in Edmonton?
             </h2>
             <p className="mx-auto mt-4 max-w-prose text-body-lg text-ink-300">
-              Get matched with up to {siteConfig.business.maxMatchedPros} vetted pros — free,
-              fast, and no obligation.
+              Request a free quote from our team — fast response and no obligation.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <MagneticButton href="#service-quote" size="lg">
+              <Button href="#service-quote" size="lg">
                 Get Free Quotes
-              </MagneticButton>
-              <MagneticButton
+              </Button>
+              <Button
                 href={`tel:${siteConfig.phone.tel}`}
-                variant="ghost"
+                variant="secondary"
                 size="lg"
-                magnetic={false}
-                className="text-white hover:bg-ink-800 hover:text-white"
+                className="border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white"
               >
                 Call {siteConfig.phone.display}
-              </MagneticButton>
+              </Button>
             </div>
           </Reveal>
         </Container>
       </section>
 
       {/* Lead form */}
-      <Section id="service-quote" className="relative overflow-hidden bg-gradient-brand-subtle">
+      <Section id="service-quote" className="bg-gradient-trust">
         <Container>
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal variant="fade-up">
               <SectionHeader
-                title={`Get your free ${service.name.toLowerCase()} quotes`}
-                description={`Tell us about your project. We'll connect you with qualified ${service.pluralName.toLowerCase()} in Edmonton.`}
+                title={`Get your free ${service.name.toLowerCase()} quote`}
+                description={`Tell us about your project. Our ${service.pluralName.toLowerCase()} will review and provide a quote for Edmonton and the Capital Region.`}
                 align="left"
                 className="mx-0 mb-0 text-left"
               />
@@ -230,7 +227,7 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
             <Reveal>
               <SectionHeader
                 title="Related services"
-                description="Explore other home services available through our Edmonton network."
+                description="Explore other home services our team offers across Edmonton."
               />
             </Reveal>
             <StaggerGrid className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

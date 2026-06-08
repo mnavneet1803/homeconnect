@@ -20,7 +20,7 @@ export default function LocationsIndexPage() {
       <Container>
         <SectionHeader
           title="Serving Edmonton & the Capital Region"
-          description="Find home service pros in your area."
+          description="Our team serves Edmonton and communities across the Capital Region."
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {locations.map((location) => (

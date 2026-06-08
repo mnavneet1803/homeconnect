@@ -34,7 +34,7 @@ export default function GuidesPage() {
           ))}
         </ul>
         <p className="mt-8 text-body-sm text-ink-500">
-          Full guides coming soon. In the meantime, get matched with vetted pros for your project.
+          Full guides coming soon. In the meantime, request a free quote from our team for your project.
         </p>
         <Button href={ROUTES.quote} className="mt-4">
           Get Free Quotes

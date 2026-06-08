@@ -7,7 +7,7 @@ import { disclaimerSections } from "@/data/content/legal";
 
 export const metadata: Metadata = buildMetadata({
   title: "Disclaimer",
-  description: `Disclaimer for ${siteConfig.name} — marketplace model, pricing estimates, and service limitations.`,
+  description: `Disclaimer for ${siteConfig.name} — contractor services, custom quotes, and service limitations.`,
   path: ROUTES.legal.disclaimer,
 });
 
@@ -15,7 +15,7 @@ export default function DisclaimerPage() {
   return (
     <LegalPageLayout
       title="Disclaimer"
-      description="Important information about our marketplace model and service limitations."
+      description="Important information about our contractor services and limitations."
     >
       {disclaimerSections.map((section) => (
         <LegalSection key={section.title} title={section.title}>

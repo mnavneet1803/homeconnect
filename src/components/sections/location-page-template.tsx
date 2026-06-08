@@ -9,7 +9,7 @@ import { ServiceCard } from "@/components/ui/service-card";
 import { Accordion } from "@/components/ui/accordion";
 import { QuoteForm, QuoteFormReassurance } from "@/components/forms/quote-form";
 import { EdmontonCredibility } from "@/components/trust";
-import { MagneticButton } from "@/components/motion/magnetic-button";
+import { Button } from "@/components/ui/button";
 import type { Location } from "@/types/location";
 import { slugify } from "@/lib/utils/slugify";
 import { QuoteFormSkeleton } from "@/components/skeletons";
@@ -32,12 +32,12 @@ export function LocationPageTemplate({ location }: LocationPageTemplateProps) {
     {
       id: `${location.slug}-cost`,
       question: `How much do home services cost in ${location.name}?`,
-      answer: `Costs vary by trade and scope. Handyman work typically runs $50–$90/hr in ${location.name}; larger projects like renovations require written quotes. We connect you with up to ${siteConfig.business.maxMatchedPros} pros who provide free estimates.`,
+      answer: `Every project is priced individually. Our team reviews your scope in ${location.name} and provides a custom written quote before any work begins.`,
     },
     {
       id: `${location.slug}-speed`,
-      question: `How quickly can I get matched in ${location.name}?`,
-      answer: `Most homeowners in ${location.name} hear from matched pros within ${siteConfig.business.matchSlaHours} hours of submitting a request.`,
+      question: `How quickly will I hear back in ${location.name}?`,
+      answer: `Most homeowners in ${location.name} hear from our team within ${siteConfig.business.matchSlaHours} hours of submitting a request.`,
     },
     {
       id: `${location.slug}-areas`,
@@ -58,22 +58,20 @@ export function LocationPageTemplate({ location }: LocationPageTemplateProps) {
             Home services in {location.name}
           </h1>
           <p className="mt-4 max-w-prose text-body-lg text-ink-500">
-            Connect with vetted, insured home service professionals serving{" "}
-            {location.name} and the surrounding Capital Region. Free matching — up
-            to {siteConfig.business.maxMatchedPros} quotes, no obligation.
+            Our licensed, insured team serves {location.name} and the surrounding
+            Capital Region directly. Free quote — no obligation.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <MagneticButton href="#location-quote" size="lg" magnetic={false}>
+            <Button href="#location-quote" size="lg">
               Get Free Quotes
-            </MagneticButton>
-            <MagneticButton
+            </Button>
+            <Button
               href={`tel:${siteConfig.phone.tel}`}
               variant="secondary"
               size="lg"
-              magnetic={false}
             >
               Call {siteConfig.phone.display}
-            </MagneticButton>
+            </Button>
           </div>
         </Container>
       </Section>
@@ -103,7 +101,7 @@ export function LocationPageTemplate({ location }: LocationPageTemplateProps) {
         <Container>
           <SectionHeader
             title={`Popular services in ${location.name}`}
-            description="Browse trades available through our vetted Edmonton network."
+            description="Browse home services our team offers in Edmonton and the Capital Region."
           />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {services.slice(0, 9).map((service) => (
@@ -156,8 +154,8 @@ export function LocationPageTemplate({ location }: LocationPageTemplateProps) {
           <div className="grid items-start gap-12 lg:grid-cols-2">
             <div>
               <SectionHeader
-                title={`Get matched with pros in ${location.name}`}
-                description="Tell us about your project. We'll connect you with qualified local professionals."
+                title={`Get a free quote in ${location.name}`}
+                description="Tell us about your project. Our team will review and respond with pricing."
                 align="left"
                 className="mx-0 text-left"
               />

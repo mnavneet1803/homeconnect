@@ -7,7 +7,6 @@ export const LOCATION_SLUGS = [
   "st-albert",
   "spruce-grove",
   "stony-plain",
-  "fort-saskatchewan",
   "leduc",
   "beaumont",
 ] as const;
@@ -72,21 +71,12 @@ export const LOCATIONS: Location[] = [
     neighbourhoods: [],
   },
   {
-    slug: "fort-saskatchewan",
-    name: "Fort Saskatchewan",
-    region: "Capital Region",
-    href: ROUTES.locations.detail("fort-saskatchewan"),
-    featured: false,
-    sortOrder: 6,
-    neighbourhoods: [],
-  },
-  {
     slug: "leduc",
     name: "Leduc",
     region: "Capital Region",
     href: ROUTES.locations.detail("leduc"),
     featured: false,
-    sortOrder: 7,
+    sortOrder: 6,
     neighbourhoods: [],
   },
   {
@@ -95,7 +85,7 @@ export const LOCATIONS: Location[] = [
     region: "Capital Region",
     href: ROUTES.locations.detail("beaumont"),
     featured: false,
-    sortOrder: 8,
+    sortOrder: 7,
     neighbourhoods: [],
   },
 ];

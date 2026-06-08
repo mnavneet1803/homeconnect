@@ -10,7 +10,7 @@ export function GoogleReviewsBadge({ className }: { className?: string }) {
 
   const inner = (
     <div
-      className={`inline-flex items-center gap-3 rounded-xl border border-border-subtle bg-surface-0 px-4 py-3 shadow-card ${className ?? ""}`}
+      className={`inline-flex items-center gap-3 rounded-xl border border-border-subtle bg-surface-0 px-4 py-3.5 shadow-card ${className ?? ""}`}
     >
       <Icon name="star" size={20} className="fill-warning-500 text-warning-500" />
       <div className="text-left">
@@ -35,7 +35,7 @@ export function GoogleReviewsBadge({ className }: { className?: string }) {
       location="google_reviews_badge"
       ctaText="Google Reviews"
       external
-      className="inline-block hover:opacity-90"
+      className="inline-block transition-opacity hover:opacity-90"
     >
       {inner}
     </TrackedLink>
@@ -45,16 +45,16 @@ export function GoogleReviewsBadge({ className }: { className?: string }) {
 /** Row of professional trust signals */
 export function TrustBar() {
   const items = [
-    { icon: "shield-check" as const, label: "Vetted & insured pros" },
+    { icon: "shield-check" as const, label: "Licensed & insured team" },
     { icon: "map-pin" as const, label: "Edmonton & Capital Region" },
-    { icon: "gift" as const, label: "Free for homeowners" },
-    { icon: "clock" as const, label: `${siteConfig.business.matchSlaHours}hr match SLA` },
+    { icon: "gift" as const, label: "Free quotes" },
+    { icon: "clock" as const, label: `${siteConfig.business.matchSlaHours}hr response time` },
   ];
 
   return (
-    <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+    <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
       {items.map((item) => (
-        <li key={item.label} className="flex items-center gap-2 text-body-sm text-ink-600">
+        <li key={item.label} className="flex items-center gap-2.5 text-body-sm text-ink-600">
           <Icon name={item.icon} size={16} className="text-brand-600" />
           {item.label}
         </li>
@@ -66,31 +66,31 @@ export function TrustBar() {
 /** Local Edmonton credibility block */
 export function EdmontonCredibility() {
   return (
-    <div className="rounded-2xl border border-border-subtle bg-surface-0 p-6">
+    <div className="rounded-2xl border border-border-subtle bg-surface-0 p-7 shadow-card">
       <p className="section-eyebrow">Locally rooted</p>
-      <h3 className="mt-2 text-heading-md text-ink-900">
+      <h3 className="mt-3 text-heading-md text-ink-900">
         Built for Edmonton homeowners
       </h3>
-      <ul className="mt-4 space-y-3 text-body-sm text-ink-600">
-        <li className="flex gap-2">
+      <ul className="mt-6 space-y-4 text-body-sm leading-relaxed text-ink-600">
+        <li className="flex gap-3">
           <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand-600" />
           Serving T5, T6, T7, and T8 postal codes across the Capital Region
         </li>
-        <li className="flex gap-2">
+        <li className="flex gap-3">
           <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand-600" />
           Alberta-licensed trades verified for electricians and plumbers
         </li>
-        <li className="flex gap-2">
+        <li className="flex gap-3">
           <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand-600" />
-          WCB and liability insurance required for every pro in our network
+          WCB and liability insurance on every job our team performs
         </li>
-        <li className="flex gap-2">
+        <li className="flex gap-3">
           <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand-600" />
-          Not a contractor — we connect you with independent local businesses
+          Licensed contractor — our own in-house team does the work
         </li>
       </ul>
       {siteConfig.social.googleBusiness && (
-        <p className="mt-4">
+        <p className="mt-6">
           <Link
             href={siteConfig.social.googleBusiness}
             target="_blank"

@@ -8,15 +8,15 @@ import { ROUTES } from "@/constants/routes";
 export const metadata: Metadata = buildMetadata({
   title: "Cost Guides",
   description:
-    "Edmonton home service cost guides — pricing estimates for handyman, plumbing, painting, and renovation projects.",
+    "Request a custom quote for handyman, plumbing, painting, and renovation work in Edmonton. Pricing is based on your specific project.",
   path: ROUTES.costGuides.index,
 });
 
 const guides = [
-  { slug: "handyman", title: "Handyman costs in Edmonton", range: "$50–$90/hr" },
-  { slug: "plumbers", title: "Plumber costs in Edmonton", range: "$90–$150/hr" },
-  { slug: "painters", title: "House painting costs in Edmonton", range: "$2–$4/sq ft" },
-  { slug: "renovators", title: "Renovation costs in Edmonton", range: "Varies by scope" },
+  { slug: "handyman", title: "Handyman services in Edmonton" },
+  { slug: "plumbers", title: "Plumbing services in Edmonton" },
+  { slug: "painters", title: "House painting in Edmonton" },
+  { slug: "renovators", title: "Home renovation in Edmonton" },
 ];
 
 export default function CostGuidesPage() {
@@ -24,8 +24,8 @@ export default function CostGuidesPage() {
     <Section className="pt-16">
       <Container>
         <SectionHeader
-          title="Edmonton cost guides"
-          description="General pricing estimates to help you budget. Request free quotes for accurate project pricing."
+          title="Get a quote for your project"
+          description="We don't publish fixed prices — every job is quoted based on scope, materials, and complexity. Tell us about your project for a custom estimate."
         />
         <div className="grid gap-4 sm:grid-cols-2">
           {guides.map((g) => (
@@ -35,12 +35,14 @@ export default function CostGuidesPage() {
               className="card-interactive card-body"
             >
               <h2 className="text-heading-sm text-ink-900">{g.title}</h2>
-              <p className="mt-2 text-body-sm text-ink-500">Typical range: {g.range}</p>
+              <p className="mt-2 text-body-sm text-ink-500">
+                Custom quote based on your project
+              </p>
             </Link>
           ))}
         </div>
         <Button href={ROUTES.quote} className="mt-8">
-          Get accurate quotes for your project
+          Request a free quote
         </Button>
       </Container>
     </Section>

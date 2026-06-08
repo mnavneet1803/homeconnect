@@ -5,9 +5,9 @@
 export const siteConfig = {
   name: "Edmonton Home Connect",
   shortName: "EHC",
-  tagline: "Edmonton's trusted way to hire local home service pros.",
+  tagline: "Edmonton's trusted local home service contractor.",
   description:
-    "Connect with vetted, insured home service professionals in Edmonton and the Capital Region. Free matching — up to 3 quotes, no obligation.",
+    "Licensed home service contractor in Edmonton and the Capital Region. Request a free quote — our own team handles repairs, installs, and maintenance.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://edmontonhomeconnect.ca",
   locale: "en_CA",
   language: "en-CA",
@@ -44,9 +44,9 @@ export const siteConfig = {
   },
   business: {
     type: "HomeImprovementContractor" as const,
-    /** Marketplace disclaimer — required on key pages */
+    /** Company service model — shown on key pages */
     marketplaceDisclaimer:
-      "We connect homeowners with independent contractors. We do not perform the work ourselves.",
+      "We are the contractor. Our own licensed, insured team performs the work — no middlemen or outside subcontractors.",
     matchSlaHours: 24,
     maxMatchedPros: 3,
   },

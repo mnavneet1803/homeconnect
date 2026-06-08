@@ -7,7 +7,7 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "About Us",
-  description: `Learn about ${siteConfig.name} — Edmonton's trusted home service matching platform.`,
+  description: `Learn about ${siteConfig.name} — Edmonton's trusted local home service contractor.`,
   path: ROUTES.about,
 });
 

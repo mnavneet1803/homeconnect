@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { m } from "framer-motion";
 import { Magnetic } from "@/components/motion/magnetic";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils/cn";
@@ -33,6 +32,7 @@ interface MagneticButtonProps {
   onClick?: () => void;
   type?: "button" | "submit";
   disabled?: boolean;
+  /** Disabled by default — magnetic effects are not used in premium mode */
   magnetic?: boolean;
 }
 
@@ -46,27 +46,16 @@ export function MagneticButton({
   onClick,
   type = "button",
   disabled,
-  magnetic = true,
+  magnetic = false,
 }: MagneticButtonProps) {
   const reducedMotion = usePrefersReducedMotion();
 
   const classes = cn("btn", variantClasses[variant], sizeClasses[size], className);
 
-  const inner = (
-    <m.span
-      className="inline-flex w-full items-center justify-center"
-      whileHover={reducedMotion ? undefined : { scale: 1.02 }}
-      whileTap={reducedMotion ? undefined : { scale: 0.98 }}
-      transition={{ duration: 0.15, ease: [0.16, 1, 0.3, 1] }}
-    >
-      {children}
-    </m.span>
-  );
-
   const content = magnetic && !reducedMotion ? (
-    <Magnetic strength={0.18}>{inner}</Magnetic>
+    <Magnetic strength={0.1}>{children}</Magnetic>
   ) : (
-    inner
+    children
   );
 
   if (href) {

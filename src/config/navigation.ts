@@ -36,14 +36,14 @@ export const footerNavigation: FooterColumn[] = [
       { label: "About", href: ROUTES.about },
       { label: "How It Works", href: ROUTES.howItWorks },
       { label: "Vetting Process", href: ROUTES.vetting },
-      { label: "For Pros", href: ROUTES.forPros.index },
+      { label: "Join Our Team", href: ROUTES.careers.index },
       { label: "Contact", href: ROUTES.contact },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Cost Guides", href: ROUTES.costGuides.index },
+      { label: "Get a Quote", href: ROUTES.costGuides.index },
       { label: "Guides", href: ROUTES.guides.index },
       { label: "FAQ", href: ROUTES.faq },
       { label: "Blog", href: ROUTES.blog.index },

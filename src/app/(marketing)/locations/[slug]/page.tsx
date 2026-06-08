@@ -24,7 +24,7 @@ export async function generateMetadata({
 
   return buildMetadata({
     title: `Home Services in ${location.name}, Alberta`,
-    description: `Connect with vetted home service professionals in ${location.name} and surrounding areas. Free quotes from local pros — handyman, painters, plumbers, and more.`,
+    description: `Home services in ${location.name} and surrounding areas. Our licensed team handles handyman, painting, plumbing, electrical, and more — free custom quotes.`,
     path: location.href,
     ogImage: `/images/og/locations/${slug}.jpg`,
     keywords: [

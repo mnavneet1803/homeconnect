@@ -7,7 +7,7 @@ import { Container, Section, SectionHeader } from "@/components/ui/container";
 import { ServiceCard } from "@/components/ui/service-card";
 import { QuoteForm, QuoteFormReassurance } from "@/components/forms/quote-form";
 import { QuoteFormSkeleton } from "@/components/skeletons";
-import { MagneticButton } from "@/components/motion/magnetic-button";
+import { Button } from "@/components/ui/button";
 import type { NeighbourhoodPage } from "@/data/locations/neighbourhoods";
 
 interface NeighbourhoodPageTemplateProps {
@@ -46,13 +46,12 @@ export function NeighbourhoodPageTemplate({
             Home services in {neighbourhood.name}, {neighbourhood.cityName}
           </h1>
           <p className="mt-4 max-w-prose text-body-lg text-ink-500">
-            Vetted handymen, painters, plumbers, and more serving{" "}
-            {neighbourhood.name} homeowners. Free matching with up to{" "}
-            {siteConfig.business.maxMatchedPros} local pros.
+            Our handyman, painting, plumbing, and other crews serve{" "}
+            {neighbourhood.name} homeowners directly. Request a free quote — no obligation.
           </p>
-          <MagneticButton href="#hood-quote" className="mt-8" size="lg" magnetic={false}>
+          <Button href="#hood-quote" className="mt-10" size="lg">
             Get Free Quotes
-          </MagneticButton>
+          </Button>
         </Container>
       </Section>
 
@@ -76,7 +75,7 @@ export function NeighbourhoodPageTemplate({
           <div className="grid items-start gap-12 lg:grid-cols-2">
             <div>
               <SectionHeader
-                title={`Get matched in ${neighbourhood.name}`}
+                title={`Get a quote in ${neighbourhood.name}`}
                 align="left"
                 className="mx-0 text-left"
               />

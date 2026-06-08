@@ -11,7 +11,7 @@ import { getFeaturedFaqs } from "@/data/faq/homepage";
 export const metadata: Metadata = buildMetadata({
   title: "FAQ",
   description:
-    "Frequently asked questions about Edmonton Home Connect — matching, vetting, pricing, and how our free quote service works.",
+    "Frequently asked questions about Edmonton Home Connect — our services, team credentials, pricing, and how to request a free quote.",
   path: ROUTES.faq,
 });
 
@@ -25,7 +25,7 @@ export default function FaqPage() {
         <Container narrow>
           <SectionHeader
             title="Frequently asked questions"
-            description="Everything you need to know about getting matched with vetted Edmonton home service pros."
+            description="Everything you need to know about working with our Edmonton home service team."
           />
         </Container>
       </Section>

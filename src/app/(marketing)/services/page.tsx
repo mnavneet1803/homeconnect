@@ -8,7 +8,7 @@ import { getAllServices } from "@/data";
 export const metadata: Metadata = buildMetadata({
   title: "Home Services",
   description:
-    "Browse all home service categories in Edmonton — handyman, painters, renovators, electricians, plumbers, and more.",
+    "Browse home services our Edmonton team offers — handyman, painters, renovators, electricians, plumbers, and more.",
   path: ROUTES.services.index,
 });
 
@@ -20,9 +20,9 @@ export default function ServicesIndexPage() {
       <Container>
         <SectionHeader
           title="All home services"
-          description="Find vetted Edmonton professionals by trade."
+          description="Browse by trade and request a free quote — our own licensed crew handles every job."
         />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <Link key={service.slug} href={service.href} className="card-interactive card-body">
               <h2 className="text-heading-sm text-ink-900">{service.name}</h2>

@@ -7,7 +7,7 @@ import { termsSections } from "@/data/content/legal";
 
 export const metadata: Metadata = buildMetadata({
   title: "Terms & Conditions",
-  description: `Terms and conditions for using ${siteConfig.name} — Edmonton's home service matching platform.`,
+  description: `Terms and conditions for using ${siteConfig.name} — Edmonton's trusted local home service contractor.`,
   path: ROUTES.legal.terms,
 });
 
@@ -15,7 +15,7 @@ export default function TermsPage() {
   return (
     <LegalPageLayout
       title="Terms & Conditions"
-      description="Terms governing your use of the Edmonton Home Connect matching platform."
+      description="Terms governing your use of Edmonton Home Connect services."
     >
       {termsSections.map((section) => (
         <LegalSection key={section.title} title={section.title}>

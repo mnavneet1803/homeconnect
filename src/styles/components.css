@@ -88,7 +88,7 @@
   Testimonial card:
     <blockquote class="card card-body">
       <div class="flex gap-1 text-warning-500">★★★★★</div>
-      <p class="mt-4 text-body-md text-ink-700">"Matched with a great plumber in 24 hours."</p>
+      <p class="mt-4 text-body-md text-ink-700">"Got a quote from their team in 24 hours."</p>
       <footer class="mt-6 flex items-center gap-3">
         <div class="h-10 w-10 rounded-full bg-ink-100" />
         <div>
@@ -101,7 +101,7 @@
   Trust stat card:
     <div class="card-elevated card-body text-center">
       <p class="font-mono text-display-sm text-ink-900">847+</p>
-      <p class="mt-1 text-body-sm text-ink-500">Homeowners matched</p>
+      <p class="mt-1 text-body-sm text-ink-500">Projects completed</p>
     </div>
 
 

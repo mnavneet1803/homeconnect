@@ -43,10 +43,8 @@ export const ROUTES = {
     detail: (slug: string) => `/blog/${slug}` as const,
   },
 
-  forPros: {
+  careers: {
     index: "/for-pros",
-    join: "/for-pros/join-network",
-    requirements: "/for-pros/pro-requirements",
   },
 
   legal: {

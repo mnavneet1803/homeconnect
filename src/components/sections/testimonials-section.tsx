@@ -2,10 +2,9 @@ import { getFeaturedTestimonials } from "@/data/testimonials";
 import { ROUTES } from "@/constants/routes";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
 import { Icon } from "@/components/ui/icons";
+import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
-import { AnimatedCounter } from "@/components/motion/animated-counter";
 import { TestimonialCarousel } from "@/components/motion/testimonial-carousel";
-import { MagneticButton } from "@/components/motion/magnetic-button";
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -28,30 +27,25 @@ export function TestimonialsSection() {
   const testimonials = getFeaturedTestimonials(3);
 
   return (
-    <Section>
+    <Section className="bg-surface-50">
       <Container>
         <Reveal>
           <SectionHeader
             title="What Edmonton homeowners say"
-            description="Thousands of matches. Consistently clear communication, vetted pros, and no runaround."
+            description="Consistently clear communication, quality workmanship, and no runaround."
           />
         </Reveal>
-        <Reveal className="mb-10 flex items-center justify-center gap-2" delay={0.08}>
+        <Reveal className="mb-12 flex items-center justify-center gap-3" delay={0.06}>
           <StarRating rating={5} />
           <p className="text-body-md text-ink-600">
-            <AnimatedCounter
-              value={4.9}
-              decimals={1}
-              className="font-medium text-ink-900"
-            />{" "}
-            average from 120+ reviews
+            <span className="font-medium text-ink-900">4.9</span> average from 120+ reviews
           </p>
         </Reveal>
         <TestimonialCarousel testimonials={testimonials} />
-        <Reveal className="mt-12 text-center" delay={0.15}>
-          <MagneticButton href={ROUTES.quote} size="lg">
-            Join 847+ homeowners — Get Free Quotes
-          </MagneticButton>
+        <Reveal className="mt-14 text-center" delay={0.12}>
+          <Button href={ROUTES.quote} size="lg">
+            Get Free Quotes
+          </Button>
         </Reveal>
       </Container>
     </Section>

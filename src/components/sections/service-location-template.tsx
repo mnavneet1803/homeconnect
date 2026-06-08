@@ -9,7 +9,7 @@ import type { ServiceLocationPage } from "@/data/services/locations";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
 import { Accordion } from "@/components/ui/accordion";
 import { QuoteForm, QuoteFormReassurance } from "@/components/forms/quote-form";
-import { MagneticButton } from "@/components/motion/magnetic-button";
+import { Button } from "@/components/ui/button";
 import type { ServiceSlug } from "@/constants/services";
 import { QuoteFormSkeleton } from "@/components/skeletons";
 
@@ -28,18 +28,18 @@ export function ServiceLocationTemplate({ page }: ServiceLocationTemplateProps) 
       question: `How much does ${service.name.toLowerCase()} cost in ${location.name}?`,
       answer:
         content?.faq[0]?.answer ??
-        `Rates vary by scope. Request free quotes from up to ${siteConfig.business.maxMatchedPros} vetted ${service.pluralName.toLowerCase()} serving ${location.name}.`,
+        `Every project is priced individually. Request a free custom quote from our ${service.pluralName.toLowerCase()} serving ${location.name}.`,
     },
     {
       id: `${page.serviceSlug}-${page.locationSlug}-2`,
       question: `Are your ${service.pluralName.toLowerCase()} in ${location.name} insured?`,
       answer:
-        "Yes. All professionals in our network must provide proof of liability insurance and WCB coverage before matching.",
+        "Yes. Our team carries liability insurance and WCB coverage on every job.",
     },
     {
       id: `${page.serviceSlug}-${page.locationSlug}-3`,
       question: `How quickly can I get a ${service.name.toLowerCase()} in ${location.name}?`,
-      answer: `Most requests in ${location.name} receive contact from matched pros within ${siteConfig.business.matchSlaHours} hours.`,
+      answer: `Most requests in ${location.name} receive a response from our team within ${siteConfig.business.matchSlaHours} hours.`,
     },
   ];
 
@@ -72,17 +72,16 @@ export function ServiceLocationTemplate({ page }: ServiceLocationTemplateProps) 
             {page.description}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <MagneticButton href="#service-location-quote" size="lg" magnetic={false}>
+            <Button href="#service-location-quote" size="lg">
               Get Free Quotes
-            </MagneticButton>
-            <MagneticButton
+            </Button>
+            <Button
               href={service.href}
               variant="secondary"
               size="lg"
-              magnetic={false}
             >
               All {location.name} services
-            </MagneticButton>
+            </Button>
           </div>
         </Container>
       </Section>
@@ -115,7 +114,7 @@ export function ServiceLocationTemplate({ page }: ServiceLocationTemplateProps) 
             <div>
               <SectionHeader
                 title={`Get ${service.name.toLowerCase()} quotes in ${location.name}`}
-                description={`Matched with vetted ${service.pluralName.toLowerCase()} serving ${location.name}.`}
+                description={`Our ${service.pluralName.toLowerCase()} serve ${location.name} directly — request a free quote.`}
                 align="left"
                 className="mx-0 text-left"
               />

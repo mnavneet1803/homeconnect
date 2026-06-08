@@ -4,6 +4,8 @@ import path from "path";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  /** Allow HMR/assets when opening dev server from LAN IP (e.g. phone testing) */
+  allowedDevOrigins: ["192.168.1.16"],
   outputFileTracingRoot: path.join(__dirname),
   images: {
     formats: ["image/avif", "image/webp"],

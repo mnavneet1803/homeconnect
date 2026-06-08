@@ -28,12 +28,12 @@ export function Accordion({ items, className }: AccordionProps) {
         const buttonId = `${baseId}-${item.id}-button`;
 
         return (
-          <div key={item.id} className="px-6">
+          <div key={item.id} className="px-6 md:px-7">
             <h3>
               <button
                 id={buttonId}
                 type="button"
-                className="flex w-full items-center justify-between gap-4 py-5 text-left"
+                className="flex w-full items-center justify-between gap-4 py-6 text-left"
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpenId(isOpen ? null : item.id)}
@@ -41,8 +41,8 @@ export function Accordion({ items, className }: AccordionProps) {
                 <span className="text-heading-sm text-ink-900">{item.question}</span>
                 <m.span
                   animate={{ rotate: isOpen ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-ink-50 text-ink-500"
+                  transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-surface-50 text-ink-500 ring-1 ring-border-subtle"
                 >
                   <Icon name="chevron-down" size={18} />
                 </m.span>
@@ -57,10 +57,10 @@ export function Accordion({ items, className }: AccordionProps) {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.2, ease: [0, 0, 0.2, 1] }}
+                  transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="pb-5 text-body-md text-ink-600">{item.answer}</p>
+                  <p className="pb-6 text-body-md leading-relaxed text-ink-600">{item.answer}</p>
                 </m.div>
               )}
             </AnimatePresence>

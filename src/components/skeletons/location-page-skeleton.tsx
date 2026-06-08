@@ -33,7 +33,7 @@ export function LocationPageSkeleton() {
         <Container>
           <SectionHeader
             title="Popular services"
-            description="Browse trades available through our network."
+            description="Browse home services our team offers."
           />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {Array.from({ length: 9 }).map((_, i) => (
@@ -96,7 +96,7 @@ export function LocationPageSkeleton() {
           <div className="grid items-start gap-12 lg:grid-cols-2">
             <div>
               <SectionHeader
-                title="Get matched"
+                title="Get a quote"
                 description="Tell us about your project."
                 align="left"
                 className="mx-0 text-left"

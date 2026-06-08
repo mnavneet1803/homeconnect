@@ -7,7 +7,6 @@ import { SERVICES } from "@/constants/services";
 import { ROUTES } from "@/constants/routes";
 import { siteConfig } from "@/config/site";
 import { Icon } from "@/components/ui/icons";
-import { MagneticButton } from "@/components/motion/magnetic-button";
 import { Button } from "@/components/ui/button";
 import { fieldAriaProps } from "@/components/forms/form-field";
 import { TrackedPhoneLink } from "@/components/analytics/tracked-link";
@@ -314,7 +313,7 @@ export function QuoteForm({
                 <textarea
                   id="description"
                   className={cn("form-textarea", errors.description && "form-input-error")}
-                  placeholder="Tell us about your project — scope, timeline, any details that help us match the right pro."
+                  placeholder="Tell us about your project — scope, timeline, and any details that help us prepare your quote."
                   value={form.description}
                   onChange={(e) => updateField("description", e.target.value)}
                   {...fieldAriaProps("description", errors.description)}
@@ -432,11 +431,10 @@ export function QuoteForm({
               Back
             </Button>
           )}
-          <MagneticButton
+          <Button
             type="submit"
             className="flex-1"
             disabled={submitting}
-            magnetic={step === STEPS.length - 1}
             onClick={() =>
               trackFormStart({ serviceSlug: form.serviceSlug || undefined })
             }
@@ -444,11 +442,11 @@ export function QuoteForm({
             {submitting
               ? "Submitting…"
               : compact
-                ? "Get Matched"
+                ? "Get Quote"
                 : step === STEPS.length - 1
-                  ? "Submit & get matched"
+                  ? "Submit & get quote"
                   : "Continue"}
-          </MagneticButton>
+          </Button>
         </div>
 
         <p className="mt-4 flex items-center justify-center gap-1.5 text-caption text-ink-500">
@@ -468,9 +466,9 @@ export function QuoteFormReassurance() {
     <div className="space-y-6">
       <ul className="space-y-4">
         {[
-          `Up to ${siteConfig.business.maxMatchedPros} vetted pros`,
-          `Match within ${siteConfig.business.matchSlaHours} hours`,
-          "Free for homeowners",
+          "Our own licensed crew",
+          `Response within ${siteConfig.business.matchSlaHours} hours`,
+          "Free quote, no obligation",
         ].map((item) => (
           <li key={item} className="flex items-start gap-3">
             <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700">
@@ -482,7 +480,7 @@ export function QuoteFormReassurance() {
       </ul>
       <p className="text-body-sm text-ink-500">
         <Icon name="lock" size={14} className="mr-1 inline" />
-        We never sell your information. Matched pros in our network only.
+        We never sell your information. Your details are used only to prepare your quote.
       </p>
       <p className="text-body-sm text-ink-600">
         Prefer to talk?{" "}

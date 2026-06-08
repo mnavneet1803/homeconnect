@@ -1,39 +1,68 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { m } from "framer-motion";
 import { siteConfig } from "@/config/site";
-import { MagneticButton } from "@/components/motion/magnetic-button";
+import { Button } from "@/components/ui/button";
 import { useQuoteAnchor } from "@/hooks/use-quote-anchor";
 import { useHideStickyCta } from "@/hooks/use-hide-sticky-cta";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { trackPhoneClick, trackCtaClick } from "@/lib/analytics/events";
 import { cn } from "@/lib/utils/cn";
 
+function useMobileNavOpen(): boolean {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const sync = () => setOpen(root.hasAttribute("data-mobile-nav-open"));
+    sync();
+
+    const observer = new MutationObserver(sync);
+    observer.observe(root, { attributes: true, attributeFilter: ["data-mobile-nav-open"] });
+    return () => observer.disconnect();
+  }, []);
+
+  return open;
+}
+
 export function StickyCtaBar() {
   const quoteAnchor = useQuoteAnchor();
-  const hidden = useHideStickyCta();
+  const hiddenByForm = useHideStickyCta();
+  const navOpen = useMobileNavOpen();
+  const reducedMotion = usePrefersReducedMotion();
+
+  const hidden = hiddenByForm || navOpen;
 
   return (
-    <div
-      className={cn(
-        "mobile-sticky-cta transition-transform duration-300",
-        hidden && "pointer-events-none translate-y-full opacity-0"
-      )}
+    <m.div
       role="region"
-      aria-label="Quick actions"
+      aria-label="Contact actions"
       aria-hidden={hidden}
+      initial={reducedMotion ? false : { y: "100%", opacity: 0 }}
+      animate={{
+        y: hidden ? "100%" : 0,
+        opacity: hidden ? 0 : 1,
+      }}
+      transition={{
+        duration: reducedMotion ? 0 : 0.35,
+        ease: [0.25, 0.1, 0.25, 1],
+      }}
+      className={cn("mobile-sticky-cta", hidden && "pointer-events-none")}
     >
-      <MagneticButton
+      <Button
         href={`tel:${siteConfig.phone.tel}`}
         variant="secondary"
-        className="btn-md flex-1 touch-target"
-        magnetic={false}
+        size="md"
+        className="flex-1 touch-target"
         onClick={() => trackPhoneClick({ location: "sticky_cta" })}
       >
-        Call
-      </MagneticButton>
-      <MagneticButton
+        Call Now
+      </Button>
+      <Button
         href={quoteAnchor}
-        className="btn-md flex-[1.4] touch-target"
-        magnetic={false}
+        size="md"
+        className="flex-[1.35] touch-target"
         onClick={() =>
           trackCtaClick({
             location: "sticky_cta",
@@ -43,7 +72,7 @@ export function StickyCtaBar() {
         }
       >
         Get Free Quotes
-      </MagneticButton>
-    </div>
+      </Button>
+    </m.div>
   );
 }

@@ -2,34 +2,34 @@ import type { FAQItem } from "@/types/faq";
 
 export const homepageFaqs: FAQItem[] = [
   {
-    id: "marketplace",
-    question: "Are you the contractor, or a matching service?",
+    id: "contractor",
+    question: "Do you do the work yourselves?",
     answer:
-      "We are a free matching platform — not a contractor. We connect you with independent, vetted professionals in Edmonton. You hire and pay the pro directly.",
+      "Yes. We are a licensed contractor with our own team. When you request a quote, our crew handles the project directly — no outside subcontractors or lead matching.",
     category: "general",
     featured: true,
   },
   {
     id: "free",
-    question: "Is this really free for homeowners?",
+    question: "Is the quote really free?",
     answer:
-      "Yes. Homeowners never pay to use Edmonton Home Connect. Professionals in our network pay to receive matched leads.",
+      "Yes. Requesting a quote is completely free with no obligation. We provide upfront pricing before any work begins.",
     category: "pricing",
     featured: true,
   },
   {
-    id: "how-many",
-    question: "How many pros will contact me?",
+    id: "who-does-work",
+    question: "Who will do the work?",
     answer:
-      "Typically up to 3 matched professionals will reach out with quotes. We curate matches based on your project, location, and availability — no spam lists.",
+      "Our own in-house team handles your project from start to finish. You work directly with us — one company, one crew, accountable from quote to completion.",
     category: "process",
     featured: true,
   },
   {
     id: "vetting",
-    question: "How do you vet professionals?",
+    question: "Is your team licensed and insured?",
     answer:
-      "Every pro must provide proof of liability insurance and WCB coverage, pass credential checks where applicable, and maintain strong customer reviews. Learn more on our vetting process page.",
+      "Yes. Our team carries liability insurance and WCB coverage. Licensed trades handle electrical, plumbing, and gas work where required by Alberta law.",
     category: "vetting",
     featured: true,
   },
@@ -37,7 +37,7 @@ export const homepageFaqs: FAQItem[] = [
     id: "areas",
     question: "What areas do you serve?",
     answer:
-      "We serve Edmonton and the Capital Region including Sherwood Park, St. Albert, Spruce Grove, Stony Plain, Fort Saskatchewan, Leduc, and Beaumont.",
+      "We serve Edmonton and the Capital Region including Sherwood Park, St. Albert, Spruce Grove, Stony Plain, Leduc, and Beaumont.",
     category: "general",
     featured: true,
   },
@@ -45,15 +45,15 @@ export const homepageFaqs: FAQItem[] = [
     id: "speed",
     question: "How fast will I hear back?",
     answer:
-      "Most homeowners receive their first pro contact within 24 hours. Urgent requests are prioritized when possible.",
+      "Most quote requests receive a response from our team within 24 hours. Urgent requests are prioritized when possible.",
     category: "process",
     featured: true,
   },
   {
     id: "unhappy",
-    question: "What if I'm not happy with the pro?",
+    question: "What if I'm not happy with the work?",
     answer:
-      "Contact us immediately. We investigate all feedback and remove pros who don't meet our standards. Your experience helps keep our network trustworthy.",
+      "Contact us immediately. We stand behind our work and will work with you to make it right. Your satisfaction is our priority.",
     category: "general",
     featured: true,
   },

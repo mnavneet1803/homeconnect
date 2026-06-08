@@ -8,7 +8,7 @@ import { siteConfig } from "@/config/site";
 import { ctaNavigation } from "@/config/navigation";
 import { ROUTES } from "@/constants/routes";
 import { getAllServices } from "@/data";
-import { MagneticButton } from "@/components/motion/magnetic-button";
+import { Button } from "@/components/ui/button";
 import { TrackedPhoneLink } from "@/components/analytics/tracked-link";
 import { Icon } from "@/components/ui/icons";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
@@ -102,7 +102,7 @@ export function MobileNav() {
                 ))}
               </ul>
 
-              <p className="mt-6 mb-3 px-3 text-label-sm uppercase tracking-widest text-ink-400">
+              <p className="mb-3 mt-6 px-3 text-label-sm font-medium text-ink-500">
                 Services
               </p>
               <ul className="grid grid-cols-2 gap-1">
@@ -127,14 +127,13 @@ export function MobileNav() {
                 location="mobile_nav"
                 className="mb-3 flex items-center justify-center gap-2 py-2 text-label-md text-ink-700"
               />
-              <MagneticButton
+              <Button
                 href={ctaNavigation.primary.href}
                 className="w-full"
-                magnetic={false}
                 onClick={closeMenu}
               >
                 {ctaNavigation.primary.label}
-              </MagneticButton>
+              </Button>
             </div>
           </motion.nav>
         </>

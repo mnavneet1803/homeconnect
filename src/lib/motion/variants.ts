@@ -1,8 +1,8 @@
 import type { Variants, Transition } from "framer-motion";
 import { ANIMATION } from "@/constants/app";
 
-/** Linear / Stripe-style easing */
-export const easeOut = [0.16, 1, 0.3, 1] as const;
+/** Calm, premium easing — Apple / Stripe inspired */
+export const easeOut = [0.25, 0.1, 0.25, 1] as const;
 export const easeInOut = [0.4, 0, 0.2, 1] as const;
 
 export const defaultTransition: Transition = {
@@ -10,14 +10,8 @@ export const defaultTransition: Transition = {
   ease: easeOut,
 };
 
-export const springTransition: Transition = {
-  type: "spring",
-  stiffness: 400,
-  damping: 30,
-};
-
 export const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 12 },
+  hidden: { opacity: 0, y: 8 },
   visible: {
     opacity: 1,
     y: 0,
@@ -26,7 +20,7 @@ export const fadeInUp: Variants = {
 };
 
 export const fadeInDown: Variants = {
-  hidden: { opacity: 0, y: -8 },
+  hidden: { opacity: 0, y: -6 },
   visible: {
     opacity: 1,
     y: 0,
@@ -43,17 +37,16 @@ export const fadeIn: Variants = {
 };
 
 export const fadeInBlur: Variants = {
-  hidden: { opacity: 0, y: 10, filter: "blur(6px)" },
+  hidden: { opacity: 0, y: 6 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
-    transition: { duration: ANIMATION.duration.slower, ease: easeOut },
+    transition: { duration: ANIMATION.duration.slow, ease: easeOut },
   },
 };
 
 export const scaleIn: Variants = {
-  hidden: { opacity: 0, scale: 0.97 },
+  hidden: { opacity: 0, scale: 0.99 },
   visible: {
     opacity: 1,
     scale: 1,
@@ -62,7 +55,7 @@ export const scaleIn: Variants = {
 };
 
 export const slideInLeft: Variants = {
-  hidden: { opacity: 0, x: -16 },
+  hidden: { opacity: 0, x: -10 },
   visible: {
     opacity: 1,
     x: 0,
@@ -71,7 +64,7 @@ export const slideInLeft: Variants = {
 };
 
 export const slideInRight: Variants = {
-  hidden: { opacity: 0, x: 16 },
+  hidden: { opacity: 0, x: 10 },
   visible: {
     opacity: 1,
     x: 0,
@@ -85,7 +78,7 @@ export const staggerContainer: Variants = {
     opacity: 1,
     transition: {
       staggerChildren: ANIMATION.stagger,
-      delayChildren: 0.08,
+      delayChildren: 0.06,
     },
   },
 };
@@ -101,28 +94,26 @@ export const staggerContainerFast: Variants = {
   },
 };
 
-/** Subtle card hover — used with whileHover */
+/** Subtle card hover */
 export const hoverLift = {
-  y: -3,
-  transition: { duration: ANIMATION.duration.fast, ease: easeOut },
+  y: -2,
+  transition: { duration: ANIMATION.duration.normal, ease: easeOut },
 };
 
 export const hoverScale = {
-  scale: 1.01,
-  transition: { duration: ANIMATION.duration.fast, ease: easeOut },
+  scale: 1.005,
+  transition: { duration: ANIMATION.duration.normal, ease: easeOut },
 };
 
-/** Page enter — Vercel-style subtle fade + slide */
+/** Page enter — subtle fade */
 export const pageTransition: Variants = {
-  hidden: { opacity: 0, y: 6 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
     transition: { duration: ANIMATION.duration.slow, ease: easeOut },
   },
   exit: {
     opacity: 0,
-    y: -4,
     transition: { duration: ANIMATION.duration.fast, ease: easeInOut },
   },
 };
@@ -131,7 +122,7 @@ export const pageTransition: Variants = {
 export const testimonialSlide: Variants = {
   enter: (direction: number) => ({
     opacity: 0,
-    x: direction > 0 ? 20 : -20,
+    x: direction > 0 ? 12 : -12,
   }),
   center: {
     opacity: 1,
@@ -140,7 +131,7 @@ export const testimonialSlide: Variants = {
   },
   exit: (direction: number) => ({
     opacity: 0,
-    x: direction > 0 ? -20 : 20,
+    x: direction > 0 ? -12 : 12,
     transition: { duration: ANIMATION.duration.normal, ease: easeInOut },
   }),
 };
@@ -159,8 +150,8 @@ export const slideUpDrawer: Variants = {
 
 export const scrollViewport = {
   once: true,
-  amount: 0.15,
-  margin: "0px 0px -64px 0px",
+  amount: 0.12,
+  margin: "0px 0px -48px 0px",
 } as const;
 
 export type RevealVariant =

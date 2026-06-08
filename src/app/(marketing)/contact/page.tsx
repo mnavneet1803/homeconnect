@@ -14,7 +14,7 @@ import { QuoteFormSkeleton } from "@/components/skeletons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Contact Us",
-  description: `Contact ${siteConfig.name} — Edmonton's home service matching platform. Call, email, or submit a free quote request.`,
+  description: `Contact ${siteConfig.name} — Edmonton's trusted local home service contractor. Call, email, or submit a free quote request.`,
   path: ROUTES.contact,
 });
 
@@ -29,7 +29,7 @@ export default function ContactPage() {
             <div>
               <SectionHeader
                 title="Contact us"
-                description="Questions about matching, vetting, or your request? We're here to help Edmonton homeowners."
+                description="Questions about our services, your quote, or your project? We're here to help Edmonton homeowners."
                 align="left"
                 className="mx-0 text-left"
               />

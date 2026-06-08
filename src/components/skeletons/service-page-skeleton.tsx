@@ -67,8 +67,8 @@ export function ServicePageSkeleton() {
       <Section className="bg-surface-0">
         <Container>
           <SectionHeader
-            title="Why hire through us"
-            description="Edmonton homeowners choose us for vetted pros and free matching."
+            title="Why choose our team"
+            description="Edmonton homeowners choose us for our licensed team and free quotes."
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {Array.from({ length: 4 }).map((_, i) => (

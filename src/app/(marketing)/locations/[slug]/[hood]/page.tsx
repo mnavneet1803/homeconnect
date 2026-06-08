@@ -27,7 +27,7 @@ export async function generateMetadata({
 
   return buildMetadata({
     title: `Home Services in ${neighbourhood.name}, ${neighbourhood.cityName}`,
-    description: `Connect with vetted home service professionals in ${neighbourhood.name}, ${neighbourhood.cityName}. Free quotes from local pros.`,
+    description: `Home services in ${neighbourhood.name}, ${neighbourhood.cityName}. Our licensed team provides free custom quotes for every project.`,
     path: neighbourhood.href,
   });
 }

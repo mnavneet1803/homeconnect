@@ -10,7 +10,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = buildMetadata({
   title: "Thank You",
   description:
-    "Your request has been received. We'll match you with vetted Edmonton pros within 24 hours.",
+    "Your request has been received. Our team will contact you with a quote within 24 hours.",
   path: ROUTES.thankYou,
   noIndex: true,
 });
@@ -30,7 +30,7 @@ export default async function ThankYouPage({ searchParams }: ThankYouPageProps) 
         </div>
         <h1 className="text-display-sm text-ink-900">You&apos;re all set!</h1>
         <p className="mt-4 text-body-lg text-ink-500">
-          Your request has been received. Expect contact from matched pros within{" "}
+          Your request has been received. Expect contact from our team within{" "}
           {siteConfig.business.matchSlaHours} hours.
         </p>
 
@@ -39,16 +39,15 @@ export default async function ThankYouPage({ searchParams }: ThankYouPageProps) 
           <ol className="mt-4 space-y-3 text-body-sm text-ink-600">
             <li className="flex gap-3">
               <span className="font-medium text-brand-700">1.</span>
-              We review your project details and match you with up to{" "}
-              {siteConfig.business.maxMatchedPros} vetted pros.
+              We review your project details and prepare a quote.
             </li>
             <li className="flex gap-3">
               <span className="font-medium text-brand-700">2.</span>
-              Matched professionals contact you by phone or email with quotes.
+              Our team contacts you by phone or email with pricing and timeline.
             </li>
             <li className="flex gap-3">
               <span className="font-medium text-brand-700">3.</span>
-              You compare quotes, check references, and hire the pro you prefer.
+              You approve the quote and we schedule our crew to complete the work.
             </li>
           </ol>
           {lead && (

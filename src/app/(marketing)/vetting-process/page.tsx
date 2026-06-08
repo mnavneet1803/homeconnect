@@ -3,29 +3,29 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/config/site";
 import { ROUTES } from "@/constants/routes";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
-import { MagneticButton } from "@/components/motion/magnetic-button";
+import { Button } from "@/components/ui/button";
 import { EdmontonCredibility, GoogleReviewsBadge } from "@/components/trust";
 import { vettingSteps, vettingRequirements } from "@/data/content/vetting";
 import { Icon } from "@/components/ui/icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Vetting Process",
-  description: `Learn how ${siteConfig.name} vets home service professionals — insurance, licensing, references, and ongoing quality monitoring.`,
+  description: `Learn how ${siteConfig.name} maintains quality standards — insurance, licensing, training, and ongoing monitoring for our in-house team.`,
   path: ROUTES.vetting,
 });
 
 export default function VettingProcessPage() {
   return (
     <>
-      <Section className="bg-gradient-hero pt-16 pb-12">
+      <Section className="bg-surface-0 pt-16 pb-14">
         <Container narrow>
           <p className="section-eyebrow">Trust & quality</p>
-          <h1 className="mt-2 text-display-sm text-ink-950">
-            How we vet Edmonton home service pros
+          <h1 className="mt-4 text-display-sm text-ink-900">
+            Our team standards & credentials
           </h1>
           <p className="mt-4 text-body-lg text-ink-500">
-            Every professional in our network must meet strict insurance, licensing,
-            and review standards before we match them with homeowners.
+            Every member of our crew meets strict insurance, licensing, and quality
+            standards before working on your home.
           </p>
           <GoogleReviewsBadge className="mt-6" />
         </Container>
@@ -33,7 +33,7 @@ export default function VettingProcessPage() {
 
       <Section>
         <Container>
-          <SectionHeader title="Our 4-step vetting process" />
+          <SectionHeader title="Our 4-step quality standards" />
           <div className="grid gap-8 md:grid-cols-2">
             {vettingSteps.map((step) => (
               <article key={step.step} className="card p-6">
@@ -76,9 +76,9 @@ export default function VettingProcessPage() {
           <p className="text-body-md text-ink-500">
             {siteConfig.business.marketplaceDisclaimer}
           </p>
-          <MagneticButton href={ROUTES.quote} className="mt-8" size="lg" magnetic={false}>
-            Get matched with vetted pros
-          </MagneticButton>
+          <Button href={ROUTES.quote} className="mt-10" size="lg">
+            Get a free quote
+          </Button>
         </Container>
       </Section>
     </>
