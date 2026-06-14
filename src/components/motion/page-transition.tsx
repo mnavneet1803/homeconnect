@@ -14,6 +14,7 @@ export function PageTransition({ children }: { children: ReactNode }) {
 
   return (
     <m.div
+      className="min-w-0 overflow-x-clip"
       initial="hidden"
       animate="visible"
       exit="exit"

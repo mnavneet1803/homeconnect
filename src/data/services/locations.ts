@@ -25,7 +25,7 @@ export function getServiceLocationPages(): ServiceLocationPage[] {
         locationSlug: location.slug,
         href: ROUTES.services.sub(serviceSlug, location.slug),
         title: `${service.name} ${location.name} | Free Quote from Our Team`,
-        description: `Need a ${service.name.toLowerCase()} in ${location.name}? Our licensed, insured team handles the work directly. Free quote — no obligation.`,
+        description: `Need a ${service.name.toLowerCase()} in ${location.name}? Our team handles the work directly. Free quote — no obligation.`,
         headline: `${service.pluralName} in ${location.name}`,
       });
     }

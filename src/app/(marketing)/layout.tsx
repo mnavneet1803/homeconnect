@@ -7,7 +7,7 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <div className="overflow-x-clip">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-toast focus:rounded-lg focus:bg-brand-700 focus:px-4 focus:py-2 focus:text-white"
@@ -17,12 +17,12 @@ export default function MarketingLayout({
       <Header />
       <main
         id="main-content"
-        className="pb-[calc(var(--sticky-cta-height)+env(safe-area-inset-bottom))] md:pb-0"
+        className="min-w-0 overflow-x-clip pb-[calc(var(--sticky-cta-height)+env(safe-area-inset-bottom,0px)+0.5rem)] md:pb-0"
       >
         {children}
       </main>
       <Footer />
       <StickyCtaBar />
-    </>
+    </div>
   );
 }

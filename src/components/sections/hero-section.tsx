@@ -1,4 +1,6 @@
 import { siteConfig } from "@/config/site";
+import { ctaNavigation } from "@/config/navigation";
+import { SERVING_AREA } from "@/constants/launch";
 import { TRUST_BADGES } from "@/constants/app";
 import { Container, Section } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
@@ -25,13 +27,13 @@ const HeroVisual = dynamic(
 
 export function HeroSection() {
   return (
-    <Section className="relative overflow-hidden bg-surface-0 pb-24 pt-16 md:pb-36 md:pt-28">
+    <Section className="relative overflow-x-clip bg-surface-0 pb-24 pt-16 md:pb-36 md:pt-28">
       <FloatingBackground />
       <Container className="relative">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div>
             <Reveal variant="fade-up" immediate delay={0}>
-              <p className="section-eyebrow">Edmonton home services</p>
+              <p className="section-eyebrow">{SERVING_AREA}</p>
             </Reveal>
             <Reveal variant="fade-up" immediate delay={0.06}>
               <h1 className="mt-4 text-balance text-display-sm text-ink-900 md:text-display-lg">
@@ -40,17 +42,17 @@ export function HeroSection() {
             </Reveal>
             <Reveal variant="fade-up" immediate delay={0.12}>
               <p className="mt-6 max-w-prose text-body-lg text-ink-500">
-                Tell us what you need. Our licensed, insured team provides a
-                free quote — fast response and no obligation.
+                Tell us what you need. Our team provides a free quote — fast
+                response and no obligation.
               </p>
             </Reveal>
             <Reveal variant="fade-up" immediate delay={0.18}>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Button href="#quote" size="lg">
-                  Get Free Quotes
+                <Button href={ctaNavigation.secondary.href} size="lg">
+                  {ctaNavigation.secondary.label}
                 </Button>
-                <Button href="#how-it-works" variant="secondary" size="lg">
-                  See how it works
+                <Button href={ctaNavigation.primary.href} variant="secondary" size="lg">
+                  {ctaNavigation.primary.label}
                 </Button>
               </div>
             </Reveal>
@@ -64,7 +66,7 @@ export function HeroSection() {
                 {siteConfig.business.marketplaceDisclaimer}
               </p>
             </Reveal>
-            <StaggerGrid className="mt-6 flex flex-wrap gap-2" fast>
+            <StaggerGrid className="mt-6 flex max-w-full flex-wrap gap-2" fast>
               {TRUST_BADGES.map((badge) => (
                 <StaggerItem key={badge}>
                   <Badge variant="neutral">

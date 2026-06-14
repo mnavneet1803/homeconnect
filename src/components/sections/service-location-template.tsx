@@ -32,9 +32,9 @@ export function ServiceLocationTemplate({ page }: ServiceLocationTemplateProps) 
     },
     {
       id: `${page.serviceSlug}-${page.locationSlug}-2`,
-      question: `Are your ${service.pluralName.toLowerCase()} in ${location.name} insured?`,
+      question: `Do you serve ${location.name} and surrounding areas?`,
       answer:
-        "Yes. Our team carries liability insurance and WCB coverage on every job.",
+        "Yes. We serve Edmonton and surrounding communities. Request a free quote with your postal code and project details.",
     },
     {
       id: `${page.serviceSlug}-${page.locationSlug}-3`,

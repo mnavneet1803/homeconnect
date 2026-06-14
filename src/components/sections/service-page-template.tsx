@@ -108,7 +108,7 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
           <Reveal>
             <SectionHeader
               title={`Why choose our ${service.pluralName.toLowerCase()}`}
-              description="Edmonton homeowners choose Home Solution Services for our own licensed team, free quotes, and direct accountability."
+              description="Edmonton homeowners choose Home Solution Services for our own in-house team, free quotes, and direct accountability."
             />
           </Reveal>
           <StaggerGrid className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -179,7 +179,7 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
         </Container>
       </Section>
 
-      {/* Testimonials */}
+      {/* TODO: Enable testimonials after receiving verified customer reviews.
       <Section className="bg-surface-0">
         <Container>
           <Reveal>
@@ -191,6 +191,7 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
           <TestimonialCarousel testimonials={displayTestimonials} />
         </Container>
       </Section>
+      */}
 
       {/* CTA band */}
       <section className="bg-brand-900 py-16">

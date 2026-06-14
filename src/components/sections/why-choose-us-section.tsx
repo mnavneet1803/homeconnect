@@ -18,8 +18,8 @@ export function WhyChooseUsSection() {
   return (
     <Section className="bg-surface-50">
       <Container>
-        <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
-          <div>
+        <div className="grid min-w-0 items-start gap-14 lg:grid-cols-2 lg:gap-20">
+          <div className="min-w-0">
             <Reveal variant="fade-up">
               <p className="section-eyebrow">Why choose us</p>
               <h2 className="section-title text-balance text-left">
@@ -53,23 +53,23 @@ export function WhyChooseUsSection() {
             </Reveal>
           </div>
 
-          <Reveal variant="fade-up" delay={0.1}>
-            <div className="card overflow-hidden shadow-elevated">
-              <div className="border-b border-border-subtle bg-brand-900 px-7 py-6">
+          <Reveal variant="fade-up" delay={0.1} className="min-w-0">
+            <div className="card max-w-full overflow-hidden shadow-elevated">
+              <div className="border-b border-border-subtle bg-brand-900 px-4 py-5 sm:px-7 sm:py-6">
                 <p className="text-label-md font-medium text-white">Compare your options</p>
               </div>
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[320px] text-left text-body-sm">
+              <div className="overflow-x-auto overscroll-x-contain hide-scrollbar">
+                <table className="w-full min-w-0 text-left text-body-sm">
                   <thead>
                     <tr className="border-b border-border-subtle bg-surface-50">
-                      <th className="px-7 py-5 font-medium text-ink-500" scope="col" />
-                      <th className="px-4 py-5 font-medium text-ink-400" scope="col">
+                      <th className="px-3 py-4 font-medium text-ink-500 sm:px-5 sm:py-5" scope="col" />
+                      <th className="px-2 py-4 font-medium text-ink-400 sm:px-4 sm:py-5" scope="col">
                         Google
                       </th>
-                      <th className="px-4 py-5 font-medium text-ink-400" scope="col">
+                      <th className="px-2 py-4 font-medium text-ink-400 sm:px-4 sm:py-5" scope="col">
                         Lead sites
                       </th>
-                      <th className="px-4 py-5 font-semibold text-brand-700" scope="col">
+                      <th className="px-2 py-4 font-semibold text-brand-700 sm:px-4 sm:py-5" scope="col">
                         Home Solution
                       </th>
                     </tr>
@@ -77,16 +77,16 @@ export function WhyChooseUsSection() {
                   <tbody>
                     {comparison.map((row) => (
                       <tr key={row.feature} className="border-b border-border-subtle last:border-0">
-                        <th className="px-7 py-5 font-medium text-ink-900" scope="row">
+                        <th className="px-3 py-4 font-medium text-ink-900 sm:px-5 sm:py-5" scope="row">
                           {row.feature}
                         </th>
-                        <td className="px-4 py-5 text-center text-ink-300">
+                        <td className="px-2 py-4 text-center text-ink-300 sm:px-4 sm:py-5">
                           {row.google ? "✓" : "—"}
                         </td>
-                        <td className="px-4 py-5 text-center text-ink-300">
+                        <td className="px-2 py-4 text-center text-ink-300 sm:px-4 sm:py-5">
                           {row.national ? "✓" : "—"}
                         </td>
-                        <td className="px-4 py-5 text-center font-semibold text-brand-600">✓</td>
+                        <td className="px-2 py-4 text-center font-semibold text-brand-600 sm:px-4 sm:py-5">✓</td>
                       </tr>
                     ))}
                   </tbody>

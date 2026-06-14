@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getAllServices } from "@/data";
 import { siteConfig } from "@/config/site";
-import { ROUTES } from "@/constants/routes";
 import { IMAGE_SIZES } from "@/lib/images";
 import type { ServiceSlug } from "@/constants/services";
 import { SERVICE_CARD_IMAGES } from "@/data/service-showcase";
@@ -24,7 +23,7 @@ export function ServicesSection() {
           <SectionHeader
             eyebrow="Edmonton home services"
             title="Everything your home needs — handled"
-            description="From quick repairs to full renovations, cleaning, and tech setup. One local team handles it all across Edmonton and the Capital Region."
+            description="Handyman repairs, TV mounting, furniture assembly, plumbing and electrical maintenance, move-in/out repairs, and condo upkeep across Edmonton."
           />
         </Reveal>
 
@@ -77,11 +76,11 @@ export function ServicesSection() {
 
         {/* CTAs */}
         <Reveal className="mt-16 flex flex-col items-center justify-center gap-4 sm:flex-row" delay={0.1}>
-          <Button href={ROUTES.quote} size="lg">
-            Get free quote
+          <Button href="/#quote" size="lg">
+            Request a Free Quote
           </Button>
           <Button href={`tel:${siteConfig.phone.tel}`} variant="secondary" size="lg">
-            Call {siteConfig.phone.display}
+            Call Now
           </Button>
         </Reveal>
       </Container>

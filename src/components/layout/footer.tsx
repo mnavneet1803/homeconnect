@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { ctaNavigation } from "@/config/navigation";
+import { SERVING_AREA } from "@/constants/launch";
 import { ROUTES } from "@/constants/routes";
 import { getAllServices, getAllLocations } from "@/data";
 import { Button } from "@/components/ui/button";
@@ -16,13 +18,23 @@ export function Footer() {
         <Container className="flex flex-col items-center justify-between gap-6 text-center sm:flex-row sm:text-left">
           <div>
             <p className="text-heading-sm text-white">Ready to start your project?</p>
-            <p className="mt-2 text-body-sm text-brand-100">
-              Free quotes from our licensed Edmonton team — no obligation.
+            <p className="mt-2 text-body-sm text-brand-100">{SERVING_AREA}</p>
+            <p className="mt-1 text-body-sm text-brand-100">
+              Free quotes from our Edmonton team — no obligation.
             </p>
           </div>
-          <Button href={ROUTES.quote} variant="secondary" className="shrink-0 bg-white hover:bg-surface-50">
-            Get Free Quotes
-          </Button>
+          <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+            <Button
+              href={ctaNavigation.secondary.href}
+              variant="secondary"
+              className="bg-white hover:bg-surface-50"
+            >
+              {ctaNavigation.secondary.label}
+            </Button>
+            <Button href={ctaNavigation.primary.href} variant="secondary" className="bg-white hover:bg-surface-50">
+              {ctaNavigation.primary.label}
+            </Button>
+          </div>
         </Container>
       </div>
 
@@ -33,6 +45,7 @@ export function Footer() {
               {siteConfig.name}
             </p>
             <p className="mt-3 text-body-sm leading-relaxed text-ink-500">{siteConfig.tagline}</p>
+            <p className="mt-3 text-body-sm font-medium text-ink-600">{SERVING_AREA}</p>
             <div className="mt-6">
               <GoogleReviewsBadge />
             </div>

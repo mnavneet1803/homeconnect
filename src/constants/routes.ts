@@ -56,6 +56,14 @@ export const ROUTES = {
   forHomeowners: "/for-homeowners",
   forBusinesses: "/for-businesses",
   forPropertyManagers: "/for-property-managers",
+
+  seoLanding: {
+    tvWallMounting: "/tv-wall-mounting-edmonton",
+    handyman: "/handyman-services-edmonton",
+    furnitureAssembly: "/furniture-assembly-edmonton",
+    doorLockRepair: "/door-lock-repair-edmonton",
+    moveInMoveOut: "/move-in-move-out-repairs-edmonton",
+  },
 } as const;
 
 export type RouteKey = keyof typeof ROUTES;

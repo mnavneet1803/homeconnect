@@ -17,9 +17,9 @@ const LOCAL_AREAS = [
 export const SERVICE_PAGES: Record<string, ServicePageContent> = {
   handyman: {
     slug: "handyman",
-    metaTitle: "Handyman Edmonton | Free Quote from Our Licensed Team",
+    metaTitle: "Handyman Edmonton | Free Quote from Our Team",
     metaDescription:
-      "Need a handyman in Edmonton? Our licensed, insured team handles repairs, installs, and home maintenance. Free quote — no obligation.",
+      "Need a handyman in Edmonton? Our team handles repairs, installs, and home maintenance. Free quote — no obligation.",
     keywords: [
       "handyman Edmonton",
       "handyman near me Edmonton",
@@ -31,7 +31,7 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
       eyebrow: "Handyman Services · Edmonton",
       headline: "Trusted handyman services in Edmonton",
       subheadline:
-        "Repairs, installs, and odd jobs — handled by our own licensed crew.",
+        "Repairs, installs, and odd jobs — handled by our own experienced crew.",
       intro:
         "From drywall patches to furniture assembly, our handyman team shows up on time, carries insurance, and gets the job done right. Request a free quote with no obligation.",
     },
@@ -47,12 +47,12 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
       title: "Professional handyman help across Edmonton",
       paragraphs: [
         "Edmonton homeowners rely on handymen for the jobs that fall between DIY and a full contractor call — hanging shelves before winter, patching walls after a move, or tackling a growing to-do list on a Saturday you would rather spend elsewhere.",
-        "Our in-house handyman crew serves every quadrant of Edmonton and the Capital Region. Every team member carries liability insurance and WCB coverage. You receive a written quote before work begins and work directly with us — no middlemen.",
+        "Our in-house handyman crew serves every quadrant of Edmonton and the Capital Region. Every team member carries. You receive a written quote before work begins and work directly with us — no middlemen.",
         "Whether you live in a 1960s bungalow in Glenora or a new build in Terwillegar, our team knows Edmonton homes and Alberta building practices.",
       ],
     },
     benefits: [
-      { title: "Licensed & insured team", description: "Our crew carries liability insurance and WCB coverage on every job.", icon: "shield-check" },
+      { title: "Experienced local team", description: "Our crew carries on every job.", icon: "shield-check" },
       { title: "Free quotes", description: "Request a quote at no cost and no obligation before work begins.", icon: "gift" },
       { title: "Edmonton-local", description: "A team that knows Edmonton homes — from weatherproofing to legacy housing quirks.", icon: "map-pin" },
       { title: "Fast response", description: "Most homeowners hear back from our team within 24 hours.", icon: "clock" },
@@ -60,7 +60,7 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
     localAreas: LOCAL_AREAS,
     faq: [
       { question: "How much does a handyman cost in Edmonton?", answer: "Every job is different. We quote based on the scope of work, materials, and time required. Submit a request and our team will provide a custom written quote before any work begins." },
-      { question: "Are your handymen insured?", answer: "Yes. Our team carries liability insurance and WCB coverage on every job." },
+      { question: "Are you local to Edmonton?", answer: "Yes. Our team carries on every job." },
       { question: "What jobs can a handyman handle?", answer: "Common jobs include drywall repair, minor plumbing and electrical (non-panel work), furniture assembly, caulking, shelving, door adjustments, and general home maintenance. Licensed trades handle major electrical, plumbing, and structural work." },
       { question: "How quickly can I get a handyman in Edmonton?", answer: "Most requests receive a response from our team within 24 hours. Urgent repairs are prioritized when possible." },
       { question: "Do you serve areas outside Edmonton?", answer: "Yes — we cover the Capital Region including Sherwood Park, St. Albert, Spruce Grove, Stony Plain, Leduc, and Beaumont." },
@@ -101,14 +101,14 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
       paragraphs: [
         "Edmonton's freeze-thaw cycles and dry winters take a toll on exterior paint. Professional painters understand surface prep — the difference between a finish that lasts five years and one that peels after one winter.",
         "Whether you're refreshing a downtown condo in Oliver, repainting a weatherboard home in Strathearn, or preparing a rental for turnover in Mill Woods, our painting crew has experience with Edmonton housing stock.",
-        "Request a free quote from our insured team. One company, one crew, accountable from estimate to final coat.",
+        "Request a free quote from our team. One company, one crew, accountable from estimate to final coat.",
       ],
     },
     benefits: [
       { title: "Quality prep & finish", description: "Our painters prioritize surface preparation and durable materials.", icon: "shield-check" },
       { title: "Free written quote", description: "Upfront pricing and timeline before you commit.", icon: "gift" },
       { title: "Climate-aware work", description: "We schedule exterior work around Edmonton's weather windows.", icon: "calendar" },
-      { title: "Insured crew", description: "Liability insurance and WCB coverage on every job.", icon: "check-circle" },
+      { title: "Professional crew", description: "Professional workmanship on every job.", icon: "check-circle" },
     ],
     localAreas: LOCAL_AREAS,
     faq: [
@@ -116,7 +116,7 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
       { question: "What is the best time to paint exteriors in Edmonton?", answer: "Late spring through early fall (May–September) is ideal when temperatures stay above 10°C and rain is less frequent. Our team advises on optimal scheduling." },
       { question: "Do your painters provide prep work?", answer: "Yes. Our painters include cleaning, sanding, patching, and priming as part of a quality job. Scope is outlined in your quote." },
       { question: "Can I get interior and exterior done together?", answer: "Yes — our team handles both. Describe your full project when requesting a quote and we'll scope it accordingly." },
-      { question: "Are your painters insured?", answer: "Yes. Our painting crew carries liability insurance and WCB coverage on every job." },
+      { question: "Do you serve Edmonton and surrounding areas?", answer: "Yes. Our painting crew carries on every job." },
     ],
     relatedSlugs: ["handyman", "renovators", "deck-fence"],
   },
@@ -161,7 +161,7 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
       { title: "Permit-ready team", description: "Familiar with Edmonton permit and inspection processes.", icon: "clipboard-list" },
       { title: "Written quotes", description: "Detailed scope and pricing before work begins.", icon: "gift" },
       { title: "Trade coordination", description: "We manage plumbing, electrical, and flooring as part of your reno.", icon: "users" },
-      { title: "Licensed & insured", description: "Insurance and credentials verified for every project.", icon: "shield-check" },
+      { title: "Experienced team", description: "Quality standards verified for every project.", icon: "shield-check" },
     ],
     localAreas: LOCAL_AREAS,
     faq: [
@@ -231,7 +231,7 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
     slug: "plumbers",
     metaTitle: "Plumber Edmonton | Licensed Plumbing Quotes & Emergency Service",
     metaDescription:
-      "Need a plumber in Edmonton? Our licensed, insured team handles repairs, installs, and emergencies. Free quote — no obligation.",
+      "Need a plumber in Edmonton? Our team handles repairs, installs, and emergencies. Free quote — no obligation.",
     keywords: [
       "plumber Edmonton",
       "plumber near me Edmonton",
@@ -245,7 +245,7 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
       subheadline:
         "Leaks, installs, water heaters, and emergencies — our own licensed crew.",
       intro:
-        "Frozen pipes, water heater failures, and slow drains can't wait. Our licensed plumbers carry insurance and know Alberta plumbing code. Request a free quote — urgent requests prioritized.",
+        "Frozen pipes, water heater failures, and slow drains can't wait. Our plumbers know Alberta plumbing code. Request a free quote — urgent requests prioritized.",
     },
     subServices: [
       { name: "Leak repair", description: "Pipes, faucets, toilets, and shut-off valves" },
@@ -259,7 +259,7 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
       title: "Trusted Edmonton plumbing services",
       paragraphs: [
         "Edmonton winters create unique plumbing challenges — frozen hose bibs, burst pipes in unheated walls, and water heaters working overtime. Our licensed plumbers handle emergencies and planned work with equal professionalism.",
-        "Our plumbing team holds Alberta licensing where required, plus liability insurance and WCB coverage. You receive a direct quote and our crew completes the work.",
+        "Our plumbing team holds Alberta licensing where required, plus. You receive a direct quote and our crew completes the work.",
         "Serving Edmonton, Sherwood Park, St. Albert, and the full Capital Region.",
       ],
     },
@@ -328,7 +328,7 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
       { question: "Do I need a permit for electrical work in Edmonton?", answer: "Yes — most electrical work beyond minor repairs requires permits and inspection. Our licensed electricians handle this process." },
       { question: "Can you upgrade my electrical panel?", answer: "Yes. Panel upgrades from 100A to 200A are common in older Edmonton homes. Our electricians assess your load and provide a quote." },
       { question: "Do you install EV chargers?", answer: "Yes — our team installs Level 2 home EV charging stations, including dedicated circuits and permit applications." },
-      { question: "Are your electricians insured?", answer: "Yes. Our electrical crew carries liability insurance and WCB coverage on every job." },
+      { question: "Do you serve Edmonton homes and condos?", answer: "Yes. Our electrical crew carries on every job." },
     ],
     relatedSlugs: ["renovators", "plumbers", "handyman"],
   },
@@ -366,14 +366,14 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
       paragraphs: [
         "The Capital Region's clay-heavy soil and harsh winters demand landscapers who understand proper grading, drainage, and plant selection for Zone 3a. Spring book-up happens fast — early quotes ensure summer-ready yards.",
         "Whether you need a complete yard overhaul in Windermere or ongoing lawn maintenance in St. Albert, our landscaping crew serves residential and commercial properties across the metro.",
-        "Submit one request and receive a written quote from our insured team.",
+        "Submit one request and receive a written quote from our team.",
       ],
     },
     benefits: [
       { title: "Climate-smart design", description: "We select plants and materials suited to Edmonton winters.", icon: "tree" },
       { title: "Seasonal scheduling", description: "Book spring cleanup early — Edmonton's season is short.", icon: "calendar" },
       { title: "Free quotes", description: "Written estimates with no obligation.", icon: "gift" },
-      { title: "Insured crew", description: "Verified insurance for property and worker protection.", icon: "shield-check" },
+      { title: "Professional crew", description: "Professional workmanship you can count on.", icon: "shield-check" },
     ],
     localAreas: LOCAL_AREAS,
     faq: [
@@ -418,12 +418,12 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
       title: "Reliable cleaning across Edmonton",
       paragraphs: [
         "Landlords in Edmonton know move-out cleans can make or break deposit returns. Homeowners preparing for listing photos need a level of clean that goes beyond weekly tidying. Our cleaners use professional-grade products and consistent checklists.",
-        "Our cleaning crew is insured and trained for residential and commercial work. You describe your home size and needs, receive a quote, and our team handles the rest — no middlemen.",
+        "Our cleaning crew is trained for residential and commercial work. You describe your home size and needs, receive a quote, and our team handles the rest — no middlemen.",
         "Serving Edmonton and surrounding communities including Sherwood Park, St. Albert, and Spruce Grove.",
       ],
     },
     benefits: [
-      { title: "Insured crew", description: "Our cleaning team carries liability insurance on every job.", icon: "shield-check" },
+      { title: "Professional crew", description: "Our cleaning team follows consistent quality standards on every job.", icon: "shield-check" },
       { title: "Flexible scheduling", description: "One-time deep cleans or recurring maintenance plans.", icon: "calendar" },
       { title: "Free quotes", description: "Pricing based on your home size and scope.", icon: "gift" },
       { title: "Eco-friendly options", description: "Green cleaning products available on request.", icon: "sparkles" },
@@ -434,7 +434,7 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
       { question: "Do cleaners bring their own supplies?", answer: "Yes — our team brings equipment and products. Eco-friendly options are available on request." },
       { question: "How long does a deep clean take?", answer: "Typically 3–6 hours depending on home size and condition. Move-out cleans for rentals may take a full day." },
       { question: "Can I book recurring cleaning?", answer: "Yes — we offer weekly, bi-weekly, and monthly maintenance schedules at discounted rates." },
-      { question: "Are your cleaners insured?", answer: "Yes. Our cleaning crew carries liability insurance on every job." },
+      { question: "Do you offer move-out cleaning?", answer: "Yes. Move-out and deep cleaning are among our most requested services in Edmonton." },
     ],
     relatedSlugs: ["handyman", "painters", "home-maintenance"],
   },
@@ -469,11 +469,11 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
       title: "Professional deck & fence services across Edmonton",
       paragraphs: [
         "Edmonton's freeze-thaw cycles take a toll on outdoor structures. Homeowners turn to deck and fence specialists for everything from replacing rotted posts to building entertainment-ready composite decks.",
-        "Our in-house crew serves every quadrant of the Capital Region. Every team member carries insurance and WCB coverage.",
+        "Our in-house crew serves every quadrant of the Capital Region. Every team member follows our quality and safety standards.",
       ],
     },
     benefits: [
-      { title: "Licensed & insured", description: "Insurance and WCB verified on every project.", icon: "shield-check" },
+      { title: "Experienced team", description: "Quality verified on every project.", icon: "shield-check" },
       { title: "Free quotes", description: "Written estimates before work begins.", icon: "gift" },
       { title: "Local expertise", description: "We know Alberta building codes and weather.", icon: "map-pin" },
       { title: "Fast response", description: "Most requests answered within 24 hours.", icon: "clock" },
@@ -516,11 +516,11 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
       title: "Reliable home maintenance across the Capital Region",
       paragraphs: [
         "Edmonton homeowners and landlords use maintenance services to stay ahead of costly repairs — from clearing gutters before spring melt to preparing furnaces before winter.",
-        "Our insured team handles recurring property care or one-off seasonal tasks across Edmonton and the Capital Region.",
+        "Our team handles recurring property care or one-off seasonal tasks across Edmonton and the Capital Region.",
       ],
     },
     benefits: [
-      { title: "Insured team", description: "Insurance verified for every maintenance visit.", icon: "shield-check" },
+      { title: "Professional team", description: "Quality care on every maintenance visit.", icon: "shield-check" },
       { title: "Landlord-friendly", description: "Ideal for multi-unit and rental property owners.", icon: "home" },
       { title: "Capital Region coverage", description: "Edmonton, Sherwood Park, St. Albert, and beyond.", icon: "map-pin" },
       { title: "Flexible scheduling", description: "One-time or recurring maintenance plans.", icon: "clock" },

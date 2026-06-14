@@ -12,7 +12,7 @@ export const howItWorksSteps: HowItWorksStep[] = [
     step: 2,
     title: "We review & quote",
     description:
-      "Our team reviews your request and prepares a detailed quote — insured, licensed where required, and tailored to your project.",
+      "Our team reviews your request and prepares a detailed quote tailored to your project.",
     icon: "users",
   },
   {
@@ -26,9 +26,9 @@ export const howItWorksSteps: HowItWorksStep[] = [
 
 export const whyChooseUsBenefits: BenefitItem[] = [
   {
-    title: "Licensed & insured team",
+    title: "Experienced local team",
     description:
-      "Our crew carries WCB and liability insurance. Licensed trades handle work that requires it.",
+      "Our crew handles handyman, maintenance, and repair work across Edmonton every day.",
     icon: "shield-check",
   },
   {
@@ -40,7 +40,7 @@ export const whyChooseUsBenefits: BenefitItem[] = [
   {
     title: "Edmonton-native expertise",
     description:
-      "A team that knows local permits, climate, and housing — from Terwillegar bungalows to downtown infills.",
+      "A team that knows local housing — from Terwillegar bungalows to downtown condos.",
     icon: "map-pin",
   },
   {
@@ -52,7 +52,7 @@ export const whyChooseUsBenefits: BenefitItem[] = [
   {
     title: "Season-smart guidance",
     description:
-      "Winter basement reno? Spring deck build? We help you plan at the right time.",
+      "We help you plan repairs and maintenance at the right time for Edmonton homes.",
     icon: "calendar",
   },
 ];

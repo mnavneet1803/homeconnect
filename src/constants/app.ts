@@ -31,11 +31,10 @@ export const TRUST_STATS = [
 ] as const;
 
 export const TRUST_BADGES = [
-  "Licensed Team",
-  "Insured & WCB",
   "Free Quotes",
   "Edmonton Local",
-  "Google Verified",
+  "Fast Response",
+  "Direct Accountability",
 ] as const;
 
 export const ANIMATION = {

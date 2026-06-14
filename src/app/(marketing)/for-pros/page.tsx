@@ -22,7 +22,7 @@ export default function CareersPage() {
         <ul className="mt-8 space-y-3 text-body-md text-ink-600">
           <li>• Work directly for one contractor — no lead fees or middlemen</li>
           <li>• Steady projects across Edmonton and the Capital Region</li>
-          <li>• Licensed trades, insured crew, and accountable workmanship</li>
+          <li>• Skilled trades, professional crew, and accountable workmanship</li>
           <li>• Hands-on roles in handyman, painting, plumbing, electrical, and more</li>
         </ul>
         <p className="mt-8 text-body-sm text-ink-500">

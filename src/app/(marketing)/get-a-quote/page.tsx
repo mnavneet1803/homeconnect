@@ -9,7 +9,7 @@ import { QuoteFormSkeleton } from "@/components/skeletons";
 export const metadata: Metadata = buildMetadata({
   title: "Get Free Quotes",
   description:
-    "Tell us about your project and get a free quote from our licensed Edmonton home service team. No obligation.",
+    "Tell us about your project and get a free quote from our Edmonton home service team. No obligation.",
   path: ROUTES.quote,
 });
 

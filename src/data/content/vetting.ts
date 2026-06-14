@@ -3,15 +3,15 @@ import { howItWorksSteps } from "@/data/content/homepage";
 export const vettingSteps = [
   {
     step: 1,
-    title: "Licensed & credentialed",
+    title: "Skilled tradespeople",
     description:
-      "Our team holds required trade licenses for electrical, plumbing, and gas work. Every crew member meets Alberta credential requirements for their role.",
+      "Our team has the experience needed for handyman, plumbing, electrical, and general home repair work across Edmonton.",
   },
   {
     step: 2,
-    title: "Insurance verification",
+    title: "Quality standards",
     description:
-      "We maintain minimum $2M general liability coverage and active WCB account status for all employees and on-site work.",
+      "We follow consistent quality checklists, safety protocols, and homeowner communication standards on every job.",
   },
   {
     step: 3,
@@ -23,17 +23,17 @@ export const vettingSteps = [
     step: 4,
     title: "Ongoing quality monitoring",
     description:
-      "Insurance and license renewals are kept current. Homeowner feedback after every project helps us maintain our service standards.",
+      "Homeowner feedback after every project helps us maintain our service standards and improve with every job.",
   },
 ] as const;
 
 export const vettingRequirements = [
   "Valid Alberta business registration",
-  "Minimum $2M general liability insurance",
-  "Active WCB coverage for all employees",
-  "Trade license for electricians, plumbers, and gas fitters",
   "Written quotes provided before work begins",
   "Code of conduct and homeowner communication standards",
+  "Experienced crew for residential repairs and maintenance",
+  "Reliable scheduling and follow-through",
+  "Respect for your home and property",
 ] as const;
 
 export { howItWorksSteps };

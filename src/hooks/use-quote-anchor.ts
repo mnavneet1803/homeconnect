@@ -13,6 +13,13 @@ export function useQuoteAnchor(): string {
   if (segments[0] === "locations" && segments.length >= 3) return "#hood-quote";
   if (segments[0] === "locations") return "#location-quote";
   if (pathname === ROUTES.quote || pathname === ROUTES.contact) return "#quote-form";
+  if (
+    pathname.includes("-edmonton") &&
+    !pathname.startsWith("/locations") &&
+    !pathname.startsWith("/services")
+  ) {
+    return "#seo-quote";
+  }
   return "#quote";
 }
 

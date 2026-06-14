@@ -6,7 +6,7 @@ import type { ServiceDetail } from "@/types/service";
 /** Data access layer — components never import raw JSON directly */
 
 export function getAllServices() {
-  return [...SERVICES].sort((a, b) => a.sortOrder - b.sortOrder);
+  return [...SERVICES].filter((s) => s.featured).sort((a, b) => a.sortOrder - b.sortOrder);
 }
 
 export function getServiceBySlug(slug: string) {
@@ -50,7 +50,7 @@ export function getServiceDetail(slug: ServiceSlug): ServiceDetail | null {
   return {
     ...service,
     metaTitle: `${service.name} Edmonton | Free Quote from Our Team`,
-    metaDescription: `Need a ${service.name.toLowerCase()} in Edmonton? Our licensed, insured team handles the work directly. Free quote, no obligation.`,
+    metaDescription: `Need ${service.name.toLowerCase()} in Edmonton? Our team handles the work directly. Free quote, no obligation.`,
     headline: `${service.pluralName} in Edmonton`,
     subheadline: `Our own ${service.pluralName.toLowerCase()} serve Edmonton and the Capital Region.`,
     intro: `Tell us about your project and our team will provide a free quote — no middlemen, no obligation.`,

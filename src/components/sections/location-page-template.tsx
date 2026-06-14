@@ -58,7 +58,7 @@ export function LocationPageTemplate({ location }: LocationPageTemplateProps) {
             Home services in {location.name}
           </h1>
           <p className="mt-4 max-w-prose text-body-lg text-ink-500">
-            Our licensed, insured team serves {location.name} and the surrounding
+            Our team serves {location.name} and the surrounding
             Capital Region directly. Free quote — no obligation.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -115,6 +115,7 @@ export function LocationPageTemplate({ location }: LocationPageTemplateProps) {
         </Container>
       </Section>
 
+      {/* TODO: Enable testimonials after receiving verified customer reviews.
       <Section className="bg-surface-0">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2">
@@ -139,6 +140,13 @@ export function LocationPageTemplate({ location }: LocationPageTemplateProps) {
             </div>
             <EdmontonCredibility />
           </div>
+        </Container>
+      </Section>
+      */}
+
+      <Section className="bg-surface-0">
+        <Container>
+          <EdmontonCredibility />
         </Container>
       </Section>
 

@@ -5,6 +5,7 @@ import { SEO_SERVICE_SLUGS } from "@/data/services/pages";
 import { getServiceLocationPages } from "@/data/services/locations";
 import { getAllNeighbourhoodPages } from "@/data/locations/neighbourhoods";
 import { getAllLocationSlugs } from "@/data";
+import { SEO_LANDING_PAGES } from "@/data/seo-landing";
 import { absoluteUrl } from "@/lib/utils/format";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -58,8 +59,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
+  const seoLandingRoutes: MetadataRoute.Sitemap = Object.values(SEO_LANDING_PAGES).map(
+    (page) => ({
+      url: absoluteUrl(page.path, baseUrl),
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    })
+  );
+
   return [
     ...staticRoutes,
+    ...seoLandingRoutes,
     ...serviceRoutes,
     ...serviceLocationRoutes,
     ...locationRoutes,

@@ -9,7 +9,7 @@ import {
   HeroSection,
   TrustIndicatorsSection,
   ServicesSection,
-  BeforeAfterSection,
+  // BeforeAfterSection,
   HowItWorksSection,
   WhyChooseUsSection,
   ServiceAreasSection,
@@ -74,10 +74,12 @@ const TestimonialsSection = dynamic(
     ),
   }
 );
+
+// TODO: Enable testimonials after receiving verified customer reviews.
 export const metadata: Metadata = buildMetadata({
   title: "Home Solution Services",
   description:
-    "Licensed home service contractor in Edmonton and the Capital Region. Request a free quote — our own team handles the work.",
+    "Edmonton home service contractor — handyman, TV mounting, furniture assembly, plumbing and electrical maintenance, and move-in/out repairs. Request a free quote.",
   path: "/",
   keywords: [
     "home services Edmonton",
@@ -101,8 +103,9 @@ export default function HomePage() {
       <HowItWorksSection />
       <WhyChooseUsSection />
       {/* <FeaturedProjectsSection /> */}
-      <BeforeAfterSection />
-      <TestimonialsSection />
+      {/* <BeforeAfterSection /> */}
+      {/* TODO: Enable before/after gallery after verified project photos are available. */}
+      {/* <TestimonialsSection /> */}
       <ServiceAreasSection />
       <FaqSection />
       <LeadFormSection />

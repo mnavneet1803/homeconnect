@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { siteConfig } from "@/config/site";
+import { SERVING_AREA } from "@/constants/launch";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
 import { QuoteForm, QuoteFormReassurance } from "@/components/forms/quote-form";
 import { QuoteFormSkeleton } from "@/components/skeletons";
@@ -18,7 +19,7 @@ export function LeadFormSection() {
             <Reveal variant="fade-up">
               <SectionHeader
                 title="Get a free quote from our team"
-                description="Tell us about your project. Our licensed crew will review and respond — free and no obligation."
+                description={`${SERVING_AREA}. Tell us about your project — our crew will review and respond, free and with no obligation.`}
                 align="left"
                 className="mx-0 mb-0 text-left"
               />

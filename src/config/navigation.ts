@@ -52,6 +52,6 @@ export const footerNavigation: FooterColumn[] = [
 ];
 
 export const ctaNavigation = {
-  primary: { label: "Get Free Quotes", href: ROUTES.quote },
-  secondary: { label: "Call Us", href: "tel:+17805550123" },
+  primary: { label: "Request a Free Quote", href: "/#quote" },
+  secondary: { label: "Call Now", href: "tel:5875948575" },
 } as const;

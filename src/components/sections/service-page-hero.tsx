@@ -64,11 +64,11 @@ export function ServicePageHero({ content, service, breadcrumbs, images }: Servi
             </Reveal>
             <Reveal variant="fade-up" immediate delay={0.18}>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-                <Button href="#service-quote" size="lg">
-                  Get Free Quotes
+                <Button href={`tel:${siteConfig.phone.tel}`} size="lg">
+                  Call Now
                 </Button>
-                <Button href={`tel:${siteConfig.phone.tel}`} variant="secondary" size="lg">
-                  Call {siteConfig.phone.display}
+                <Button href="#service-quote" variant="secondary" size="lg">
+                  Request a Free Quote
                 </Button>
               </div>
             </Reveal>

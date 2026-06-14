@@ -57,7 +57,7 @@ export function HeroVisual() {
           </div>
           <div className="min-w-0 flex-1">
             <p className="text-label-md text-ink-900">Home Solution Services</p>
-            <p className="text-caption text-ink-500">Our licensed crew handles the work</p>
+            <p className="text-caption text-ink-500">Our crew handles the work</p>
           </div>
           <div className="flex items-center gap-1 text-caption font-medium text-ink-600">
             <Icon name="star" size={14} className="fill-warning-500 text-warning-500" />

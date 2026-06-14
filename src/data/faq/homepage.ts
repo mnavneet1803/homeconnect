@@ -5,7 +5,7 @@ export const homepageFaqs: FAQItem[] = [
     id: "contractor",
     question: "Do you do the work yourselves?",
     answer:
-      "Yes. We are a licensed contractor with our own team. When you request a quote, our crew handles the project directly — no outside subcontractors or lead matching.",
+      "Yes. We are a home service contractor with our own team. When you request a quote, our crew handles the project directly — no outside subcontractors or lead matching.",
     category: "general",
     featured: true,
   },
@@ -26,18 +26,10 @@ export const homepageFaqs: FAQItem[] = [
     featured: true,
   },
   {
-    id: "vetting",
-    question: "Is your team licensed and insured?",
-    answer:
-      "Yes. Our team carries liability insurance and WCB coverage. Licensed trades handle electrical, plumbing, and gas work where required by Alberta law.",
-    category: "vetting",
-    featured: true,
-  },
-  {
     id: "areas",
     question: "What areas do you serve?",
     answer:
-      "We serve Edmonton and the Capital Region including Sherwood Park, St. Albert, Spruce Grove, Stony Plain, Leduc, and Beaumont.",
+      "We serve Edmonton and surrounding areas including Sherwood Park, St. Albert, Spruce Grove, Stony Plain, Leduc, and Beaumont.",
     category: "general",
     featured: true,
   },

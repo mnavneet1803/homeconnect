@@ -466,7 +466,7 @@ export function QuoteFormReassurance() {
     <div className="space-y-6">
       <ul className="space-y-4">
         {[
-          "Our own licensed crew",
+          "Our own in-house crew",
           `Response within ${siteConfig.business.matchSlaHours} hours`,
           "Free quote, no obligation",
         ].map((item) => (

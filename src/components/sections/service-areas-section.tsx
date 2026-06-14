@@ -20,7 +20,7 @@ export function ServiceAreasSection() {
             <Reveal variant="fade-up">
               <p className="section-eyebrow">Service areas</p>
               <h2 className="section-title text-balance text-left">
-                Serving Edmonton & the Capital Region
+                Serving Edmonton & Surrounding Areas
               </h2>
               <p className="mt-5 text-body-lg text-ink-500">
                 Wherever you are in the metro area, our team knows your neighbourhood

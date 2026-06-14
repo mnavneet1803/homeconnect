@@ -7,13 +7,13 @@ export const siteConfig = {
   shortName: "Home Solution",
   tagline: "Your home, our solution — trusted Edmonton home services.",
   description:
-    "Licensed home service team in Edmonton and the Capital Region — handyman repairs, maintenance, installs, cleaning, and tech setup. Big or small, we do it all. Call for a free quote.",
+    "Edmonton home service team — handyman repairs, TV mounting, furniture assembly, plumbing and electrical maintenance, move-in/out repairs, and condo upkeep. Call for a free quote.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.homesolutionservices.ca",
   locale: "en_CA",
   language: "en-CA",
   phone: {
-    display: process.env.NEXT_PUBLIC_PHONE_DISPLAY ?? "(587) 594-8575",
-    tel: process.env.NEXT_PUBLIC_PHONE_TEL ?? "+15875948575",
+    display: process.env.NEXT_PUBLIC_PHONE_DISPLAY ?? "587-594-8575",
+    tel: process.env.NEXT_PUBLIC_PHONE_TEL ?? "5875948575",
     hours: "Mon–Sat 7am–6pm",
   },
   email: "hello@homesolutionservices.ca",
@@ -46,7 +46,7 @@ export const siteConfig = {
     type: "HomeImprovementContractor" as const,
     /** Company service model — shown on key pages */
     marketplaceDisclaimer:
-      "We are the contractor. Our own licensed, insured team performs the work — no middlemen or outside subcontractors.",
+      "We are the contractor. Our own in-house team performs the work — no middlemen or outside subcontractors.",
     matchSlaHours: 24,
     maxMatchedPros: 3,
   },

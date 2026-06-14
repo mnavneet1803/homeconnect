@@ -11,7 +11,7 @@ import { getFeaturedFaqs } from "@/data/faq/homepage";
 export const metadata: Metadata = buildMetadata({
   title: "How It Works",
   description:
-    "Learn how Home Solution Services works — request a quote and our own licensed team handles your project. Free, fast, and no obligation.",
+    "Learn how Home Solution Services works — request a quote and our own team handles your project. Free, fast, and no obligation.",
   path: ROUTES.howItWorks,
 });
 

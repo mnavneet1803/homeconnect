@@ -20,7 +20,7 @@ export default function ServicesIndexPage() {
       <Container>
         <SectionHeader
           title="All home services"
-          description="Browse by trade and request a free quote — our own licensed crew handles every job."
+          description="Browse by trade and request a free quote — our own crew handles every job."
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (

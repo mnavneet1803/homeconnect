@@ -167,6 +167,18 @@ const SERVICE_PAGE_IMAGES: Record<ServiceSlug, ServicePageImages> = {
     hero: handymanPromo,
     detail: handymanOverview,
   },
+  "tv-wall-mounting": {
+    hero: tvMount,
+    detail: handymanOverview,
+  },
+  "furniture-assembly": {
+    hero: repairStrip,
+    detail: handymanPromo,
+  },
+  "move-in-move-out-repairs": {
+    hero: beforeAfter,
+    detail: handymanOverview,
+  },
   painters: {
     hero: {
       ...beforeAfter,
@@ -246,6 +258,18 @@ export const SERVICE_CARD_IMAGES: Record<
     width: 859,
     height: 573,
   },
+  "tv-wall-mounting": {
+    src: `${DIR}/tv-wall-mount-stereo-installation.png`,
+    alt: "Professional TV wall mounting in an Edmonton home — Home Solution Services",
+    width: 1024,
+    height: 682,
+  },
+  "furniture-assembly": {
+    src: `${DIR}/repair-services-strip.png`,
+    alt: "Furniture assembly service in Edmonton — IKEA and flat-pack builds",
+    width: 1024,
+    height: 151,
+  },
   painters: {
     src: "/images/projects/interior-paint.jpg",
     alt: "Freshly painted room interior in Edmonton — professional interior painting service",
@@ -266,13 +290,19 @@ export const SERVICE_CARD_IMAGES: Record<
   },
   electricians: {
     src: `${DIR}/handyman-repair-services-overview.png`,
-    alt: "Edmonton electrical repair services — outlets, switches and wiring fixes",
+    alt: "Edmonton electrical maintenance — outlets, switches and wiring fixes",
     width: 1024,
     height: 682,
   },
   plumbers: {
     src: `${DIR}/home-maintenance-repairs-edmonton.png`,
-    alt: "Edmonton plumbing repairs — fixing leaks, taps and pipes by Home Solution Services",
+    alt: "Edmonton plumbing maintenance — fixing leaks, taps and pipes",
+    width: 1024,
+    height: 682,
+  },
+  "move-in-move-out-repairs": {
+    src: `${DIR}/move-out-move-in-repairs-before-after.png`,
+    alt: "Move-in and move-out repairs in Edmonton — wall patching and touch-ups",
     width: 1024,
     height: 682,
   },

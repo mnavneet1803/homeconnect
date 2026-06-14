@@ -34,7 +34,7 @@ export const privacyPolicySections = [
 export const termsSections = [
   {
     title: "Service description",
-    body: `${siteConfig.name} is a licensed home service contractor serving Edmonton and the Capital Region. Our own team performs the work described in your approved quote.`,
+    body: `${siteConfig.name} is a home service contractor serving Edmonton and surrounding areas. Our own team performs the work described in your approved quote.`,
   },
   {
     title: "No charge to homeowners",

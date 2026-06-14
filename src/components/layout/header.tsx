@@ -11,7 +11,8 @@ export function Header({ className }: { className?: string }) {
   return (
     <header
       className={cn(
-        "sticky top-0 z-sticky border-b border-border-subtle/80 bg-surface-0/90 backdrop-blur-lg",
+        "sticky top-0 z-sticky w-full max-w-[100vw] border-b border-border-subtle/80 bg-surface-0/95 backdrop-blur-lg",
+        "pt-[env(safe-area-inset-top,0px)]",
         className
       )}
     >
@@ -26,13 +27,21 @@ export function Header({ className }: { className?: string }) {
 
         <DesktopNav />
 
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="flex items-center gap-2 sm:gap-3">
           <TrackedPhoneLink
             tel={siteConfig.phone.tel}
             display={siteConfig.phone.display}
             location="header"
-            className="hidden text-label-md text-ink-600 transition-colors hover:text-brand-700 sm:inline-flex"
+            className="hidden text-label-md text-ink-600 transition-colors hover:text-brand-700 md:inline-flex"
           />
+          <Button
+            href={ctaNavigation.secondary.href}
+            variant="secondary"
+            size="sm"
+            className="hidden sm:inline-flex"
+          >
+            {ctaNavigation.secondary.label}
+          </Button>
           <Button
             href={ctaNavigation.primary.href}
             size="sm"

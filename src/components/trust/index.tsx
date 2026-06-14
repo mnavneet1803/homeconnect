@@ -45,8 +45,8 @@ export function GoogleReviewsBadge({ className }: { className?: string }) {
 /** Row of professional trust signals */
 export function TrustBar() {
   const items = [
-    { icon: "shield-check" as const, label: "Licensed & insured team" },
-    { icon: "map-pin" as const, label: "Edmonton & Capital Region" },
+    { icon: "shield-check" as const, label: "Experienced local team" },
+    { icon: "map-pin" as const, label: "Edmonton & Surrounding Areas" },
     { icon: "gift" as const, label: "Free quotes" },
     { icon: "clock" as const, label: `${siteConfig.business.matchSlaHours}hr response time` },
   ];
@@ -74,19 +74,19 @@ export function EdmontonCredibility() {
       <ul className="mt-6 space-y-4 text-body-sm leading-relaxed text-ink-600">
         <li className="flex gap-3">
           <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand-600" />
-          Serving T5, T6, T7, and T8 postal codes across the Capital Region
+          Serving T5, T6, T7, and T8 postal codes across Edmonton and surrounding areas
         </li>
         <li className="flex gap-3">
           <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand-600" />
-          Alberta-licensed trades verified for electricians and plumbers
+          Handyman, maintenance, and repair work for houses and condos
         </li>
         <li className="flex gap-3">
           <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand-600" />
-          WCB and liability insurance on every job our team performs
+          Free quotes with upfront pricing before work begins
         </li>
         <li className="flex gap-3">
           <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand-600" />
-          Licensed contractor — our own in-house team does the work
+          Our own in-house team does the work — no middlemen
         </li>
       </ul>
       {siteConfig.social.googleBusiness && (
