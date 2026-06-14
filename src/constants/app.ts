@@ -57,8 +57,8 @@ export const FORM = {
 } as const;
 
 export const SEO = {
-  titleTemplate: "%s | Edmonton Home Connect",
-  defaultTitle: "Edmonton Home Connect — Trusted Local Home Service Contractor",
+  titleTemplate: "%s | Home Solution Services",
+  defaultTitle: "Home Solution Services — Edmonton Handyman & Home Repairs",
   maxDescriptionLength: 160,
   maxTitleLength: 60,
   ogImageWidth: 1200,

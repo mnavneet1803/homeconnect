@@ -27,7 +27,7 @@ export function TestimonialsSection() {
   const testimonials = getFeaturedTestimonials(3);
 
   return (
-    <Section className="bg-surface-50">
+    <Section className="bg-surface-0">
       <Container>
         <Reveal>
           <SectionHeader

@@ -60,13 +60,13 @@
   --header-height-mobile: 3.5rem;
   --sticky-cta-height: 4.75rem;
   --container-padding: 1.25rem;
-  --section-gap: 5.5rem;
+  --section-gap: 6.5rem;
 }
 
 @media (min-width: 1024px) {
   :root {
     --container-padding: 2rem;
-    --section-gap: 8rem;
+    --section-gap: 10rem;
   }
 }
 
@@ -147,7 +147,7 @@
   /* ── Buttons ── */
   .btn {
     @apply inline-flex items-center justify-center gap-2
-      rounded-xl font-medium transition-colors duration-normal ease-out
+      rounded-xl font-medium transition-all duration-200 ease-out
       focus-visible:outline-none focus-visible:ring-[3px]
       focus-visible:ring-brand-500/20 focus-visible:ring-offset-2
       disabled:pointer-events-none disabled:opacity-50;
@@ -162,19 +162,19 @@
   }
 
   .btn-lg {
-    @apply h-13 px-8 text-body-md;
+    @apply h-14 px-9 text-label-md;
   }
 
   .btn-primary {
-    @apply btn btn-md bg-brand-700 text-white shadow-sm
-      hover:bg-brand-600 hover:text-white
-      active:bg-brand-800 active:text-white;
+    @apply btn btn-md bg-brand-700 text-white shadow-md
+      hover:bg-brand-600 hover:-translate-y-px hover:shadow-lg hover:text-white
+      active:translate-y-0 active:bg-brand-800 active:shadow-sm active:text-white;
   }
 
   .btn-secondary {
-    @apply btn btn-md border border-border bg-surface-0 text-ink-900 shadow-xs
-      hover:border-ink-300 hover:bg-surface-50 hover:text-ink-900
-      active:bg-surface-100 active:text-ink-900;
+    @apply btn btn-md border border-border bg-surface-0 text-ink-900 shadow-sm
+      hover:border-ink-300 hover:-translate-y-px hover:bg-surface-50 hover:shadow-md hover:text-ink-900
+      active:translate-y-0 active:bg-surface-100 active:shadow-xs active:text-ink-900;
   }
 
   .btn-ghost {
@@ -184,9 +184,9 @@
   }
 
   .btn-accent {
-    @apply btn btn-md bg-ink-900 text-white shadow-sm
-      hover:bg-ink-800 hover:text-white
-      active:bg-ink-950 active:text-white;
+    @apply btn btn-md bg-ink-900 text-white shadow-md
+      hover:bg-ink-800 hover:-translate-y-px hover:shadow-lg hover:text-white
+      active:translate-y-0 active:bg-ink-950 active:text-white;
   }
 
   .btn-destructive {
@@ -261,47 +261,47 @@
 
   /* ── Cards ── */
   .card {
-    @apply rounded-2xl border border-border-subtle bg-surface-0 shadow-card
-      transition-shadow duration-normal ease-out;
+    @apply rounded-3xl border border-border-subtle bg-surface-0 shadow-card
+      transition-all duration-300 ease-out;
   }
 
   .card-interactive {
     @apply card cursor-pointer
-      hover:border-ink-200 hover:shadow-card-hover;
+      hover:-translate-y-px hover:border-ink-200 hover:shadow-card-hover;
   }
 
   .card-elevated {
-    @apply rounded-2xl border border-border-subtle bg-surface-0 shadow-elevated;
+    @apply rounded-3xl border border-border-subtle/70 bg-surface-0 shadow-md;
   }
 
   .card-featured {
-    @apply card relative overflow-hidden border-brand-100 bg-gradient-trust;
+    @apply card relative overflow-hidden border-brand-100/60 bg-gradient-trust;
   }
 
   .card-body {
-    @apply p-6 md:p-8;
+    @apply p-7 md:p-10;
   }
 
   .card-header {
-    @apply border-b border-border-subtle px-6 py-5 md:px-8;
+    @apply border-b border-border-subtle px-7 py-5 md:px-10;
   }
 
   .card-footer {
-    @apply border-t border-border-subtle px-6 py-5 md:px-8;
+    @apply border-t border-border-subtle px-7 py-5 md:px-10;
   }
 
   /* ── Trust badges ── */
   .badge {
-    @apply inline-flex items-center gap-1.5 rounded-pill px-3 py-1
+    @apply inline-flex items-center gap-1.5 rounded-pill px-3.5 py-1.5
       text-label-sm font-medium;
   }
 
   .badge-brand {
-    @apply badge bg-brand-50 text-brand-800 ring-1 ring-brand-100;
+    @apply badge bg-brand-50 text-brand-700 ring-1 ring-brand-100;
   }
 
   .badge-neutral {
-    @apply badge bg-ink-100/80 text-ink-700 ring-1 ring-ink-200/60;
+    @apply badge bg-ink-100/70 text-ink-700 ring-1 ring-ink-200/50;
   }
 
   .badge-success {
@@ -318,19 +318,19 @@
   }
 
   .section-header {
-    @apply mx-auto mb-14 max-w-narrow text-center md:mb-16;
+    @apply mx-auto mb-16 max-w-narrow text-center md:mb-24;
   }
 
   .section-eyebrow {
-    @apply mb-4 text-label-md font-medium text-brand-700;
+    @apply mb-3 text-label-sm font-semibold uppercase tracking-widest text-brand-600;
   }
 
   .section-title {
-    @apply text-display-sm text-ink-900 md:text-display-md;
+    @apply mt-3 text-display-sm text-ink-900 md:text-display-md;
   }
 
   .section-description {
-    @apply mt-5 text-body-lg text-ink-500;
+    @apply mt-6 text-body-lg text-ink-400;
   }
 
   /* ── Mobile sticky contact bar ── */

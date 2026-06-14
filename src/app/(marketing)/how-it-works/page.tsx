@@ -11,7 +11,7 @@ import { getFeaturedFaqs } from "@/data/faq/homepage";
 export const metadata: Metadata = buildMetadata({
   title: "How It Works",
   description:
-    "Learn how Edmonton Home Connect works — request a quote and our own licensed team handles your project. Free, fast, and no obligation.",
+    "Learn how Home Solution Services works — request a quote and our own licensed team handles your project. Free, fast, and no obligation.",
   path: ROUTES.howItWorks,
 });
 
@@ -24,7 +24,7 @@ export default function HowItWorksPage() {
       <Section className="pt-16 pb-0">
         <Container>
           <SectionHeader
-            title="How Edmonton Home Connect works"
+            title="How Home Solution Services works"
             description="A simple, transparent process from your request to our crew completing the work."
           />
         </Container>

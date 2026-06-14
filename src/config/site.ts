@@ -3,20 +3,20 @@
  * Import from `@/config/site` only; never hardcode these values in components.
  */
 export const siteConfig = {
-  name: "Edmonton Home Connect",
-  shortName: "EHC",
-  tagline: "Edmonton's trusted local home service contractor.",
+  name: "Home Solution Services",
+  shortName: "Home Solution",
+  tagline: "Your home, our solution — trusted Edmonton home services.",
   description:
-    "Licensed home service contractor in Edmonton and the Capital Region. Request a free quote — our own team handles repairs, installs, and maintenance.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://edmontonhomeconnect.ca",
+    "Licensed home service team in Edmonton and the Capital Region — handyman repairs, maintenance, installs, cleaning, and tech setup. Big or small, we do it all. Call for a free quote.",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.homesolutionservices.ca",
   locale: "en_CA",
   language: "en-CA",
   phone: {
-    display: process.env.NEXT_PUBLIC_PHONE_DISPLAY ?? "(780) 555-0123",
-    tel: process.env.NEXT_PUBLIC_PHONE_TEL ?? "+17805550123",
+    display: process.env.NEXT_PUBLIC_PHONE_DISPLAY ?? "(587) 594-8575",
+    tel: process.env.NEXT_PUBLIC_PHONE_TEL ?? "+15875948575",
     hours: "Mon–Sat 7am–6pm",
   },
-  email: "hello@edmontonhomeconnect.ca",
+  email: "hello@homesolutionservices.ca",
   address: {
     street: "",
     city: "Edmonton",

@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Edmonton Home Connect — Premium Design System
+ * Home Solution Services — Premium Design System
  * Tailwind v3+ configuration
  *
  * Aesthetic: Apple × Stripe × Canadian healthcare trust
@@ -142,8 +142,8 @@ const config: Config = {
         "22": "5.5rem",
         "26": "6.5rem",
         "30": "7.5rem",
-        section: "5.5rem",
-        "section-lg": "8rem",
+        section: "6.5rem",
+        "section-lg": "10rem",
         gutter: "1.25rem",
         "gutter-lg": "2rem",
       },
@@ -172,18 +172,19 @@ const config: Config = {
       boxShadow: {
         none: "none",
         xs: "0 1px 2px 0 rgba(12, 10, 9, 0.03)",
-        sm: "0 1px 3px 0 rgba(12, 10, 9, 0.04), 0 1px 2px -1px rgba(12, 10, 9, 0.03)",
-        DEFAULT: "0 2px 8px -2px rgba(12, 10, 9, 0.06), 0 1px 3px -1px rgba(12, 10, 9, 0.03)",
-        md: "0 4px 16px -4px rgba(12, 10, 9, 0.07), 0 2px 6px -2px rgba(12, 10, 9, 0.04)",
-        lg: "0 8px 32px -8px rgba(12, 10, 9, 0.08), 0 4px 12px -4px rgba(12, 10, 9, 0.04)",
-        xl: "0 16px 48px -12px rgba(12, 10, 9, 0.1), 0 8px 20px -8px rgba(12, 10, 9, 0.05)",
-        inner: "inset 0 1px 2px 0 rgba(12, 10, 9, 0.04)",
+        sm: "0 1px 3px 0 rgba(12, 10, 9, 0.05), 0 1px 2px -1px rgba(12, 10, 9, 0.04)",
+        DEFAULT: "0 2px 8px -2px rgba(12, 10, 9, 0.07), 0 1px 3px -1px rgba(12, 10, 9, 0.04)",
+        md: "0 4px 20px -4px rgba(12, 10, 9, 0.09), 0 2px 8px -2px rgba(12, 10, 9, 0.05)",
+        lg: "0 12px 40px -8px rgba(12, 10, 9, 0.11), 0 4px 16px -4px rgba(12, 10, 9, 0.06)",
+        xl: "0 20px 64px -12px rgba(12, 10, 9, 0.13), 0 8px 24px -8px rgba(12, 10, 9, 0.07)",
+        inner: "inset 0 1px 2px 0 rgba(12, 10, 9, 0.05)",
         focus: "0 0 0 3px rgba(13, 107, 100, 0.2)",
         "focus-error": "0 0 0 3px rgba(185, 28, 28, 0.15)",
-        card: "0 1px 2px rgba(12, 10, 9, 0.03), 0 0 0 1px rgba(12, 10, 9, 0.05)",
-        "card-hover": "0 4px 20px -4px rgba(12, 10, 9, 0.08), 0 0 0 1px rgba(12, 10, 9, 0.05)",
-        elevated: "0 8px 32px -8px rgba(12, 10, 9, 0.08), 0 0 0 1px rgba(12, 10, 9, 0.04)",
-        sticky: "0 -4px 24px -4px rgba(12, 10, 9, 0.06)",
+        card: "0 1px 4px rgba(12, 10, 9, 0.04), 0 0 0 1px rgba(12, 10, 9, 0.06)",
+        "card-hover": "0 8px 32px -8px rgba(12, 10, 9, 0.12), 0 2px 8px -2px rgba(12, 10, 9, 0.06), 0 0 0 1px rgba(12, 10, 9, 0.06)",
+        elevated: "0 8px 40px -8px rgba(12, 10, 9, 0.1), 0 0 0 1px rgba(12, 10, 9, 0.05)",
+        feature: "0 24px 80px -16px rgba(12, 10, 9, 0.16), 0 0 0 1px rgba(12, 10, 9, 0.04)",
+        sticky: "0 -4px 24px -4px rgba(12, 10, 9, 0.07)",
       },
 
       /* ─── Animation ─────────────────────────────────────────────── */
@@ -259,9 +260,12 @@ const config: Config = {
       backgroundImage: {
         "gradient-brand": "linear-gradient(135deg, #0D6B64 0%, #0F766E 100%)",
         "gradient-brand-subtle": "linear-gradient(180deg, #FAFAF9 0%, #F5F5F4 100%)",
-        "gradient-hero": "linear-gradient(180deg, #FAFAF9 0%, #FFFFFF 60%)",
+        "gradient-hero": "linear-gradient(160deg, #F0FDFA 0%, #FAFAF9 35%, #FFFFFF 70%)",
         "gradient-surface": "linear-gradient(180deg, #FFFFFF 0%, #FAFAF9 100%)",
-        "gradient-trust": "linear-gradient(180deg, #F0FDFA 0%, #FAFAF9 100%)",
+        "gradient-trust": "linear-gradient(180deg, #F0FDFA 0%, #F5F5F4 60%, #FAFAF9 100%)",
+        "gradient-section-top": "linear-gradient(180deg, #F5F5F4 0%, #FAFAF9 100%)",
+        "gradient-cta": "linear-gradient(135deg, #042F2E 0%, #115E59 50%, #0D6B64 100%)",
+        "gradient-mesh": "radial-gradient(ellipse 80% 60% at 50% -5%, rgba(13,107,100,0.07) 0%, transparent 65%)",
       },
       ringWidth: {
         DEFAULT: "3px",

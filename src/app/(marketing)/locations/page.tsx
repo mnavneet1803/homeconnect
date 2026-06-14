@@ -8,7 +8,7 @@ import { getAllLocations } from "@/data";
 export const metadata: Metadata = buildMetadata({
   title: "Service Areas",
   description:
-    "Edmonton Home Connect serves Edmonton and the Capital Region — Sherwood Park, St. Albert, Spruce Grove, and more.",
+    "Home Solution Services serves Edmonton and the Capital Region — Sherwood Park, St. Albert, Spruce Grove, and more.",
   path: ROUTES.locations.index,
 });
 

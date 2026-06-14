@@ -15,7 +15,7 @@ export default function PrivacyPage() {
   return (
     <LegalPageLayout
       title="Privacy Policy"
-      description="How Edmonton Home Connect collects, uses, and protects your personal information."
+      description="How Home Solution Services collects, uses, and protects your personal information."
     >
       {privacyPolicySections.map((section) => (
         <LegalSection key={section.title} title={section.title}>

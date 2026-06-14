@@ -11,6 +11,8 @@ import {
   GoogleAnalytics4,
 } from "@/components/analytics/google-tag-manager";
 import { MotionProvider } from "@/components/motion/motion-provider";
+import { ImageAuditProvider } from "@/components/dev/image-audit-context";
+import { ImageAuditFAB } from "@/components/dev/image-audit-fab";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = getRootMetadata();
@@ -43,9 +45,12 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-surface-50 font-sans antialiased">
         <GoogleTagManagerNoScript />
-        <Suspense fallback={null}>
-          <MotionProvider>{children}</MotionProvider>
-        </Suspense>
+        <ImageAuditProvider>
+          <Suspense fallback={null}>
+            <MotionProvider>{children}</MotionProvider>
+          </Suspense>
+          <ImageAuditFAB />
+        </ImageAuditProvider>
       </body>
     </html>
   );

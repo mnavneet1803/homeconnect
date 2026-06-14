@@ -11,7 +11,7 @@ function FormFallback() {
 
 export function LeadFormSection() {
   return (
-    <Section id="quote" className="bg-gradient-trust">
+    <Section id="quote" className="bg-gradient-trust border-t border-brand-100/50">
       <Container>
         <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
           <div>

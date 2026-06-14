@@ -53,10 +53,10 @@ export function HeroVisual() {
           className="mt-4 flex items-center gap-3 rounded-xl border border-brand-100 bg-brand-50 p-4"
         >
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-label-sm font-medium text-brand-800">
-            EHC
+            HS
           </div>
           <div className="min-w-0 flex-1">
-            <p className="text-label-md text-ink-900">Edmonton Home Connect</p>
+            <p className="text-label-md text-ink-900">Home Solution Services</p>
             <p className="text-caption text-ink-500">Our licensed crew handles the work</p>
           </div>
           <div className="flex items-center gap-1 text-caption font-medium text-ink-600">

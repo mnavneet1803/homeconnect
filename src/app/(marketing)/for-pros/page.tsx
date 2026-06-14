@@ -17,7 +17,7 @@ export default function CareersPage() {
       <Container narrow>
         <SectionHeader
           title="Join our Edmonton team"
-          description="Edmonton Home Connect is a local contractor with our own crew. We're always interested in skilled tradespeople and reliable team members who take pride in their work."
+          description="Home Solution Services is a local contractor with our own crew. We're always interested in skilled tradespeople and reliable team members who take pride in their work."
         />
         <ul className="mt-8 space-y-3 text-body-md text-ink-600">
           <li>• Work directly for one contractor — no lead fees or middlemen</li>

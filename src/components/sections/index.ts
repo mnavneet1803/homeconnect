@@ -1,6 +1,7 @@
 export { HeroSection } from "./hero-section";
 export { TrustIndicatorsSection } from "./trust-indicators-section";
 export { ServicesSection } from "./services-section";
+export { BeforeAfterSection } from "./before-after-section";
 export { HowItWorksSection } from "./how-it-works-section";
 export { WhyChooseUsSection } from "./why-choose-us-section";
 export { FeaturedProjectsSection } from "./featured-projects-section";

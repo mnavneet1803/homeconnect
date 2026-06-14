@@ -13,7 +13,7 @@ export function ServiceAreasSection() {
   const edmonton = LOCATIONS.find((l) => l.slug === "edmonton");
 
   return (
-    <Section className="bg-surface-0">
+    <Section className="bg-surface-50">
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div>

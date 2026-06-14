@@ -1,10 +1,13 @@
 import { Suspense } from "react";
+import { AuditImage } from "@/components/dev/audit-image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { SERVICE_BY_SLUG } from "@/constants/services";
 import { ROUTES } from "@/constants/routes";
 import { getServicePageContent } from "@/data/services/pages";
+import { getServicePageImages } from "@/data/service-showcase";
+import { IMAGE_SIZES } from "@/lib/images";
 import { getAreaHref } from "@/lib/utils/local-links";
 import { testimonials } from "@/data/testimonials";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
@@ -47,9 +50,16 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
     .map((s) => SERVICE_BY_SLUG[s])
     .filter(Boolean);
 
+  const images = getServicePageImages(slug);
+
   return (
     <>
-      <ServicePageHero content={content} service={service} breadcrumbs={breadcrumbs} />
+      <ServicePageHero
+        content={content}
+        service={service}
+        breadcrumbs={breadcrumbs}
+        images={images}
+      />
 
       {/* Service details */}
       <Section>
@@ -57,6 +67,19 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal variant="fade-up">
               <h2 className="text-display-sm text-ink-900">{content.details.title}</h2>
+              <div className="mt-6 overflow-hidden rounded-xl border border-border-subtle shadow-card">
+                <AuditImage
+                  auditId={`service-detail-${slug}`}
+                  src={images.detail.src}
+                  alt={images.detail.alt}
+                  width={images.detail.width}
+                  height={images.detail.height}
+                  sizes={IMAGE_SIZES.hero}
+                  loading="lazy"
+                  className="h-auto w-full"
+                />
+              </div>
+              <p className="mt-3 text-caption text-ink-500">{images.detail.caption}</p>
               <div className="mt-6 space-y-4">
                 {content.details.paragraphs.map((p) => (
                   <p key={p.slice(0, 40)} className="text-body-md text-ink-600">
@@ -85,7 +108,7 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
           <Reveal>
             <SectionHeader
               title={`Why choose our ${service.pluralName.toLowerCase()}`}
-              description="Edmonton homeowners choose Edmonton Home Connect for our own licensed team, free quotes, and direct accountability."
+              description="Edmonton homeowners choose Home Solution Services for our own licensed team, free quotes, and direct accountability."
             />
           </Reveal>
           <StaggerGrid className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

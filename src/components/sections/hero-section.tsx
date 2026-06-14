@@ -25,7 +25,7 @@ const HeroVisual = dynamic(
 
 export function HeroSection() {
   return (
-    <Section className="relative overflow-hidden bg-surface-0 pb-20 pt-14 md:pb-28 md:pt-20">
+    <Section className="relative overflow-hidden bg-surface-0 pb-24 pt-16 md:pb-36 md:pt-28">
       <FloatingBackground />
       <Container className="relative">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">

@@ -9,6 +9,7 @@ import {
   HeroSection,
   TrustIndicatorsSection,
   ServicesSection,
+  BeforeAfterSection,
   HowItWorksSection,
   WhyChooseUsSection,
   ServiceAreasSection,
@@ -74,7 +75,7 @@ const TestimonialsSection = dynamic(
   }
 );
 export const metadata: Metadata = buildMetadata({
-  title: "Edmonton Home Connect",
+  title: "Home Solution Services",
   description:
     "Licensed home service contractor in Edmonton and the Capital Region. Request a free quote — our own team handles the work.",
   path: "/",
@@ -99,7 +100,8 @@ export default function HomePage() {
       <ServicesSection />
       <HowItWorksSection />
       <WhyChooseUsSection />
-      <FeaturedProjectsSection />
+      {/* <FeaturedProjectsSection /> */}
+      <BeforeAfterSection />
       <TestimonialsSection />
       <ServiceAreasSection />
       <FaqSection />

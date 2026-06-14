@@ -1,8 +1,11 @@
 "use client";
 
+import { AuditImage } from "@/components/dev/audit-image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { TRUST_BADGES } from "@/constants/app";
+import { IMAGE_SIZES } from "@/lib/images";
+import type { ServicePageImages } from "@/data/service-showcase";
 import { Badge } from "@/components/ui/badge";
 import { Icon } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
@@ -16,9 +19,10 @@ interface ServicePageHeroProps {
   content: ServicePageContent;
   service: Service;
   breadcrumbs: { name: string; href: string }[];
+  images: ServicePageImages;
 }
 
-export function ServicePageHero({ content, service, breadcrumbs }: ServicePageHeroProps) {
+export function ServicePageHero({ content, service, breadcrumbs, images }: ServicePageHeroProps) {
   return (
     <section className="relative overflow-hidden bg-surface-0 pb-16 pt-10 md:pb-20 md:pt-14">
       <FloatingBackground />
@@ -81,7 +85,20 @@ export function ServicePageHero({ content, service, breadcrumbs }: ServicePageHe
           </div>
 
           <Reveal variant="fade-up" immediate delay={0.1}>
-            <div className="card-elevated p-8">
+            <div className="space-y-6">
+              <div className="overflow-hidden rounded-2xl border border-border-subtle shadow-elevated">
+                <AuditImage
+                  auditId={`service-hero-${service.slug}`}
+                  src={images.hero.src}
+                  alt={images.hero.alt}
+                  width={images.hero.width}
+                  height={images.hero.height}
+                  sizes={IMAGE_SIZES.hero}
+                  priority
+                  className="h-auto w-full"
+                />
+              </div>
+              <div className="card-elevated p-8">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-700 ring-1 ring-brand-100">
                 <Icon name={serviceIconName(service.icon)} size={32} />
               </div>
@@ -101,6 +118,7 @@ export function ServicePageHero({ content, service, breadcrumbs }: ServicePageHe
               <p className="mt-6 text-caption text-ink-400">
                 {siteConfig.business.marketplaceDisclaimer}
               </p>
+            </div>
             </div>
           </Reveal>
         </div>
