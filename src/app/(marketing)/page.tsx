@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { DEFAULT_OG_IMAGE_ALT } from "@/constants/seo-social";
+import { SEO } from "@/constants/app";
 import { buildFAQSchema } from "@/lib/seo/json-ld";
 import { JsonLdScript } from "@/components/seo/json-ld-script";
 import { ProjectCardSkeleton, TestimonialSkeleton } from "@/components/skeletons";
@@ -82,6 +84,8 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Edmonton home service contractor — handyman, TV mounting, furniture assembly, professional cleaning, plumbing and electrical maintenance, and move-in/out repairs. Request a free quote.",
   path: "/",
+  ogTitle: SEO.defaultTitle,
+  ogImageAlt: DEFAULT_OG_IMAGE_ALT,
   keywords: [
     "home services Edmonton",
     "handyman Edmonton",

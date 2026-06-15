@@ -6,7 +6,10 @@ export interface PageMetadata {
   path: string;
   keywords?: string[];
   noIndex?: boolean;
+  /** Relative path — defaults to /og-image.jpg */
   ogImage?: string;
+  /** Alt text for share image (accessibility + WhatsApp/Facebook previews) */
+  ogImageAlt?: string;
 }
 
 export interface BreadcrumbItem {

@@ -334,7 +334,7 @@ export function getServicePageSeo(slug: ServiceSlug) {
     description: content.metaDescription,
     path: SERVICE_BY_SLUG[slug].href,
     keywords: content.keywords,
-    ogImage: `/images/og/services/${slug}.jpg`,
+    ogImageAlt: `${content.hero.headline} — ${siteConfig.name}`,
     faq: content.faq.map((f, i) => ({
       id: `${slug}-faq-${i}`,
       question: f.question,

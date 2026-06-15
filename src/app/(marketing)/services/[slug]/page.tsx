@@ -32,7 +32,7 @@ export async function generateMetadata({
     description: seo.description,
     path: seo.path,
     keywords: seo.keywords,
-    ogImage: seo.ogImage,
+    ogImageAlt: seo.ogImageAlt,
   });
 }
 

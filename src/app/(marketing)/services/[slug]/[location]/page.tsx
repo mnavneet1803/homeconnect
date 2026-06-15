@@ -32,7 +32,7 @@ export async function generateMetadata({
     title: page.title,
     description: page.description,
     path: page.href,
-    ogImage: `/images/og/services/${slug}.jpg`,
+    ogImageAlt: `${page.title} — Home Solution Services`,
   });
 }
 

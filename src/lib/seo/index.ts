@@ -1,4 +1,4 @@
-export { buildMetadata, getRootMetadata } from "./metadata";
+export { buildMetadata, getRootMetadata, resolveOgImageUrl } from "./metadata";
 export {
   buildOrganizationSchema,
   buildBreadcrumbSchema,
