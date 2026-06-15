@@ -7,5 +7,6 @@ export { Magnetic } from "./magnetic";
 export { MagneticButton } from "./magnetic-button";
 export { FloatingBackground } from "./floating-background";
 export { HoverCard } from "./hover-card";
+export { PremiumCard } from "./premium-card";
 export { PageTransition } from "./page-transition";
 export { TestimonialCarousel } from "./testimonial-carousel";

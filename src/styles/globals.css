@@ -273,6 +273,12 @@
       hover:-translate-y-px hover:border-ink-200 hover:shadow-card-hover;
   }
 
+  /* Framer Motion hover companion — shadow transitions on motion-driven cards */
+  .motion-card-hover {
+    @apply transition-[box-shadow,border-color] duration-300 ease-out
+      hover:border-brand-200/70 hover:shadow-card-hover;
+  }
+
   .card-elevated {
     @apply rounded-3xl border border-border-subtle/70 bg-surface-0 shadow-md;
   }

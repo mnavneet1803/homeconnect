@@ -1,7 +1,7 @@
 "use client";
 
 import { m } from "framer-motion";
-import { hoverLift } from "@/lib/motion/variants";
+import { premiumHover, premiumHoverTap } from "@/lib/motion/variants";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils/cn";
 import type { ReactNode } from "react";
@@ -9,9 +9,10 @@ import type { ReactNode } from "react";
 interface HoverCardProps {
   children: ReactNode;
   className?: string;
-  as?: "div" | "article" | "a";
+  as?: "div" | "article" | "a" | "li";
 }
 
+/** Premium hover lift for cards — Apple / Stripe restraint */
 export function HoverCard({ children, className, as = "div" }: HoverCardProps) {
   const reducedMotion = usePrefersReducedMotion();
   const Component = m[as];
@@ -23,9 +24,9 @@ export function HoverCard({ children, className, as = "div" }: HoverCardProps) {
 
   return (
     <Component
-      className={cn(className)}
-      whileHover={hoverLift}
-      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      className={cn("motion-card-hover", className)}
+      whileHover={premiumHover}
+      whileTap={premiumHoverTap}
     >
       {children}
     </Component>

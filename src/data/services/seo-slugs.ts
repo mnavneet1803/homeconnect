@@ -1,0 +1,14 @@
+export const SEO_SERVICE_SLUGS = [
+  "handyman",
+  "painters",
+  "renovators",
+  "flooring",
+  "plumbers",
+  "electricians",
+  "landscapers",
+  "cleaners",
+  "deck-fence",
+  "home-maintenance",
+] as const;
+
+export type SeoServiceSlug = (typeof SEO_SERVICE_SLUGS)[number];

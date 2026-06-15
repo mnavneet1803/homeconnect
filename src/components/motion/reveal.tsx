@@ -2,6 +2,7 @@
 
 import { m } from "framer-motion";
 import {
+  easePremium,
   revealVariants,
   scrollViewport,
   type RevealVariant,
@@ -46,7 +47,7 @@ export function Reveal({
         ? { animate: "visible" }
         : { whileInView: "visible", viewport: scrollViewport })}
       variants={revealVariants[variant]}
-      transition={{ delay, ...(duration ? { duration } : {}) }}
+      transition={{ delay, ease: easePremium, ...(duration ? { duration } : {}) }}
     >
       {children}
     </Component>

@@ -9,6 +9,7 @@ export type IconName =
   | "zap"
   | "droplets"
   | "sparkles"
+  | "cleaning"
   | "tree"
   | "fence"
   | "shield-check"
@@ -78,6 +79,31 @@ const paths: Record<IconName, React.ReactNode> = {
       strokeLinejoin="round"
       d="M5 3v4M3 5h4M6 17v4M4 19h4M13 3l1.5 4.5L19 9l-4.5 1.5L13 15l-1.5-4.5L7 9l4.5-1.5L13 3zM18 14l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z"
     />
+  ),
+  cleaning: (
+    <>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9 3h6v2.5a2 2 0 01-2 2h-2a2 2 0 01-2-2V3z"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M8 7.5h8l-1.2 12.5H9.2L8 7.5z"
+      />
+      <path strokeLinecap="round" d="M10 11h4" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M18 4l.75 2.25L21 7l-2.25.75L18 10l-.75-2.25L15 7l2.25-.75L18 4z"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M5 14l.5 1.5L7 16l-1.5.5L5 18l-.5-1.5L3 16l1.5-.5L5 14z"
+      />
+    </>
   ),
   tree: (
     <>
@@ -222,6 +248,7 @@ export function serviceIconName(icon: string): IconName {
     zap: "zap",
     droplets: "droplets",
     sparkles: "sparkles",
+    cleaning: "cleaning",
     tree: "tree",
     fence: "fence",
     "shield-check": "shield-check",
@@ -240,6 +267,7 @@ export function benefitIconName(icon: string): IconName {
     clock: "clock",
     tree: "tree",
     sparkles: "sparkles",
+    cleaning: "cleaning",
     zap: "zap",
     "clipboard-list": "clipboard-list",
     users: "users",

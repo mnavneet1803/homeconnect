@@ -1,47 +1,59 @@
 import Link from "next/link";
-import { TRUST_STATS } from "@/constants/app";
+import { HOMEPAGE_TRUST_STATS } from "@/constants/app";
 import { ROUTES } from "@/constants/routes";
 import { Container } from "@/components/ui/container";
+import { TrustStatCard } from "@/components/trust/trust-stat-card";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerGrid, StaggerItem } from "@/components/motion/stagger-grid";
-import { AnimatedCounter } from "@/components/motion/animated-counter";
 
 export function TrustIndicatorsSection() {
+  const statCount = HOMEPAGE_TRUST_STATS.length;
+
   return (
-    <section className="border-y border-border-subtle bg-surface-0 py-16 md:py-24">
+    <section
+      aria-label="Trust indicators"
+      className="relative z-10 mt-4 pb-16 md:mt-6 md:pb-20 lg:mt-8"
+    >
       <Container>
-        <Reveal className="mb-14 text-center md:mb-16">
-          <p className="text-label-sm font-semibold uppercase tracking-widest text-brand-600">
-            Trusted across Edmonton
-          </p>
-          <p className="mt-3 text-body-lg text-ink-400">
-            The Capital Region&apos;s local home service team
-          </p>
-        </Reveal>
+        <Reveal variant="scale" immediate>
+          <div className="overflow-hidden rounded-3xl border border-border-subtle/80 bg-surface-0 shadow-elevated">
+            <div className="border-b border-border-subtle bg-gradient-to-r from-brand-50/80 via-surface-0 to-brand-50/50 px-6 py-10 text-center md:px-10 md:py-12">
+              <p className="text-label-sm font-semibold uppercase tracking-widest text-brand-600">
+                Trusted across Edmonton
+              </p>
+              <p className="mx-auto mt-2 max-w-lg text-body-md text-ink-500">
+                Local homeowners count on our team for reliable work, honest quotes, and fast
+                follow-up.
+              </p>
+            </div>
 
-        <StaggerGrid className="grid grid-cols-2 gap-px bg-border-subtle md:grid-cols-4">
-          {TRUST_STATS.map((stat) => (
-            <StaggerItem key={stat.key}>
-              <div className="flex flex-col items-center bg-surface-0 px-6 py-10 text-center md:px-10 md:py-12">
-                <AnimatedCounter
-                  value={stat.count}
-                  suffix={stat.suffix}
-                  decimals={stat.decimals}
-                  className="text-display-md font-medium tracking-tight text-ink-900 md:text-display-lg"
-                />
-                <p className="mt-3 text-body-sm text-ink-400">{stat.label}</p>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerGrid>
+            <div className="px-4 py-8 md:px-10 md:py-10">
+              <StaggerGrid
+                className={
+                  statCount === 3
+                    ? "mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3"
+                    : statCount === 4
+                      ? "mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
+                      : "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5"
+                }
+              >
+                {HOMEPAGE_TRUST_STATS.map((stat) => (
+                  <StaggerItem key={stat.key}>
+                    <TrustStatCard stat={stat} variant={statCount <= 3 ? "compact" : "default"} />
+                  </StaggerItem>
+                ))}
+              </StaggerGrid>
 
-        <Reveal className="mt-12 text-center" delay={0.15}>
-          <Link
-            href={ROUTES.vetting}
-            className="text-label-sm font-medium text-brand-700 transition-colors hover:text-brand-600"
-          >
-            Read our standards & vetting process →
-          </Link>
+              <Reveal className="mt-8 text-center" delay={0.12}>
+                <Link
+                  href={ROUTES.vetting}
+                  className="text-label-sm font-medium text-brand-700 transition-colors hover:text-brand-600"
+                >
+                  Read our standards & vetting process →
+                </Link>
+              </Reveal>
+            </div>
+          </div>
         </Reveal>
       </Container>
     </section>

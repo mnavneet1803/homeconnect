@@ -11,6 +11,12 @@ export interface Service {
   licenseLabel?: string;
   featured: boolean;
   sortOrder: number;
+  /** Bullet points shown on the homepage service card */
+  highlights?: string[];
+  /** Custom link label on service cards (defaults to "Learn more") */
+  cardCta?: string;
+  /** Custom quote button label on service detail pages */
+  quoteCta?: string;
 }
 
 export interface SubService {

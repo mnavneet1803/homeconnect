@@ -13,6 +13,7 @@ import {
   HowItWorksSection,
   WhyChooseUsSection,
   ServiceAreasSection,
+  LocalServicesSection,
   FaqSection,
   LeadFormSection,
 } from "@/components/sections";
@@ -79,7 +80,7 @@ const TestimonialsSection = dynamic(
 export const metadata: Metadata = buildMetadata({
   title: "Home Solution Services",
   description:
-    "Edmonton home service contractor — handyman, TV mounting, furniture assembly, plumbing and electrical maintenance, and move-in/out repairs. Request a free quote.",
+    "Edmonton home service contractor — handyman, TV mounting, furniture assembly, professional cleaning, plumbing and electrical maintenance, and move-in/out repairs. Request a free quote.",
   path: "/",
   keywords: [
     "home services Edmonton",
@@ -88,6 +89,7 @@ export const metadata: Metadata = buildMetadata({
     "home renovation Edmonton",
     "plumber Edmonton",
     "electrician Edmonton",
+    "cleaning services Edmonton",
   ],
 });
 
@@ -107,6 +109,7 @@ export default function HomePage() {
       {/* TODO: Enable before/after gallery after verified project photos are available. */}
       {/* <TestimonialsSection /> */}
       <ServiceAreasSection />
+      <LocalServicesSection />
       <FaqSection />
       <LeadFormSection />
     </>

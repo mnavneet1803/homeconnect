@@ -1,34 +1,45 @@
-/** Trust stats — sourced from Google reviews config in production */
-export const TRUST_STATS = [
+/** Trust stats shown on the homepage trust section */
+export type HomepageTrustStat =
+  | {
+      key: string;
+      type: "numeric";
+      value: number;
+      suffix?: string;
+      prefix?: string;
+      decimals?: number;
+      label: string;
+      icon: string;
+      showStars?: boolean;
+    }
+  | {
+      key: string;
+      type: "text";
+      headline: string;
+      subline?: string;
+      icon: string;
+    };
+
+export const HOMEPAGE_TRUST_STATS: HomepageTrustStat[] = [
   {
-    count: parseInt(process.env.NEXT_PUBLIC_GOOGLE_REVIEW_COUNT ?? "127", 10),
-    suffix: "+",
-    label: "Google reviews",
-    key: "reviews",
-    decimals: 0,
+    key: "local",
+    type: "text",
+    headline: "Edmonton Based Team",
+    icon: "map-pin",
   },
   {
-    count: parseFloat(process.env.NEXT_PUBLIC_GOOGLE_RATING ?? "4.9"),
-    suffix: "★",
-    label: "Google rating",
-    key: "rating",
-    decimals: 1,
+    key: "quotes",
+    type: "text",
+    headline: "Free Quotes",
+    subline: "No obligation pricing",
+    icon: "gift",
   },
   {
-    count: 10,
-    suffix: "+",
-    label: "Home services offered",
-    key: "services",
-    decimals: 0,
+    key: "response",
+    type: "text",
+    headline: "Response Within 24 Hours",
+    icon: "clock",
   },
-  {
-    count: 24,
-    suffix: " hr",
-    label: "Typical response time",
-    key: "sla",
-    decimals: 0,
-  },
-] as const;
+];
 
 export const TRUST_BADGES = [
   "Free Quotes",

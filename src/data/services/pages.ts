@@ -1,4 +1,9 @@
-import type { ServicePageContent } from "@/types/service-page";
+import type { ServicePageContent, ServicePageBase } from "@/types/service-page";
+import { SERVICE_PAGE_ENRICHMENTS } from "./enriched-pages";
+import { mergeServicePage } from "./merge-page";
+import type { SeoServiceSlug } from "./seo-slugs";
+
+export { SEO_SERVICE_SLUGS, type SeoServiceSlug } from "./seo-slugs";
 
 const LOCAL_AREAS = [
   "Edmonton",
@@ -14,7 +19,7 @@ const LOCAL_AREAS = [
   "Oliver",
 ];
 
-export const SERVICE_PAGES: Record<string, ServicePageContent> = {
+export const SERVICE_PAGES: Record<string, ServicePageBase> = {
   handyman: {
     slug: "handyman",
     metaTitle: "Handyman Edmonton | Free Quote from Our Team",
@@ -388,45 +393,46 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
 
   cleaners: {
     slug: "cleaners",
-    metaTitle: "House Cleaning Edmonton | Move-Out & Deep Cleaning Services",
+    metaTitle: "Cleaning Services Edmonton | Home, Office & Post-Construction",
     metaDescription:
-      "Need house cleaning in Edmonton? Our team handles deep cleans, move-out service, and recurring maintenance. Free quote — no obligation.",
+      "Professional cleaning services in Edmonton for homes, apartments, condos, offices, rental properties, and post-construction projects. Get a free cleaning quote.",
     keywords: [
-      "house cleaning Edmonton",
       "cleaning services Edmonton",
+      "house cleaning Edmonton",
       "move out cleaning Edmonton",
-      "deep cleaning Edmonton",
-      "maid service Edmonton",
+      "commercial cleaning Edmonton",
+      "post construction cleaning Edmonton",
+      "rental property cleaning Edmonton",
     ],
     hero: {
       eyebrow: "Cleaning Services · Edmonton",
-      headline: "House cleaning services in Edmonton",
+      headline: "Professional cleaning services in Edmonton",
       subheadline:
-        "Deep cleans, move-out service, and recurring maintenance — our own trusted crew.",
+        "Homes, apartments, condos, offices, rental properties, and post-construction projects — our own trusted crew.",
       intro:
-        "Whether you're preparing a rental turnover, moving into a new home, or reclaiming your weekends, our cleaning team delivers reliable results. Request a free quote.",
+        "Whether you're preparing a new home, turning over a rental, or clearing construction dust, our cleaning team delivers reliable results across Edmonton and surrounding areas. Get a free cleaning quote.",
     },
     subServices: [
-      { name: "Deep cleaning", description: "Top-to-bottom cleans for homes and condos" },
-      { name: "Move-out / move-in", description: "Rental turnovers and pre-possession cleans" },
-      { name: "Recurring maintenance", description: "Weekly, bi-weekly, and monthly schedules" },
-      { name: "Post-renovation cleaning", description: "Construction dust and debris removal" },
-      { name: "Carpet & upholstery", description: "Steam cleaning and stain treatment" },
-      { name: "Commercial cleaning", description: "Offices, retail, and common areas" },
+      { name: "New Home Cleaning", description: "Pre-move-in and new-build cleans for fresh starts" },
+      { name: "Apartment & Condo Cleaning", description: "Deep and recurring cleans for multi-unit living" },
+      { name: "Move-In / Move-Out Cleaning", description: "Rental turnovers and deposit-ready deep cleans" },
+      { name: "Commercial & Office Cleaning", description: "Offices, retail spaces, and common areas" },
+      { name: "Post-Construction Cleaning", description: "Construction dust, debris, and final detail cleans" },
+      { name: "Rental Property Cleaning", description: "Landlord turnovers and tenant move-out service" },
     ],
     details: {
       title: "Reliable cleaning across Edmonton",
       paragraphs: [
         "Landlords in Edmonton know move-out cleans can make or break deposit returns. Homeowners preparing for listing photos need a level of clean that goes beyond weekly tidying. Our cleaners use professional-grade products and consistent checklists.",
-        "Our cleaning crew is trained for residential and commercial work. You describe your home size and needs, receive a quote, and our team handles the rest — no middlemen.",
-        "Serving Edmonton and surrounding communities including Sherwood Park, St. Albert, and Spruce Grove.",
+        "From new home cleans to post-construction detail work, our crew handles residential and commercial projects throughout Edmonton and surrounding communities including Sherwood Park, St. Albert, and Spruce Grove.",
+        "You describe your property size and scope, receive a free quote, and our team handles the rest — no middlemen.",
       ],
     },
     benefits: [
       { title: "Professional crew", description: "Our cleaning team follows consistent quality standards on every job.", icon: "shield-check" },
       { title: "Flexible scheduling", description: "One-time deep cleans or recurring maintenance plans.", icon: "calendar" },
-      { title: "Free quotes", description: "Pricing based on your home size and scope.", icon: "gift" },
-      { title: "Eco-friendly options", description: "Green cleaning products available on request.", icon: "sparkles" },
+      { title: "Free quotes", description: "Pricing based on your property size and scope.", icon: "gift" },
+      { title: "Eco-friendly options", description: "Green cleaning products available on request.", icon: "cleaning" },
     ],
     localAreas: LOCAL_AREAS,
     faq: [
@@ -535,21 +541,10 @@ export const SERVICE_PAGES: Record<string, ServicePageContent> = {
   },
 };
 
-export const SEO_SERVICE_SLUGS = [
-  "handyman",
-  "painters",
-  "renovators",
-  "flooring",
-  "plumbers",
-  "electricians",
-  "landscapers",
-  "cleaners",
-  "deck-fence",
-  "home-maintenance",
-] as const;
-
-export type SeoServiceSlug = (typeof SEO_SERVICE_SLUGS)[number];
-
 export function getServicePageContent(slug: string): ServicePageContent | null {
-  return SERVICE_PAGES[slug] ?? null;
+  const base = SERVICE_PAGES[slug];
+  if (!base) return null;
+  const enrichment = SERVICE_PAGE_ENRICHMENTS[slug as SeoServiceSlug];
+  if (!enrichment) return null;
+  return mergeServicePage(base, enrichment);
 }

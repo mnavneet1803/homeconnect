@@ -7,7 +7,7 @@ export const siteConfig = {
   shortName: "Home Solution",
   tagline: "Your home, our solution — trusted Edmonton home services.",
   description:
-    "Edmonton home service team — handyman repairs, TV mounting, furniture assembly, plumbing and electrical maintenance, move-in/out repairs, and condo upkeep. Call for a free quote.",
+    "Edmonton home service team — handyman repairs, TV mounting, furniture assembly, professional cleaning, plumbing and electrical maintenance, move-in/out repairs, and condo upkeep. Call for a free quote.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.homesolutionservices.ca",
   locale: "en_CA",
   language: "en-CA",

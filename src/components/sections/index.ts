@@ -7,5 +7,6 @@ export { WhyChooseUsSection } from "./why-choose-us-section";
 export { FeaturedProjectsSection } from "./featured-projects-section";
 export { TestimonialsSection } from "./testimonials-section";
 export { ServiceAreasSection } from "./service-areas-section";
+export { LocalServicesSection } from "./local-services-section";
 export { FaqSection } from "./faq-section";
 export { LeadFormSection } from "./lead-form-section";

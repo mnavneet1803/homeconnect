@@ -8,6 +8,7 @@ export const LAUNCH_SERVICE_SLUGS: ServiceSlug[] = [
   "handyman",
   "tv-wall-mounting",
   "furniture-assembly",
+  "cleaners",
   "plumbers",
   "electricians",
   "move-in-move-out-repairs",

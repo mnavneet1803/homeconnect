@@ -9,6 +9,7 @@ const FORM_SELECTORS = [
   "#hero-quote-form",
   "#location-quote",
   "#service-location-quote",
+  "#seo-quote",
   "#hood-quote",
 ].join(",");
 

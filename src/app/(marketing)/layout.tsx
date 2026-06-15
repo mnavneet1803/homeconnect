@@ -1,5 +1,6 @@
 import { Header, Footer } from "@/components/layout";
 import { StickyCtaBar } from "@/components/layout/sticky-cta";
+import { FloatingCta } from "@/components/layout/floating-cta";
 
 export default function MarketingLayout({
   children,
@@ -23,6 +24,7 @@ export default function MarketingLayout({
       </main>
       <Footer />
       <StickyCtaBar />
+      <FloatingCta />
     </div>
   );
 }

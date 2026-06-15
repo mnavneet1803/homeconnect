@@ -7,7 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import { HeroQuoteForm } from "@/components/forms/hero-quote-form";
-import { GoogleReviewsBadge } from "@/components/trust";
 import { Reveal } from "@/components/motion/reveal";
 import { FloatingBackground } from "@/components/motion/floating-background";
 import { StaggerGrid, StaggerItem } from "@/components/motion/stagger-grid";
@@ -27,7 +26,7 @@ const HeroVisual = dynamic(
 
 export function HeroSection() {
   return (
-    <Section className="relative overflow-x-clip bg-surface-0 pb-24 pt-16 md:pb-36 md:pt-28">
+    <Section className="relative overflow-x-clip bg-surface-0 pb-16 pt-16 md:pb-20 md:pt-28">
       <FloatingBackground />
       <Container className="relative">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
@@ -57,12 +56,7 @@ export function HeroSection() {
               </div>
             </Reveal>
             <Reveal variant="fade" immediate delay={0.22}>
-              <div className="mt-8 hidden sm:block">
-                <GoogleReviewsBadge />
-              </div>
-            </Reveal>
-            <Reveal variant="fade" immediate delay={0.26}>
-              <p className="mt-5 text-caption text-ink-400">
+              <p className="mt-8 text-caption text-ink-400">
                 {siteConfig.business.marketplaceDisclaimer}
               </p>
             </Reveal>

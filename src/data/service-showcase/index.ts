@@ -308,7 +308,7 @@ export const SERVICE_CARD_IMAGES: Record<
   },
   cleaners: {
     src: `${DIR}/move-in-move-out-cleaning-edmonton.png`,
-    alt: "Move-in and move-out deep cleaning service for Edmonton homes and condos",
+    alt: "Professional cleaning services for Edmonton homes, apartments, condos, and offices — Home Solution Services",
     width: 1024,
     height: 682,
   },

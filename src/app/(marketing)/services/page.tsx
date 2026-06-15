@@ -8,7 +8,7 @@ import { getAllServices } from "@/data";
 export const metadata: Metadata = buildMetadata({
   title: "Home Services",
   description:
-    "Browse home services our Edmonton team offers — handyman, painters, renovators, electricians, plumbers, and more.",
+    "Browse home services our Edmonton team offers — handyman, cleaning, painters, renovators, electricians, plumbers, and more.",
   path: ROUTES.services.index,
 });
 

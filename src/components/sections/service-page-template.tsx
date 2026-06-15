@@ -9,7 +9,6 @@ import { getServicePageContent } from "@/data/services/pages";
 import { getServicePageImages } from "@/data/service-showcase";
 import { IMAGE_SIZES } from "@/lib/images";
 import { getAreaHref } from "@/lib/utils/local-links";
-import { testimonials } from "@/data/testimonials";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
 import { ServiceCard } from "@/components/ui/service-card";
 import { Accordion } from "@/components/ui/accordion";
@@ -19,9 +18,8 @@ import { QuoteForm, QuoteFormReassurance } from "@/components/forms/quote-form";
 import { QuoteFormSkeleton } from "@/components/skeletons";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerGrid, StaggerItem } from "@/components/motion/stagger-grid";
+import { PremiumCard } from "@/components/motion/premium-card";
 import { Button } from "@/components/ui/button";
-import { TestimonialCarousel } from "@/components/motion/testimonial-carousel";
-import type { ServicePageContent } from "@/types/service-page";
 import type { ServiceSlug } from "@/constants/services";
 
 interface ServicePageTemplateProps {
@@ -40,12 +38,6 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
     { name: service.name, href: service.href },
   ];
 
-  const serviceTestimonials = testimonials.filter((t) => t.serviceSlug === slug);
-  const displayTestimonials =
-    serviceTestimonials.length > 0
-      ? serviceTestimonials
-      : testimonials.filter((t) => t.featured).slice(0, 3);
-
   const relatedServices = content.relatedSlugs
     .map((s) => SERVICE_BY_SLUG[s])
     .filter(Boolean);
@@ -61,13 +53,22 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
         images={images}
       />
 
-      {/* Service details */}
-      <Section>
+      {/* 1. Service Overview */}
+      <Section id="overview">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal variant="fade-up">
-              <h2 className="text-display-sm text-ink-900">{content.details.title}</h2>
-              <div className="mt-6 overflow-hidden rounded-xl border border-border-subtle shadow-card">
+              <h2 className="text-display-sm text-ink-900">{content.overview.title}</h2>
+              <div className="mt-6 space-y-4">
+                {content.overview.paragraphs.map((p) => (
+                  <p key={p.slice(0, 48)} className="text-body-md leading-relaxed text-ink-600">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal variant="fade-up" delay={0.08}>
+              <div className="overflow-hidden rounded-2xl border border-border-subtle shadow-card">
                 <AuditImage
                   auditId={`service-detail-${slug}`}
                   src={images.detail.src}
@@ -80,72 +81,107 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
                 />
               </div>
               <p className="mt-3 text-caption text-ink-500">{images.detail.caption}</p>
-              <div className="mt-6 space-y-4">
-                {content.details.paragraphs.map((p) => (
-                  <p key={p.slice(0, 40)} className="text-body-md text-ink-600">
-                    {p}
-                  </p>
-                ))}
-              </div>
             </Reveal>
-            <StaggerGrid className="grid gap-4 sm:grid-cols-2">
-              {content.subServices.map((sub) => (
-                <StaggerItem key={sub.name}>
-                  <div className="card h-full p-5 transition-shadow duration-300 hover:shadow-card-hover">
-                    <h3 className="text-heading-sm text-ink-900">{sub.name}</h3>
-                    <p className="mt-2 text-body-sm text-ink-500">{sub.description}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerGrid>
           </div>
         </Container>
       </Section>
 
-      {/* Benefits */}
-      <Section className="bg-surface-0">
+      {/* What we offer */}
+      <Section className="border-y border-border-subtle bg-surface-50">
         <Container>
           <Reveal>
             <SectionHeader
-              title={`Why choose our ${service.pluralName.toLowerCase()}`}
-              description="Edmonton homeowners choose Home Solution Services for our own in-house team, free quotes, and direct accountability."
+              title={`${service.name} we provide`}
+              description={`Practical solutions delivered by our Edmonton-based crew — from quick fixes to full-scope projects.`}
             />
           </Reveal>
-          <StaggerGrid className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {content.benefits.map((benefit) => (
-              <StaggerItem key={benefit.title}>
-                <div className="card h-full p-6">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
-                    <Icon name={benefitIconName(benefit.icon)} size={20} />
-                  </span>
-                  <h3 className="mt-4 text-heading-sm text-ink-900">{benefit.title}</h3>
-                  <p className="mt-2 text-body-sm text-ink-500">{benefit.description}</p>
-                </div>
+          <StaggerGrid className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {content.subServices.map((sub) => (
+              <StaggerItem key={sub.name}>
+                <PremiumCard className="p-6">
+                  <h3 className="text-heading-sm text-ink-900">{sub.name}</h3>
+                  <p className="mt-2 text-body-sm leading-relaxed text-ink-500">{sub.description}</p>
+                </PremiumCard>
               </StaggerItem>
             ))}
           </StaggerGrid>
         </Container>
       </Section>
 
-      {/* Local SEO areas */}
+      {/* 2. Common Problems We Solve */}
+      <Section>
+        <Container>
+          <Reveal>
+            <SectionHeader
+              title={content.commonProblems.title}
+              description={content.commonProblems.intro}
+            />
+          </Reveal>
+          <StaggerGrid className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {content.commonProblems.problems.map((problem) => (
+              <StaggerItem key={problem.title}>
+                <PremiumCard className="p-6">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                    <Icon name="check" size={18} />
+                  </span>
+                  <h3 className="mt-4 text-heading-sm text-ink-900">{problem.title}</h3>
+                  <p className="mt-2 text-body-sm leading-relaxed text-ink-500">
+                    {problem.description}
+                  </p>
+                </PremiumCard>
+              </StaggerItem>
+            ))}
+          </StaggerGrid>
+        </Container>
+      </Section>
+
+      {/* 3. Why Choose Our Team */}
+      <Section className="bg-surface-0">
+        <Container>
+          <Reveal>
+            <SectionHeader
+              title={content.whyChooseUs.title}
+              description={content.whyChooseUs.intro}
+            />
+          </Reveal>
+          <StaggerGrid className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {content.whyChooseUs.reasons.map((reason) => (
+              <StaggerItem key={reason.title}>
+                <PremiumCard className="p-6">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                    <Icon name={benefitIconName(reason.icon)} size={20} />
+                  </span>
+                  <h3 className="mt-4 text-heading-sm text-ink-900">{reason.title}</h3>
+                  <p className="mt-2 text-body-sm leading-relaxed text-ink-500">
+                    {reason.description}
+                  </p>
+                </PremiumCard>
+              </StaggerItem>
+            ))}
+          </StaggerGrid>
+        </Container>
+      </Section>
+
+      {/* 4. Service Areas */}
       <Section className="border-y border-border-subtle bg-surface-50 py-12">
         <Container>
           <Reveal>
-            <h2 className="text-heading-lg text-ink-900">
-              {service.name} services across the Capital Region
-            </h2>
-            <p className="mt-2 max-w-prose text-body-md text-ink-500">
-              Our {service.pluralName.toLowerCase()} serve Edmonton and surrounding communities
-              directly. Don&apos;t see your area? Submit your postal code — we likely serve you.
+            <h2 className="text-heading-lg text-ink-900">{content.serviceAreas.title}</h2>
+            <p className="mt-3 max-w-prose text-body-md leading-relaxed text-ink-500">
+              {content.serviceAreas.intro}
             </p>
           </Reveal>
-          <StaggerGrid className="mt-6 flex flex-wrap gap-2">
+          <StaggerGrid className="mt-8 flex flex-wrap gap-2">
             {content.localAreas.map((area) => {
               const href = getAreaHref(area, slug);
               return (
                 <StaggerItem key={area}>
                   {href ? (
-                    <Link href={href} className="badge-neutral hover:bg-brand-50 hover:text-brand-800">
+                    <Link
+                      href={href}
+                      className="badge-neutral transition-colors hover:bg-brand-50 hover:text-brand-800"
+                    >
+                      <Icon name="map-pin" size={14} className="text-brand-600" />
                       {area}
                     </Link>
                   ) : (
@@ -155,16 +191,45 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
               );
             })}
           </StaggerGrid>
+          <Reveal className="mt-8" delay={0.1}>
+            <Link href={ROUTES.locations.index} className="btn-link">
+              Browse all service areas →
+            </Link>
+          </Reveal>
         </Container>
       </Section>
 
-      {/* FAQ */}
-      <Section id="faq">
+      {/* 5. Process */}
+      <Section>
+        <Container>
+          <Reveal>
+            <SectionHeader title={content.process.title} description={content.process.intro} />
+          </Reveal>
+          <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {content.process.steps.map((step) => (
+              <StaggerItem key={step.step}>
+                <div className="relative h-full rounded-2xl border border-border-subtle bg-surface-0 p-6 shadow-sm">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-700 font-display text-label-md font-semibold text-white">
+                    {step.step}
+                  </span>
+                  <h3 className="mt-5 text-heading-sm text-ink-900">{step.title}</h3>
+                  <p className="mt-2 text-body-sm leading-relaxed text-ink-500">
+                    {step.description}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerGrid>
+        </Container>
+      </Section>
+
+      {/* 6. FAQ */}
+      <Section id="faq" className="bg-surface-0">
         <Container narrow>
           <Reveal>
             <SectionHeader
-              title={`${service.name} FAQ`}
-              description={`Common questions about our ${service.pluralName.toLowerCase()} in Edmonton.`}
+              title={`${service.name} — frequently asked questions`}
+              description={`Answers to common questions about ${service.name.toLowerCase()} in Edmonton and the Capital Region.`}
             />
           </Reveal>
           <Reveal delay={0.08}>
@@ -179,33 +244,43 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
         </Container>
       </Section>
 
-      {/* TODO: Enable testimonials after receiving verified customer reviews.
-      <Section className="bg-surface-0">
-        <Container>
-          <Reveal>
-            <SectionHeader
-              title="What Edmonton homeowners say"
-              description={`Real reviews from homeowners who worked with our ${service.pluralName.toLowerCase()}.`}
-            />
-          </Reveal>
-          <TestimonialCarousel testimonials={displayTestimonials} />
-        </Container>
-      </Section>
-      */}
+      {/* 7. Related Services */}
+      {relatedServices.length > 0 && (
+        <Section className="border-t border-border-subtle bg-surface-50">
+          <Container>
+            <Reveal>
+              <SectionHeader
+                title="Related services"
+                description="Explore other home services our Edmonton team offers across the Capital Region."
+              />
+            </Reveal>
+            <StaggerGrid className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedServices.map((related) => (
+                <StaggerItem key={related.slug}>
+                  <ServiceCard service={related} />
+                </StaggerItem>
+              ))}
+            </StaggerGrid>
+            <p className="mt-8 text-center">
+              <Link href={ROUTES.services.index} className="btn-link">
+                View all services →
+              </Link>
+            </p>
+          </Container>
+        </Section>
+      )}
 
-      {/* CTA band */}
-      <section className="bg-brand-900 py-16">
+      {/* 8. Strong CTA */}
+      <section className="bg-brand-900 py-16 md:py-20">
         <Container className="text-center">
           <Reveal variant="fade-up">
-            <h2 className="text-display-sm text-white">
-              Need {service.pluralName.toLowerCase()} in Edmonton?
-            </h2>
-            <p className="mx-auto mt-4 max-w-prose text-body-lg text-ink-300">
-              Request a free quote from our team — fast response and no obligation.
+            <h2 className="text-balance text-display-sm text-white">{content.cta.headline}</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-body-lg leading-relaxed text-brand-100">
+              {content.cta.description}
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button href="#service-quote" size="lg">
-                Get Free Quotes
+                {service.quoteCta ?? "Get a Free Quote"}
               </Button>
               <Button
                 href={`tel:${siteConfig.phone.tel}`}
@@ -216,6 +291,9 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
                 Call {siteConfig.phone.display}
               </Button>
             </div>
+            <p className="mt-6 text-body-sm text-brand-200">
+              Serving Edmonton · Sherwood Park · St. Albert · Spruce Grove · Leduc · Beaumont
+            </p>
           </Reveal>
         </Container>
       </section>
@@ -243,32 +321,6 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
           </div>
         </Container>
       </Section>
-
-      {/* Related services */}
-      {relatedServices.length > 0 && (
-        <Section>
-          <Container>
-            <Reveal>
-              <SectionHeader
-                title="Related services"
-                description="Explore other home services our team offers across Edmonton."
-              />
-            </Reveal>
-            <StaggerGrid className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {relatedServices.map((related) => (
-                <StaggerItem key={related.slug}>
-                  <ServiceCard service={related} />
-                </StaggerItem>
-              ))}
-            </StaggerGrid>
-            <p className="mt-8 text-center">
-              <Link href={ROUTES.services.index} className="btn-link">
-                View all services →
-              </Link>
-            </p>
-          </Container>
-        </Section>
-      )}
     </>
   );
 }
@@ -290,5 +342,3 @@ export function getServicePageSeo(slug: ServiceSlug) {
     })),
   };
 }
-
-export type { ServicePageContent };

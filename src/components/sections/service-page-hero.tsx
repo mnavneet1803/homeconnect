@@ -68,7 +68,7 @@ export function ServicePageHero({ content, service, breadcrumbs, images }: Servi
                   Call Now
                 </Button>
                 <Button href="#service-quote" variant="secondary" size="lg">
-                  Request a Free Quote
+                  {service.quoteCta ?? "Request a Free Quote"}
                 </Button>
               </div>
             </Reveal>
@@ -104,7 +104,7 @@ export function ServicePageHero({ content, service, breadcrumbs, images }: Servi
               </div>
               <h2 className="text-heading-lg text-ink-900">What we offer</h2>
               <ul className="mt-5 space-y-4">
-                {content.subServices.slice(0, 4).map((sub) => (
+                {content.subServices.map((sub) => (
                   <li key={sub.name} className="flex items-start gap-3 text-body-sm text-ink-600">
                     <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand-600" />
                     <span>
