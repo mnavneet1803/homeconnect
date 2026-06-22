@@ -23,7 +23,7 @@ export interface CrmSubmitResult {
   error?: string;
 }
 
-function buildPayload(
+export function buildLeadPayload(
   lead: LeadFormData,
   leadId: string,
   meta?: Partial<CrmLeadPayload["source"]>
@@ -95,6 +95,6 @@ export async function submitLeadToCrm(
   leadId: string,
   meta?: Partial<CrmLeadPayload["source"]>
 ): Promise<CrmSubmitResult> {
-  const payload = buildPayload(lead, leadId, meta);
+  const payload = buildLeadPayload(lead, leadId, meta);
   return postWebhook(payload);
 }

@@ -21,5 +21,6 @@ export interface LeadSubmissionResult {
   leadId?: string;
   message: string;
   crmDelivered?: boolean;
+  emailsDelivered?: boolean;
   errors?: Record<string, string[]>;
 }

@@ -20,7 +20,7 @@ export const siteConfig = {
     defaultMessage:
       "Hi! I'd like to request a quote from Home Solution Services.",
   },
-  email: "hello@homesolutionservices.ca",
+  email: "homehelp0789@gmail.com",
   address: {
     street: "",
     city: "Edmonton",
