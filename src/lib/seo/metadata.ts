@@ -146,10 +146,12 @@ export function getRootMetadata(): Metadata {
     }),
     icons: {
       icon: [
+        { url: "/favicon.ico", sizes: "48x48" },
         { url: siteConfig.brand.logoIcon.src, sizes: "512x512", type: "image/png" },
         { url: "/images/brand/favicon-32.png", sizes: "32x32", type: "image/png" },
       ],
       apple: "/images/brand/apple-touch-icon.png",
+      shortcut: "/favicon.ico",
     },
   };
 }
