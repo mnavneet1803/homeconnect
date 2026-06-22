@@ -35,9 +35,9 @@ export function SeoLandingPageTemplate({ slug }: SeoLandingPageTemplateProps) {
   return (
     <>
       <JsonLdScript data={buildFAQSchema(faqItems)} />
-      <Section className="bg-surface-0 pb-16 pt-10 md:pb-20 md:pt-14">
+      <Section className="bg-surface-0 pb-10 pt-8 md:pb-14 md:pt-10">
         <Container>
-          <nav aria-label="Breadcrumb" className="mb-10">
+          <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-2 text-caption text-ink-500">
               <li>
                 <Link href={ROUTES.home} className="hover:text-brand-700">
@@ -49,16 +49,20 @@ export function SeoLandingPageTemplate({ slug }: SeoLandingPageTemplateProps) {
             </ol>
           </nav>
 
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
             <div>
               <p className="section-eyebrow">{SERVING_AREA}</p>
               <h1 className="mt-4 text-balance text-display-sm text-ink-900 md:text-display-md">
                 {page.h1}
               </h1>
               <p className="mt-5 text-body-lg text-ink-500">{page.intro}</p>
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Button href={ctaNavigation.secondary.href} size="lg">
                   {ctaNavigation.secondary.label}
+                </Button>
+                <Button href={ctaNavigation.whatsapp.href} variant="secondary" size="lg" external>
+                  <Icon name="whatsapp" size={18} className="mr-2" />
+                  {ctaNavigation.whatsapp.label}
                 </Button>
                 <Button href="#seo-quote" variant="secondary" size="lg">
                   {ctaNavigation.primary.label}
@@ -81,7 +85,7 @@ export function SeoLandingPageTemplate({ slug }: SeoLandingPageTemplateProps) {
 
       <Section>
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
             <Reveal variant="fade-up">
               <h2 className="text-display-sm text-ink-900">
                 Local Edmonton service you can count on
@@ -155,9 +159,13 @@ export function SeoLandingPageTemplate({ slug }: SeoLandingPageTemplateProps) {
               <div className="mt-10">
                 <QuoteFormReassurance />
               </div>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Button href={ctaNavigation.secondary.href} size="lg">
                   {ctaNavigation.secondary.label}
+                </Button>
+                <Button href={ctaNavigation.whatsapp.href} variant="secondary" size="lg" external>
+                  <Icon name="whatsapp" size={18} className="mr-2" />
+                  {ctaNavigation.whatsapp.label}
                 </Button>
                 <Button href={ctaNavigation.primary.href} variant="secondary" size="lg">
                   {ctaNavigation.primary.label}

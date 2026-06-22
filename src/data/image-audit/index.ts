@@ -136,7 +136,7 @@ const AUDIT_ENTRIES: ImageAuditEntry[] = [
     aiPrompt:
       "Photorealistic image of an electrician's gloved hands replacing a white electrical outlet in a residential wall. Wire connectors visible, professional tools nearby. Soft natural light. No text. 4:3 landscape.",
     suggestedAlt:
-      "Licensed electrician repairing outlet in Edmonton home — Home Solution Services",
+      "Professional electrician repairing outlet in Edmonton home — Home Solution Services",
     searchKeywords: [
       "electrician working outlet panel residential",
       "electrical repair home contractor",
@@ -565,15 +565,15 @@ const AUDIT_ENTRIES: ImageAuditEntry[] = [
     issue:
       "Narrow decorative banner (1024×151 px). Not appropriate for a hero image — extremely thin, renders awkwardly, and only partially shows electrical content among 4 other services.",
     needed:
-      "Licensed electrician working at a residential breaker panel or replacing an outlet. Safety gloves visible, professional appearance.",
+      "Professional electrician working at a residential breaker panel or replacing an outlet. Safety gloves visible, professional appearance.",
     suggestedFilename: "electrician-breaker-panel-edmonton.webp",
     aiPrompt:
-      "Photorealistic photo of a licensed electrician in a white safety vest and insulated gloves working at a residential breaker panel inside an Edmonton home utility room. Panel open, wires visible. Professional lighting. No text. 3:2 landscape.",
+      "Photorealistic photo of a professional electrician in a white safety vest and insulated gloves working at a residential breaker panel inside an Edmonton home utility room. Panel open, wires visible. Professional lighting. No text. 3:2 landscape.",
     suggestedAlt:
-      "Licensed electrician working on residential breaker panel in Edmonton — Home Solution Services",
+      "Professional electrician working on residential breaker panel in Edmonton — Home Solution Services",
     searchKeywords: [
       "electrician residential panel work professional",
-      "licensed electrician home outlet repair",
+      "professional electrician home outlet repair",
       "electrical repair home contractor safety gloves",
     ],
   },

@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { getAllServices } from "@/data";
-import { siteConfig } from "@/config/site";
+import { ctaNavigation } from "@/config/navigation";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { Icon } from "@/components/ui/icons";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerGrid, StaggerItem } from "@/components/motion/stagger-grid";
 import { ServiceGridCard } from "@/components/sections/service-grid-card";
@@ -32,12 +32,16 @@ export function ServicesSection() {
         </StaggerGrid>
 
         {/* CTAs */}
-        <Reveal className="mt-16 flex flex-col items-center justify-center gap-4 sm:flex-row" delay={0.1}>
-          <Button href="/#quote" size="lg">
-            Request a Free Quote
+        <Reveal className="mt-16 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap" delay={0.1}>
+          <Button href={ctaNavigation.primary.href} size="lg">
+            {ctaNavigation.primary.label}
           </Button>
-          <Button href={`tel:${siteConfig.phone.tel}`} variant="secondary" size="lg">
-            Call Now
+          <Button href={ctaNavigation.secondary.href} variant="secondary" size="lg">
+            {ctaNavigation.secondary.label}
+          </Button>
+          <Button href={ctaNavigation.whatsapp.href} variant="secondary" size="lg" external>
+            <Icon name="whatsapp" size={18} className="mr-2" />
+            {ctaNavigation.whatsapp.label}
           </Button>
         </Reveal>
       </Container>

@@ -24,7 +24,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "priya-s",
     quote:
-      "I was nervous about hiring online, but the Home Solution team was transparent about licensing and insurance. Our basement reno was done on budget and passed inspection.",
+      "I was nervous about hiring online, but the Home Solution team was transparent about credentials and insurance. Our basement reno was done on budget and passed inspection.",
     author: "Priya S.",
     location: "Sherwood Park",
     serviceSlug: "renovators",

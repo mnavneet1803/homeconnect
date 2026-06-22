@@ -7,8 +7,6 @@ export interface Service {
   shortDescription: string;
   icon: string;
   href: string;
-  licensed: boolean;
-  licenseLabel?: string;
   featured: boolean;
   sortOrder: number;
   /** Bullet points shown on the homepage service card */

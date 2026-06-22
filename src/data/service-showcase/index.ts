@@ -28,6 +28,7 @@ export interface ServicePageImages {
 }
 
 const DIR = "/images/services";
+const HOMEPAGE_DIR = "/images/homepage";
 
 /** Main "Services we offer" visual gallery. */
 export const serviceShowcase: ShowcaseImage[] = [
@@ -68,8 +69,8 @@ export const serviceShowcase: ShowcaseImage[] = [
     alt: "Professional TV wall mounting and stereo system installation in Edmonton homes",
     title: "TV mounting & stereo",
     caption: "Secure TV wall mounting and home theatre setup with clean, concealed wiring.",
-    width: 1024,
-    height: 682,
+    width: 627,
+    height: 352,
   },
   {
     src: `${DIR}/computer-printer-setup-software.png`,
@@ -93,8 +94,8 @@ export const repairServicesStrip: ShowcaseImage = {
 
 /** Hero visual for the Before & After / Real Repairs section. */
 export const beforeAfterRepairs: ShowcaseImage = {
-  src: `${DIR}/move-out-move-in-repairs-before-after.png`,
-  alt: "Before and after wall and baseboard repairs for an Edmonton move out and move in",
+  src: `${HOMEPAGE_DIR}/move-in-move-out-repairs.jpg`,
+  alt: "Move-out and move-in repairs in Edmonton — hole and dent repair, baseboard fixes, scratch removal and touch-up painting",
   title: "Move-out & move-in repairs",
   caption:
     "Holes, dents, scuffs and damaged baseboards — repaired and repainted so your place looks move-in perfect.",
@@ -157,14 +158,21 @@ const tvMount: ShowcaseImage = {
   alt: "TV wall mounting and home theatre setup in Edmonton",
   title: "TV & wall mounting",
   caption: "Professional AV installation with clean wiring.",
-  width: 1024,
-  height: 682,
+  width: 627,
+  height: 352,
 };
 
 /** Per-service hero + detail imagery for `/services/[slug]` pages. */
 const SERVICE_PAGE_IMAGES: Record<ServiceSlug, ServicePageImages> = {
   handyman: {
-    hero: handymanPromo,
+    hero: {
+      src: `${HOMEPAGE_DIR}/handyman-services-banner.png`,
+      alt: "Edmonton handyman services — furniture assembly, TV mounting, drywall, painting, plumbing, electrical and general repairs",
+      title: "Handyman services",
+      caption: "Professional handyman work across Edmonton.",
+      width: 1024,
+      height: 709,
+    },
     detail: handymanOverview,
   },
   "tv-wall-mounting": {
@@ -172,7 +180,14 @@ const SERVICE_PAGE_IMAGES: Record<ServiceSlug, ServicePageImages> = {
     detail: handymanOverview,
   },
   "furniture-assembly": {
-    hero: repairStrip,
+    hero: {
+      src: `${HOMEPAGE_DIR}/furniture-assembly-workshop.jpg`,
+      alt: "Canadian furniture assembly service in Edmonton — IKEA, JYSK, Wayfair, The Brick and more leading brands",
+      title: "Furniture assembly",
+      caption: "Fast, precise assembly from every major retailer.",
+      width: 1024,
+      height: 558,
+    },
     detail: handymanPromo,
   },
   "move-in-move-out-repairs": {
@@ -181,15 +196,24 @@ const SERVICE_PAGE_IMAGES: Record<ServiceSlug, ServicePageImages> = {
   },
   painters: {
     hero: {
-      ...beforeAfter,
-      alt: "Before and after interior painting and wall repair in Edmonton — touch-up painting by Home Solution Services",
+      src: `${HOMEPAGE_DIR}/painting-renovation-collage.png`,
+      alt: "Edmonton painting and renovation work — interior painting, exterior siding, fencing, deck building and finishing",
       title: "Painting & touch-ups",
       caption: "Smooth walls and flawless finishes for Edmonton homes.",
+      width: 1024,
+      height: 558,
     },
     detail: repairStrip,
   },
   renovators: {
-    hero: completeHomeCare,
+    hero: {
+      src: `${HOMEPAGE_DIR}/modern-kitchen.png`,
+      alt: "Spotless modern kitchen after professional renovation and home maintenance in Edmonton",
+      title: "Renovation services",
+      caption: "Quality home improvements across the Capital Region.",
+      width: 1024,
+      height: 664,
+    },
     detail: beforeAfter,
   },
   flooring: {
@@ -204,7 +228,7 @@ const SERVICE_PAGE_IMAGES: Record<ServiceSlug, ServicePageImages> = {
   electricians: {
     hero: {
       ...repairStrip,
-      alt: "Edmonton electrical repair services — outlet, switch and wiring fixes by licensed technicians",
+      alt: "Edmonton electrical repair services — outlet, switch and wiring fixes by professional technicians",
       title: "Electrical repairs",
       caption: "Safe, code-compliant electrical work in Edmonton.",
     },
@@ -220,7 +244,14 @@ const SERVICE_PAGE_IMAGES: Record<ServiceSlug, ServicePageImages> = {
     detail: handymanOverview,
   },
   cleaners: {
-    hero: moveInOutCleaning,
+    hero: {
+      src: `${HOMEPAGE_DIR}/cleaning-services-banner.png`,
+      alt: "Professional cleaning services in Edmonton — reliable, thorough and affordable for homes, apartments, condos and businesses",
+      title: "Cleaning services",
+      caption: "Deep cleaning for Edmonton homes and rentals.",
+      width: 807,
+      height: 532,
+    },
     detail: completeHomeCare,
   },
   landscapers: {
@@ -247,87 +278,91 @@ export function getServicePageImages(slug: ServiceSlug): ServicePageImages {
   return SERVICE_PAGE_IMAGES[slug];
 }
 
-/** Thumbnail image shown on the homepage service-card grid (one per service). */
+/**
+ * Thumbnail image shown on the homepage service-card grid (one per service).
+ * Cards use each image's intrinsic width/height — nothing is cropped.
+ * For a uniform grid look, export assets near **1200×800** (3:2) or **1024×683**.
+ */
 export const SERVICE_CARD_IMAGES: Record<
   ServiceSlug,
   { src: string; alt: string; width: number; height: number }
 > = {
   handyman: {
-    src: `${DIR}/handyman-services-edmonton.png`,
-    alt: "Handyman fixing kitchen cabinet in an Edmonton home — Home Solution Services",
-    width: 859,
-    height: 573,
+    src: `${DIR}/handyman-repair-services-overview.png`,
+    alt: "Edmonton handyman services — repairs, installs, plumbing, electrical and more",
+    width: 1024,
+    height: 709,
   },
   "tv-wall-mounting": {
     src: `${DIR}/tv-wall-mount-stereo-installation.png`,
     alt: "Professional TV wall mounting in an Edmonton home — Home Solution Services",
-    width: 1024,
-    height: 682,
+    width: 627,
+    height: 352,
   },
   "furniture-assembly": {
-    src: `${DIR}/repair-services-strip.png`,
-    alt: "Furniture assembly service in Edmonton — IKEA and flat-pack builds",
+    src: `${HOMEPAGE_DIR}/furniture-assembly-workshop.jpg`,
+    alt: "Canadian furniture assembly service in Edmonton — IKEA, JYSK, Wayfair, The Brick and more leading brands",
     width: 1024,
-    height: 151,
+    height: 558,
   },
   painters: {
-    src: "/images/projects/interior-paint.jpg",
-    alt: "Freshly painted room interior in Edmonton — professional interior painting service",
-    width: 800,
-    height: 600,
+    src: `${HOMEPAGE_DIR}/painting-renovation-collage.png`,
+    alt: "Edmonton interior and exterior painting, fencing, decking and renovation work",
+    width: 1024,
+    height: 558,
   },
   renovators: {
-    src: "/images/projects/basement-reno.jpg",
-    alt: "Finished basement renovation in Edmonton — kitchen, bathroom and living space reno",
-    width: 800,
-    height: 600,
+    src: `${HOMEPAGE_DIR}/modern-kitchen.png`,
+    alt: "Modern kitchen renovation and home improvement in Edmonton",
+    width: 1024,
+    height: 664,
   },
   flooring: {
-    src: `${DIR}/home-maintenance-repairs-edmonton.png`,
+    src: `${HOMEPAGE_DIR}/modern-kitchen.png`,
     alt: "Edmonton flooring installation and home repair services — tile, hardwood and laminate",
     width: 1024,
-    height: 682,
+    height: 664,
   },
   electricians: {
-    src: `${DIR}/handyman-repair-services-overview.png`,
+    src: `${HOMEPAGE_DIR}/handyman-services-banner.png`,
     alt: "Edmonton electrical maintenance — outlets, switches and wiring fixes",
     width: 1024,
-    height: 682,
+    height: 709,
   },
   plumbers: {
-    src: `${DIR}/home-maintenance-repairs-edmonton.png`,
+    src: `${HOMEPAGE_DIR}/handyman-services-banner.png`,
     alt: "Edmonton plumbing maintenance — fixing leaks, taps and pipes",
     width: 1024,
-    height: 682,
+    height: 709,
   },
   "move-in-move-out-repairs": {
-    src: `${DIR}/move-out-move-in-repairs-before-after.png`,
-    alt: "Move-in and move-out repairs in Edmonton — wall patching and touch-ups",
+    src: `${HOMEPAGE_DIR}/move-in-move-out-repairs.jpg`,
+    alt: "Move-out and move-in repairs in Edmonton — hole and dent repair, baseboard fixes, scratch removal and touch-up painting",
     width: 1024,
     height: 682,
   },
   cleaners: {
-    src: `${DIR}/move-in-move-out-cleaning-edmonton.png`,
-    alt: "Professional cleaning services for Edmonton homes, apartments, condos, and offices — Home Solution Services",
+    src: `${HOMEPAGE_DIR}/cleaning-move-in-move-out.jpg`,
+    alt: "Move-in and move-out cleaning for houses, condos and apartments in Edmonton — deep cleaning, kitchen, bathroom, floors and more",
     width: 1024,
     height: 682,
   },
   landscapers: {
-    src: `${DIR}/complete-home-care-edmonton.png`,
-    alt: "Complete home care including landscaping and outdoor maintenance in Edmonton",
-    width: 643,
-    height: 348,
+    src: `${HOMEPAGE_DIR}/painting-renovation-collage.png`,
+    alt: "Exterior home improvements including fencing, decking and landscaping in Edmonton",
+    width: 1024,
+    height: 558,
   },
   "deck-fence": {
-    src: "/images/projects/deck-build.jpg",
+    src: `${HOMEPAGE_DIR}/painting-renovation-collage.png`,
     alt: "Custom deck build and fence installation in Edmonton by Home Solution Services",
-    width: 800,
-    height: 600,
+    width: 1024,
+    height: 558,
   },
   "home-maintenance": {
-    src: `${DIR}/handyman-repair-services-overview.png`,
-    alt: "Preventative home maintenance services in Edmonton — repairs, upkeep and inspections",
-    width: 1024,
-    height: 682,
+    src: `${HOMEPAGE_DIR}/post-construction-cleaning.png`,
+    alt: "Preventative home maintenance and post-construction cleaning in Edmonton",
+    width: 248,
+    height: 176,
   },
 };

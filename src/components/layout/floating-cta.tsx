@@ -74,6 +74,30 @@ export function FloatingCta() {
               </Link>
 
               <Link
+                href={ctaNavigation.whatsapp.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackCtaClick({
+                    location: "floating_cta",
+                    text: ctaNavigation.whatsapp.label,
+                    href: ctaNavigation.whatsapp.href,
+                  })
+                }
+                className="group flex items-center gap-3 rounded-xl px-4 py-3 text-left transition-colors hover:bg-surface-50"
+              >
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-brand-700 ring-1 ring-brand-100 transition-transform duration-300 group-hover:scale-105">
+                  <Icon name="whatsapp" size={18} />
+                </span>
+                <span>
+                  <span className="block text-caption text-ink-500">Message us</span>
+                  <span className="text-label-md font-medium text-ink-900">
+                    {ctaNavigation.whatsapp.label}
+                  </span>
+                </span>
+              </Link>
+
+              <Link
                 href={quoteAnchor}
                 onClick={() =>
                   trackCtaClick({

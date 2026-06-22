@@ -26,7 +26,7 @@ const HeroVisual = dynamic(
 
 export function HeroSection() {
   return (
-    <Section className="relative overflow-x-clip bg-surface-0 pb-16 pt-16 md:pb-20 md:pt-28">
+    <Section className="relative overflow-x-clip bg-surface-0 pb-12 pt-12 md:pb-16 md:pt-20">
       <FloatingBackground />
       <Container className="relative">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
@@ -46,9 +46,18 @@ export function HeroSection() {
               </p>
             </Reveal>
             <Reveal variant="fade-up" immediate delay={0.18}>
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                 <Button href={ctaNavigation.secondary.href} size="lg">
                   {ctaNavigation.secondary.label}
+                </Button>
+                <Button
+                  href={ctaNavigation.whatsapp.href}
+                  variant="secondary"
+                  size="lg"
+                  external
+                >
+                  <Icon name="whatsapp" size={18} className="mr-2" />
+                  {ctaNavigation.whatsapp.label}
                 </Button>
                 <Button href={ctaNavigation.primary.href} variant="secondary" size="lg">
                   {ctaNavigation.primary.label}
@@ -74,7 +83,7 @@ export function HeroSection() {
               <HeroQuoteForm className="mt-10" />
             </Reveal>
           </div>
-          <Reveal variant="fade-up" immediate delay={0.15} className="hidden lg:block">
+          <Reveal variant="fade-up" immediate delay={0.15}>
             <HeroVisual />
           </Reveal>
         </div>

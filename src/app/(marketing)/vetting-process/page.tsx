@@ -10,7 +10,7 @@ import { Icon } from "@/components/ui/icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Vetting Process",
-  description: `Learn how ${siteConfig.name} maintains quality standards — insurance, licensing, training, and ongoing monitoring for our in-house team.`,
+  description: `Learn how ${siteConfig.name} maintains quality standards — insurance, training, and ongoing monitoring for our in-house team.`,
   path: ROUTES.vetting,
 });
 
@@ -24,7 +24,7 @@ export default function VettingProcessPage() {
             Our team standards & credentials
           </h1>
           <p className="mt-4 text-body-lg text-ink-500">
-            Every member of our crew meets strict insurance, licensing, and quality
+            Every member of our crew meets strict insurance, training, and quality
             standards before working on your home.
           </p>
           <GoogleReviewsBadge className="mt-6" />

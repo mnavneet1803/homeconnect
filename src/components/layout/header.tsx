@@ -1,9 +1,9 @@
-import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { ctaNavigation } from "@/config/navigation";
-import { ROUTES } from "@/constants/routes";
 import { DesktopNav, MobileNav } from "@/components/layout/mobile-nav";
+import { SiteLogo } from "@/components/brand/site-logo";
 import { Button } from "@/components/ui/button";
+import { Icon } from "@/components/ui/icons";
 import { TrackedPhoneLink } from "@/components/analytics/tracked-link";
 import { cn } from "@/lib/utils/cn";
 
@@ -17,14 +17,8 @@ export function Header({ className }: { className?: string }) {
       )}
     >
       <div className="mx-auto flex h-16 max-w-content items-center justify-between px-gutter lg:px-gutter-lg">
-        <Link
-          href={ROUTES.home}
-          className="font-display text-heading-sm tracking-tight text-ink-900 hover:text-ink-900"
-          aria-label={`${siteConfig.name} home`}
-        >
-          {siteConfig.shortName}
-        </Link>
-
+        <SiteLogo height={44} priority className="sm:hidden" />
+        <SiteLogo height={48} priority className="hidden sm:inline-flex" />
         <DesktopNav />
 
         <div className="flex items-center gap-2 sm:gap-3">
@@ -41,6 +35,17 @@ export function Header({ className }: { className?: string }) {
             className="hidden sm:inline-flex"
           >
             {ctaNavigation.secondary.label}
+          </Button>
+          <Button
+            href={ctaNavigation.whatsapp.href}
+            variant="secondary"
+            size="sm"
+            className="hidden sm:inline-flex"
+            external
+            aria-label={ctaNavigation.whatsapp.label}
+          >
+            <Icon name="whatsapp" size={16} className="lg:mr-1.5" />
+            <span className="hidden lg:inline">{ctaNavigation.whatsapp.label}</span>
           </Button>
           <Button
             href={ctaNavigation.primary.href}

@@ -327,7 +327,7 @@
   }
 
   .section-header {
-    @apply mx-auto mb-16 max-w-narrow text-center md:mb-24;
+    @apply mx-auto mb-10 max-w-narrow text-center md:mb-14;
   }
 
   .section-eyebrow {
@@ -339,7 +339,7 @@
   }
 
   .section-description {
-    @apply mt-6 text-body-lg text-ink-400;
+    @apply mt-4 text-body-lg text-ink-400;
   }
 
   /* ── Mobile sticky contact bar ── */

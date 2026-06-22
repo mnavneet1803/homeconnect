@@ -22,7 +22,7 @@ export function buildOrganizationSchema(): JsonLdGraph {
         "@id": `${siteConfig.url}/#organization`,
         name: siteConfig.name,
         url: siteConfig.url,
-        logo: absoluteUrl("/images/brand/logo.png", siteConfig.url),
+        logo: absoluteUrl(siteConfig.brand.logo.src, siteConfig.url),
         description: siteConfig.description,
         email: siteConfig.email,
         telephone: siteConfig.phone.tel,

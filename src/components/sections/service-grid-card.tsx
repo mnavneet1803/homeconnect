@@ -5,8 +5,7 @@ import { IMAGE_SIZES } from "@/lib/images";
 import type { ServiceSlug } from "@/constants/services";
 import { SERVICE_CARD_IMAGES } from "@/data/service-showcase";
 import { AuditImage } from "@/components/dev/audit-image";
-import { Badge } from "@/components/ui/badge";
-import { Icon, serviceIconName } from "@/components/ui/icons";
+import { Icon } from "@/components/ui/icons";
 import { HoverCard } from "@/components/motion/hover-card";
 import type { Service } from "@/types/service";
 
@@ -24,18 +23,19 @@ export function ServiceGridCard({ service }: ServiceGridCardProps) {
         href={service.href}
         className="card-interactive group flex h-full flex-col overflow-hidden focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-brand-500/20"
       >
-        <div className="relative aspect-[4/3] overflow-hidden bg-surface-100">
+        <div className="relative overflow-hidden bg-surface-100">
           <AuditImage
             auditId={`service-card-${service.slug}`}
             src={img.src}
             alt={img.alt}
-            fill
+            width={img.width}
+            height={img.height}
             sizes={IMAGE_SIZES.card}
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
           />
-          <div className="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/95 text-brand-700 shadow-sm ring-1 ring-white/80 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105">
+          {/* <div className="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/95 text-brand-700 shadow-sm ring-1 ring-white/80 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105">
             <Icon name={serviceIconName(service.icon)} size={24} />
-          </div>
+          </div> */}
         </div>
         <div className="flex flex-1 flex-col p-7 md:p-8">
           <h3 className="text-heading-sm text-ink-900 transition-colors group-hover:text-brand-800">
@@ -60,11 +60,6 @@ export function ServiceGridCard({ service }: ServiceGridCardProps) {
                 </li>
               ))}
             </ul>
-          )}
-          {service.licensed && service.licenseLabel && (
-            <Badge variant="brand" className="mt-5 w-fit">
-              {service.licenseLabel}
-            </Badge>
           )}
           <span className="mt-5 inline-flex items-center gap-1.5 text-label-sm font-medium text-brand-700">
             {ctaLabel}

@@ -16,6 +16,10 @@ export const siteConfig = {
     tel: process.env.NEXT_PUBLIC_PHONE_TEL ?? "5875948575",
     hours: "Mon–Sat 7am–6pm",
   },
+  whatsapp: {
+    defaultMessage:
+      "Hi! I'd like to request a quote from Home Solution Services.",
+  },
   email: "hello@homesolutionservices.ca",
   address: {
     street: "",
@@ -49,6 +53,19 @@ export const siteConfig = {
       "We are the contractor. Our own in-house team performs the work — no middlemen or outside subcontractors.",
     matchSlaHours: 24,
     maxMatchedPros: 3,
+  },
+  brand: {
+    logo: {
+      src: "/images/brand/logo.png",
+      alt: "Home Solutions Edmonton — professional home services logo",
+      width: 397,
+      height: 275,
+    },
+    logoIcon: {
+      src: "/images/brand/logo-icon-512.png",
+      width: 512,
+      height: 512,
+    },
   },
   analytics: {
     gtmId: process.env.NEXT_PUBLIC_GTM_ID,

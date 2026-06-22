@@ -8,10 +8,10 @@ export function ServicePageSkeleton() {
   return (
     <>
       {/* Hero */}
-      <Section className="relative overflow-hidden bg-gradient-hero pb-16 pt-8 md:pb-20 md:pt-12">
+      <Section className="relative overflow-hidden bg-gradient-hero pb-10 pt-8 md:pb-14 md:pt-10">
         <div className="relative mx-auto max-w-content px-gutter lg:px-gutter-lg">
-          <Skeleton className="mb-8 h-4 w-64" />
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <Skeleton className="mb-6 h-4 w-64" />
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
             <div>
               <Skeleton className="h-4 w-48 rounded-pill" />
               <div className="mt-4 space-y-3">
@@ -46,7 +46,7 @@ export function ServicePageSkeleton() {
       {/* Details */}
       <Section>
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
             <div>
               <Skeleton className="h-8 w-2/3" />
               <SkeletonText lines={4} className="mt-6" />
@@ -68,7 +68,7 @@ export function ServicePageSkeleton() {
         <Container>
           <SectionHeader
             title="Why choose our team"
-            description="Edmonton homeowners choose us for our licensed team and free quotes."
+            description="Edmonton homeowners choose us for our in-house team and free quotes."
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {Array.from({ length: 4 }).map((_, i) => (
@@ -83,7 +83,7 @@ export function ServicePageSkeleton() {
       </Section>
 
       {/* Local areas */}
-      <Section className="border-y border-border-subtle bg-surface-50 py-12">
+      <Section className="border-y border-border-subtle bg-surface-50">
         <Container>
           <Skeleton className="h-7 w-2/3" />
           <SkeletonText lines={2} className="mt-3 max-w-prose" />
@@ -123,7 +123,7 @@ export function ServicePageSkeleton() {
       </Section>
 
       {/* CTA band */}
-      <section className="bg-ink-950 py-14" aria-hidden>
+      <section className="bg-ink-950 py-10" aria-hidden>
         <Container className="text-center">
           <Skeleton className="mx-auto h-9 w-2/3 max-w-xl bg-gradient-to-r from-ink-800 via-ink-700 to-ink-800" />
           <Skeleton className="mx-auto mt-4 h-4 w-2/3 max-w-lg bg-gradient-to-r from-ink-800 via-ink-700 to-ink-800" />
@@ -137,7 +137,7 @@ export function ServicePageSkeleton() {
       {/* Lead form */}
       <Section id="service-quote" className="relative overflow-hidden bg-gradient-brand-subtle">
         <Container>
-          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
             <div>
               <SectionHeader
                 title="Get your free quotes"

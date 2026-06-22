@@ -68,8 +68,8 @@ export const disclaimerSections = [
     body: `For emergencies (gas leaks, flooding, electrical hazards), call 911 or your utility emergency line immediately. Standard quote requests are not designed for emergency response.`,
   },
   {
-    title: "Licensing",
-    body: `Certain trades in Alberta require licensed professionals (electrical, plumbing, gas). Our licensed team members handle work that requires credentials under Alberta law.`,
+    title: "Trade credentials",
+    body: `Certain trades in Alberta require qualified professionals (electrical, plumbing, gas). Our in-house team handles work that requires credentials under Alberta law.`,
   },
   {
     title: "Pricing & quotes",

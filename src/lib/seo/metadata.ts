@@ -128,19 +128,28 @@ export function buildMetadata(options: BuildMetadataOptions): Metadata {
 
 /** Default root metadata for layout.tsx */
 export function getRootMetadata(): Metadata {
-  return buildMetadata({
-    title: siteConfig.name,
-    description: siteConfig.description,
-    path: "/",
-    ogTitle: SEO.defaultTitle,
-    ogDescription: siteConfig.description,
-    ogImageAlt: DEFAULT_OG_IMAGE_ALT,
-    keywords: [
-      "home services Edmonton",
-      "handyman Edmonton",
-      "contractors Edmonton",
-      "home renovation Edmonton",
-      "cleaning services Edmonton",
-    ],
-  });
+  return {
+    ...buildMetadata({
+      title: siteConfig.name,
+      description: siteConfig.description,
+      path: "/",
+      ogTitle: SEO.defaultTitle,
+      ogDescription: siteConfig.description,
+      ogImageAlt: DEFAULT_OG_IMAGE_ALT,
+      keywords: [
+        "home services Edmonton",
+        "handyman Edmonton",
+        "contractors Edmonton",
+        "home renovation Edmonton",
+        "cleaning services Edmonton",
+      ],
+    }),
+    icons: {
+      icon: [
+        { url: siteConfig.brand.logoIcon.src, sizes: "512x512", type: "image/png" },
+        { url: "/images/brand/favicon-32.png", sizes: "32x32", type: "image/png" },
+      ],
+      apple: "/images/brand/apple-touch-icon.png",
+    },
+  };
 }

@@ -66,7 +66,7 @@ export const SERVICE_PAGES: Record<string, ServicePageBase> = {
     faq: [
       { question: "How much does a handyman cost in Edmonton?", answer: "Every job is different. We quote based on the scope of work, materials, and time required. Submit a request and our team will provide a custom written quote before any work begins." },
       { question: "Are you local to Edmonton?", answer: "Yes. Our team carries on every job." },
-      { question: "What jobs can a handyman handle?", answer: "Common jobs include drywall repair, minor plumbing and electrical (non-panel work), furniture assembly, caulking, shelving, door adjustments, and general home maintenance. Licensed trades handle major electrical, plumbing, and structural work." },
+      { question: "What jobs can a handyman handle?", answer: "Common jobs include drywall repair, minor plumbing and electrical (non-panel work), furniture assembly, caulking, shelving, door adjustments, and general home maintenance. Our specialist trades handle major electrical, plumbing, and structural work." },
       { question: "How quickly can I get a handyman in Edmonton?", answer: "Most requests receive a response from our team within 24 hours. Urgent repairs are prioritized when possible." },
       { question: "Do you serve areas outside Edmonton?", answer: "Yes — we cover the Capital Region including Sherwood Park, St. Albert, Spruce Grove, Stony Plain, Leduc, and Beaumont." },
     ],
@@ -234,7 +234,7 @@ export const SERVICE_PAGES: Record<string, ServicePageBase> = {
 
   plumbers: {
     slug: "plumbers",
-    metaTitle: "Plumber Edmonton | Licensed Plumbing Quotes & Emergency Service",
+    metaTitle: "Plumber Edmonton | Plumbing Quotes & Emergency Service",
     metaDescription:
       "Need a plumber in Edmonton? Our team handles repairs, installs, and emergencies. Free quote — no obligation.",
     keywords: [
@@ -242,13 +242,13 @@ export const SERVICE_PAGES: Record<string, ServicePageBase> = {
       "plumber near me Edmonton",
       "emergency plumber Edmonton",
       "plumbing services Edmonton",
-      "licensed plumber Alberta",
+      "plumber Alberta",
     ],
     hero: {
       eyebrow: "Plumbing Services · Edmonton",
-      headline: "Licensed plumbers in Edmonton",
+      headline: "Professional plumbers in Edmonton",
       subheadline:
-        "Leaks, installs, water heaters, and emergencies — our own licensed crew.",
+        "Leaks, installs, water heaters, and emergencies — our own in-house crew.",
       intro:
         "Frozen pipes, water heater failures, and slow drains can't wait. Our plumbers know Alberta plumbing code. Request a free quote — urgent requests prioritized.",
     },
@@ -263,13 +263,13 @@ export const SERVICE_PAGES: Record<string, ServicePageBase> = {
     details: {
       title: "Trusted Edmonton plumbing services",
       paragraphs: [
-        "Edmonton winters create unique plumbing challenges — frozen hose bibs, burst pipes in unheated walls, and water heaters working overtime. Our licensed plumbers handle emergencies and planned work with equal professionalism.",
-        "Our plumbing team holds Alberta licensing where required, plus. You receive a direct quote and our crew completes the work.",
+        "Edmonton winters create unique plumbing challenges — frozen hose bibs, burst pipes in unheated walls, and water heaters working overtime. Our in-house plumbers handle emergencies and planned work with equal professionalism.",
+        "Our plumbing team holds Alberta trade credentials where required. You receive a direct quote and our crew completes the work.",
         "Serving Edmonton, Sherwood Park, St. Albert, and the full Capital Region.",
       ],
     },
     benefits: [
-      { title: "Licensed plumbers", description: "Alberta-licensed plumbers on every job.", icon: "shield-check" },
+      { title: "Professional plumbers", description: "Qualified Alberta plumbers on every job.", icon: "shield-check" },
       { title: "Emergency availability", description: "Same-day and emergency response when possible.", icon: "clock" },
       { title: "Free quotes", description: "Upfront pricing on planned work — no obligation.", icon: "gift" },
       { title: "Code-compliant work", description: "Installations that meet Alberta plumbing standards.", icon: "check-circle" },
@@ -278,8 +278,8 @@ export const SERVICE_PAGES: Record<string, ServicePageBase> = {
     faq: [
       { question: "How much does a plumber cost in Edmonton?", answer: "Plumbing costs depend on the type of repair or install, parts required, and access. We quote each job individually and provide upfront pricing before work begins." },
       { question: "Do you offer emergency plumbing in Edmonton?", answer: "Yes — mark your request as urgent when submitting and we prioritize emergency calls." },
-      { question: "Are your plumbers licensed in Alberta?", answer: "Yes. Our plumbing team holds Alberta trade credentials and licensing where required." },
-      { question: "Can a plumber install a water heater?", answer: "Yes — our licensed plumbers handle tank and tankless water heater installation, gas line connections, and permits where required." },
+      { question: "Are your plumbers qualified for work in Alberta?", answer: "Yes. Our plumbing team holds Alberta trade credentials where required." },
+      { question: "Can a plumber install a water heater?", answer: "Yes — our in-house plumbers handle tank and tankless water heater installation, gas line connections, and permits where required." },
       { question: "What should I do if my pipes freeze?", answer: "Shut off water at the main valve and call us immediately. Do not use open flames to thaw pipes. Submit an urgent request and we'll respond quickly." },
     ],
     relatedSlugs: ["handyman", "renovators", "electricians"],
@@ -287,7 +287,7 @@ export const SERVICE_PAGES: Record<string, ServicePageBase> = {
 
   electricians: {
     slug: "electricians",
-    metaTitle: "Electrician Edmonton | Licensed Electrical Contractors & Quotes",
+    metaTitle: "Electrician Edmonton | Electrical Contractors & Quotes",
     metaDescription:
       "Need an electrician in Edmonton? Our Master Electricians handle panels, wiring, lighting, and EV chargers. Free quote — no obligation.",
     keywords: [
@@ -299,11 +299,11 @@ export const SERVICE_PAGES: Record<string, ServicePageBase> = {
     ],
     hero: {
       eyebrow: "Electrical Services · Edmonton",
-      headline: "Licensed electricians in Edmonton",
+      headline: "Professional electricians in Edmonton",
       subheadline:
         "Panels, wiring, lighting, and EV chargers — our own Master Electricians.",
       intro:
-        "Electrical work in Alberta requires licensed trades. Our electricians handle everything from outlet installs to full panel upgrades. Request a free quote with no obligation.",
+        "Electrical work in Alberta requires qualified tradespeople. Our electricians handle everything from outlet installs to full panel upgrades. Request a free quote with no obligation.",
     },
     subServices: [
       { name: "Panel upgrades", description: "100A to 200A service upgrades and replacements" },
@@ -322,7 +322,7 @@ export const SERVICE_PAGES: Record<string, ServicePageBase> = {
       ],
     },
     benefits: [
-      { title: "Master Electricians", description: "Alberta-licensed electricians on every project.", icon: "shield-check" },
+      { title: "Master Electricians", description: "Qualified Alberta electricians on every project.", icon: "shield-check" },
       { title: "Permit-compliant", description: "Work that passes inspection and protects your home insurance.", icon: "check-circle" },
       { title: "Free quotes", description: "Written estimates on every project — no obligation.", icon: "gift" },
       { title: "Modern home ready", description: "EV chargers, smart panels, and energy-efficient upgrades.", icon: "zap" },
@@ -330,7 +330,7 @@ export const SERVICE_PAGES: Record<string, ServicePageBase> = {
     localAreas: LOCAL_AREAS,
     faq: [
       { question: "How much does an electrician cost in Edmonton?", answer: "Electrical pricing varies by job — from outlet installs to panel upgrades and EV chargers. We assess your panel capacity, wiring distance, and scope, then provide a custom written quote." },
-      { question: "Do I need a permit for electrical work in Edmonton?", answer: "Yes — most electrical work beyond minor repairs requires permits and inspection. Our licensed electricians handle this process." },
+      { question: "Do I need a permit for electrical work in Edmonton?", answer: "Yes — most electrical work beyond minor repairs requires permits and inspection. Our in-house electricians handle this process." },
       { question: "Can you upgrade my electrical panel?", answer: "Yes. Panel upgrades from 100A to 200A are common in older Edmonton homes. Our electricians assess your load and provide a quote." },
       { question: "Do you install EV chargers?", answer: "Yes — our team installs Level 2 home EV charging stations, including dedicated circuits and permit applications." },
       { question: "Do you serve Edmonton homes and condos?", answer: "Yes. Our electrical crew carries on every job." },

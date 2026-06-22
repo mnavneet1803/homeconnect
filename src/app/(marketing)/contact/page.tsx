@@ -3,6 +3,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { buildLocalBusinessSchema } from "@/lib/seo/json-ld";
 import { JsonLdScript } from "@/components/seo/json-ld-script";
 import { siteConfig } from "@/config/site";
+import { ctaNavigation } from "@/config/navigation";
 import { ROUTES } from "@/constants/routes";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
 import { QuoteForm, QuoteFormReassurance } from "@/components/forms/quote-form";
@@ -47,6 +48,22 @@ export default function ContactPage() {
                   />
                   <p className="mt-1 text-body-sm text-ink-500">
                     {siteConfig.phone.hours}
+                  </p>
+                </div>
+
+                <div className="card p-6">
+                  <h2 className="text-heading-sm text-ink-900">WhatsApp</h2>
+                  <a
+                    href={ctaNavigation.whatsapp.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-2 text-body-lg font-medium text-brand-700"
+                  >
+                    <Icon name="whatsapp" size={20} />
+                    Message us on WhatsApp
+                  </a>
+                  <p className="mt-1 text-body-sm text-ink-500">
+                    Fast replies during business hours
                   </p>
                 </div>
 

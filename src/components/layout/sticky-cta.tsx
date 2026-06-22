@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
+import { ctaNavigation } from "@/config/navigation";
 import { Button } from "@/components/ui/button";
 import { useQuoteAnchor } from "@/hooks/use-quote-anchor";
 import { useHideStickyCta } from "@/hooks/use-hide-sticky-cta";
@@ -55,6 +56,22 @@ export function StickyCtaBar() {
             onClick={() => trackPhoneClick({ location: "sticky_cta" })}
           >
             Call Now
+          </Button>
+          <Button
+            href={ctaNavigation.whatsapp.href}
+            variant="secondary"
+            size="sm"
+            className="min-w-0 flex-1"
+            external
+            onClick={() =>
+              trackCtaClick({
+                location: "sticky_cta",
+                text: ctaNavigation.whatsapp.label,
+                href: ctaNavigation.whatsapp.href,
+              })
+            }
+          >
+            WhatsApp
           </Button>
           <Button
             href={quoteAnchor}

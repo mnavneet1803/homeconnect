@@ -56,7 +56,7 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
       {/* 1. Service Overview */}
       <Section id="overview">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
             <Reveal variant="fade-up">
               <h2 className="text-display-sm text-ink-900">{content.overview.title}</h2>
               <div className="mt-6 space-y-4">
@@ -163,7 +163,7 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
       </Section>
 
       {/* 4. Service Areas */}
-      <Section className="border-y border-border-subtle bg-surface-50 py-12">
+      <Section className="border-y border-border-subtle bg-surface-50">
         <Container>
           <Reveal>
             <h2 className="text-heading-lg text-ink-900">{content.serviceAreas.title}</h2>
@@ -271,14 +271,14 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
       )}
 
       {/* 8. Strong CTA */}
-      <section className="bg-brand-900 py-16 md:py-20">
+      <section className="bg-brand-900 py-10 md:py-14">
         <Container className="text-center">
           <Reveal variant="fade-up">
             <h2 className="text-balance text-display-sm text-white">{content.cta.headline}</h2>
             <p className="mx-auto mt-4 max-w-2xl text-body-lg leading-relaxed text-brand-100">
               {content.cta.description}
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button href="#service-quote" size="lg">
                 {service.quoteCta ?? "Get a Free Quote"}
               </Button>
@@ -301,7 +301,7 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
       {/* Lead form */}
       <Section id="service-quote" className="bg-gradient-trust">
         <Container>
-          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
             <Reveal variant="fade-up">
               <SectionHeader
                 title={`Get your free ${service.name.toLowerCase()} quote`}

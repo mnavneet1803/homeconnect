@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Icon, serviceIconName } from "@/components/ui/icons";
-import { Badge } from "@/components/ui/badge";
 import { HoverCard } from "@/components/motion/hover-card";
 import type { Service } from "@/types/service";
 import { cn } from "@/lib/utils/cn";
@@ -35,11 +34,6 @@ export function ServiceCard({ service, className, href }: ServiceCardProps) {
         <p className="mt-2 flex-1 text-body-sm leading-relaxed text-ink-500">
           {service.shortDescription}
         </p>
-        {service.licensed && service.licenseLabel && (
-          <Badge variant="brand" className="mt-5 w-fit">
-            {service.licenseLabel}
-          </Badge>
-        )}
         <span className="mt-5 inline-flex items-center gap-1.5 text-label-sm font-medium text-brand-700">
           {service.cardCta ?? "Learn more"}
           <Icon

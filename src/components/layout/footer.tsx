@@ -4,7 +4,9 @@ import { ctaNavigation } from "@/config/navigation";
 import { SERVING_AREA } from "@/constants/launch";
 import { ROUTES } from "@/constants/routes";
 import { getAllServices, getAllLocations } from "@/data";
+import { SiteLogo } from "@/components/brand/site-logo";
 import { Button } from "@/components/ui/button";
+import { Icon } from "@/components/ui/icons";
 import { GoogleReviewsBadge } from "@/components/trust";
 import { Container } from "@/components/ui/container";
 
@@ -23,13 +25,22 @@ export function Footer() {
               Free quotes from our Edmonton team — no obligation.
             </p>
           </div>
-          <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+          <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button
               href={ctaNavigation.secondary.href}
               variant="secondary"
               className="bg-white hover:bg-surface-50"
             >
               {ctaNavigation.secondary.label}
+            </Button>
+            <Button
+              href={ctaNavigation.whatsapp.href}
+              variant="secondary"
+              className="bg-white hover:bg-surface-50"
+              external
+            >
+              <Icon name="whatsapp" size={16} className="mr-2" />
+              {ctaNavigation.whatsapp.label}
             </Button>
             <Button href={ctaNavigation.primary.href} variant="secondary" className="bg-white hover:bg-surface-50">
               {ctaNavigation.primary.label}
@@ -41,9 +52,7 @@ export function Footer() {
       <Container className="py-16 md:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">
-            <p className="font-display text-heading-sm text-ink-900">
-              {siteConfig.name}
-            </p>
+            <SiteLogo height={52} linked={false} />
             <p className="mt-3 text-body-sm leading-relaxed text-ink-500">{siteConfig.tagline}</p>
             <p className="mt-3 text-body-sm font-medium text-ink-600">{SERVING_AREA}</p>
             <div className="mt-6">

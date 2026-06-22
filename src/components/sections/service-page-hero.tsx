@@ -3,6 +3,7 @@
 import { AuditImage } from "@/components/dev/audit-image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { ctaNavigation } from "@/config/navigation";
 import { TRUST_BADGES } from "@/constants/app";
 import { IMAGE_SIZES } from "@/lib/images";
 import type { ServicePageImages } from "@/data/service-showcase";
@@ -24,11 +25,11 @@ interface ServicePageHeroProps {
 
 export function ServicePageHero({ content, service, breadcrumbs, images }: ServicePageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-surface-0 pb-16 pt-10 md:pb-20 md:pt-14">
+    <section className="relative overflow-hidden bg-surface-0 pb-10 pt-8 md:pb-14 md:pt-10">
       <FloatingBackground />
       <div className="relative mx-auto max-w-content px-gutter lg:px-gutter-lg">
         <Reveal variant="fade" immediate>
-          <nav aria-label="Breadcrumb" className="mb-10">
+          <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-2 text-caption text-ink-500">
               {breadcrumbs.map((crumb, i) => (
                 <li key={crumb.href} className="flex items-center gap-2">
@@ -46,7 +47,7 @@ export function ServicePageHero({ content, service, breadcrumbs, images }: Servi
           </nav>
         </Reveal>
 
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div>
             <Reveal variant="fade-up" immediate>
               <p className="section-eyebrow">{content.hero.eyebrow}</p>
@@ -63,12 +64,16 @@ export function ServicePageHero({ content, service, breadcrumbs, images }: Servi
               </p>
             </Reveal>
             <Reveal variant="fade-up" immediate delay={0.18}>
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-                <Button href={`tel:${siteConfig.phone.tel}`} size="lg">
-                  Call Now
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Button href={ctaNavigation.secondary.href} size="lg">
+                  {ctaNavigation.secondary.label}
+                </Button>
+                <Button href={ctaNavigation.whatsapp.href} variant="secondary" size="lg" external>
+                  <Icon name="whatsapp" size={18} className="mr-2" />
+                  {ctaNavigation.whatsapp.label}
                 </Button>
                 <Button href="#service-quote" variant="secondary" size="lg">
-                  {service.quoteCta ?? "Request a Free Quote"}
+                  {service.quoteCta ?? ctaNavigation.primary.label}
                 </Button>
               </div>
             </Reveal>
@@ -85,7 +90,7 @@ export function ServicePageHero({ content, service, breadcrumbs, images }: Servi
           </div>
 
           <Reveal variant="fade-up" immediate delay={0.1}>
-            <div className="space-y-6">
+            <div className="space-y-4">
               <div className="overflow-hidden rounded-2xl border border-border-subtle shadow-elevated">
                 <AuditImage
                   auditId={`service-hero-${service.slug}`}

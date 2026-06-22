@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site";
 import { ctaNavigation } from "@/config/navigation";
 import { ROUTES } from "@/constants/routes";
 import { getAllServices } from "@/data";
+import { SiteLogo } from "@/components/brand/site-logo";
 import { Button } from "@/components/ui/button";
 import { TrackedPhoneLink } from "@/components/analytics/tracked-link";
 import { Icon } from "@/components/ui/icons";
@@ -74,9 +75,7 @@ export function MobileNav() {
             aria-label="Mobile navigation"
           >
             <div className="flex items-center justify-between border-b border-border-subtle px-gutter py-4">
-              <span className="font-display text-heading-sm text-ink-900">
-                {siteConfig.shortName}
-              </span>
+              <SiteLogo height={44} onClick={closeMenu} />
               <button
                 type="button"
                 className="touch-target rounded-lg p-2 text-ink-500 hover:bg-ink-50"
@@ -127,9 +126,29 @@ export function MobileNav() {
                 location="mobile_nav"
                 className="mb-3 flex items-center justify-center gap-2 py-2 text-label-md text-ink-700"
               />
+              <div className="grid grid-cols-2 gap-2">
+                <Button
+                  href={ctaNavigation.secondary.href}
+                  variant="secondary"
+                  className="w-full"
+                  onClick={closeMenu}
+                >
+                  {ctaNavigation.secondary.label}
+                </Button>
+                <Button
+                  href={ctaNavigation.whatsapp.href}
+                  variant="secondary"
+                  className="w-full"
+                  external
+                  onClick={closeMenu}
+                >
+                  <Icon name="whatsapp" size={16} className="mr-1.5" />
+                  {ctaNavigation.whatsapp.label}
+                </Button>
+              </div>
               <Button
                 href={ctaNavigation.primary.href}
-                className="w-full"
+                className="mt-2 w-full"
                 onClick={closeMenu}
               >
                 {ctaNavigation.primary.label}

@@ -12,7 +12,7 @@ export function TrustIndicatorsSection() {
   return (
     <section
       aria-label="Trust indicators"
-      className="relative z-10 mt-4 pb-16 md:mt-6 md:pb-20 lg:mt-8"
+      className="relative z-10 mt-4 pb-10 md:mt-6 md:pb-14 lg:mt-8"
     >
       <Container>
         <Reveal variant="scale" immediate>

@@ -1,5 +1,9 @@
 export { HeroSection } from "./hero-section";
 export { TrustIndicatorsSection } from "./trust-indicators-section";
+export { PromoBannerSection } from "./promo-banner-section";
+export { FurnitureBrandsSection } from "./furniture-brands-section";
+export { CleaningShowcaseSection } from "./cleaning-showcase-section";
+export { WorkShowcaseSection } from "./work-showcase-section";
 export { ServicesSection } from "./services-section";
 export { BeforeAfterSection } from "./before-after-section";
 export { HowItWorksSection } from "./how-it-works-section";

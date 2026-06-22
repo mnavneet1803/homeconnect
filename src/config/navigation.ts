@@ -1,4 +1,6 @@
 import { ROUTES } from "@/constants/routes";
+import { siteConfig } from "@/config/site";
+import { getWhatsAppUrl } from "@/lib/contact/whatsapp";
 import type { NavItem, FooterColumn } from "@/types/navigation";
 
 export const mainNavigation: NavItem[] = [
@@ -53,5 +55,6 @@ export const footerNavigation: FooterColumn[] = [
 
 export const ctaNavigation = {
   primary: { label: "Request a Free Quote", href: "/#quote" },
-  secondary: { label: "Call Now", href: "tel:5875948575" },
+  secondary: { label: "Call Now", href: `tel:${siteConfig.phone.tel}` },
+  whatsapp: { label: "WhatsApp", href: getWhatsAppUrl() },
 } as const;

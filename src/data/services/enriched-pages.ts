@@ -595,9 +595,9 @@ export const SERVICE_PAGE_ENRICHMENTS: Record<SeoServiceSlug, ServicePageEnrichm
 
   plumbers: {
     overview: {
-      title: "Licensed plumbing services for Edmonton homes and businesses",
+      title: "Professional plumbing services for Edmonton homes and businesses",
       paragraphs: [
-        "Plumbing problems escalate fast — a slow drip becomes ceiling damage, a frozen pipe bursts overnight, and a failing water heater leaves your family without hot water in the middle of an Edmonton winter. Home Solution Services provides licensed plumbing repair, installation, and emergency response across the Capital Region with our own in-house plumbers, so you speak directly to the team that will be at your door — not a call centre or referral network.",
+        "Plumbing problems escalate fast — a slow drip becomes ceiling damage, a frozen pipe bursts overnight, and a failing water heater leaves your family without hot water in the middle of an Edmonton winter. Home Solution Services provides professional plumbing repair, installation, and emergency response across the Capital Region with our own in-house plumbers, so you speak directly to the team that will be at your door — not a call centre or referral network.",
         "Our plumbers handle the full range of residential and light commercial work: leak detection and repair, drain cleaning, fixture replacement, toilet and faucet installs, sump pumps, water softeners, tank and tankless water heaters, and rough-in for renovations. We work in older homes with galvanized supply lines, new builds with PEX systems, and rental properties that need durable fixes tenants will not undo. Every job starts with upfront pricing in a written quote before work begins.",
         "Edmonton winters create specific plumbing risks — frozen hose bibs, inadequate pipe insulation in unheated crawlspaces, and water heaters working overtime in basements across St. Albert and Sherwood Park. Our team knows Alberta code requirements, pulls permits when needed, and installs products rated for local water conditions. Property managers rely on us for fast turnover repairs; homeowners call us when DIY has made the problem worse.",
         "As a local Edmonton contractor, Home Solution Services eliminates the middleman markup and communication gaps common with lead-generation platforms. Our plumbers carry proper credentials, arrive equipped for diagnosis, and explain your options clearly — repair versus replace, immediate fix versus scheduled upgrade. Urgent requests are prioritized and most quote inquiries receive a response within 24 hours.",
@@ -607,7 +607,7 @@ export const SERVICE_PAGE_ENRICHMENTS: Record<SeoServiceSlug, ServicePageEnrichm
     commonProblems: {
       title: "Common plumbing problems in Edmonton",
       intro:
-        "These plumbing issues show up daily in Edmonton homes and rental properties. Our licensed plumbers diagnose root causes — not just symptoms.",
+        "These plumbing issues show up daily in Edmonton homes and rental properties. Our in-house plumbers diagnose root causes — not just symptoms.",
       problems: [
         {
           title: "Frozen or burst pipes in winter",
@@ -644,10 +644,10 @@ export const SERVICE_PAGE_ENRICHMENTS: Record<SeoServiceSlug, ServicePageEnrichm
     whyChooseUs: {
       title: "Why Edmonton trusts our plumbers",
       intro:
-        "Plumbing is not a guess-and-patch trade. Our licensed in-house plumbers bring credentials, clear pricing, and local experience to every call.",
+        "Plumbing is not a guess-and-patch trade. Our in-house plumbers bring credentials, clear pricing, and local experience to every call.",
       reasons: [
         {
-          title: "Licensed Alberta plumbers",
+          title: "Professional Alberta plumbers",
           description:
             "Our team holds the trade credentials required for code-compliant work, permits, and inspections across the Capital Region.",
           icon: "shield-check",
@@ -706,12 +706,12 @@ export const SERVICE_PAGE_ENRICHMENTS: Record<SeoServiceSlug, ServicePageEnrichm
     serviceAreas: {
       title: "Plumbing service areas in Edmonton and beyond",
       intro:
-        "Our licensed plumbers serve Edmonton, Sherwood Park, St. Albert, Spruce Grove, Stony Plain, Beaumont, and Leduc — in homes, condos, rental properties, and small commercial spaces. Wherever you are in the Capital Region, Home Solution Services dispatches our own crew — not outsourced strangers.",
+        "Our in-house plumbers serve Edmonton, Sherwood Park, St. Albert, Spruce Grove, Stony Plain, Beaumont, and Leduc — in homes, condos, rental properties, and small commercial spaces. Wherever you are in the Capital Region, Home Solution Services dispatches our own crew — not outsourced strangers.",
     },
     cta: {
       headline: "Need a plumber in Edmonton you can actually call back?",
       description:
-        "Request a free plumbing quote from Home Solution Services. Our licensed in-house team responds within 24 hours — mark urgent for active leaks.",
+        "Request a free plumbing quote from Home Solution Services. Our in-house team responds within 24 hours — mark urgent for active leaks.",
     },
     additionalFaq: [
       {
@@ -739,19 +739,19 @@ export const SERVICE_PAGE_ENRICHMENTS: Record<SeoServiceSlug, ServicePageEnrichm
 
   electricians: {
     overview: {
-      title: "Licensed electricians for Edmonton homes and renovations",
+      title: "Professional electricians for Edmonton homes and renovations",
       paragraphs: [
-        "Electrical work is not a weekend DIY project — Alberta code, permit requirements, and the risk of fire or shock mean your home's wiring needs a licensed professional. Home Solution Services provides Master Electrician-led service across Edmonton and the Capital Region with our own in-house electrical team, handling everything from outlet installs and lighting upgrades to panel changes, rewiring, and EV charger installations.",
+        "Electrical work is not a weekend DIY project — Alberta code, permit requirements, and the risk of fire or shock mean your home's wiring needs a trained professional. Home Solution Services provides Master Electrician-led service across Edmonton and the Capital Region with our own in-house electrical team, handling everything from outlet installs and lighting upgrades to panel changes, rewiring, and EV charger installations.",
         "Older Edmonton neighbourhoods like Highlands, King Edward Park, and Westmount still have homes with undersized panels, ungrounded circuits, and aluminum wiring that struggles with modern loads from heat pumps, induction ranges, and home offices. Newer builds in the suburbs need dedicated circuits for hot tubs, garages, and Level 2 EV chargers. Our electricians assess capacity, recommend safe upgrades, and pull permits so work passes inspection the first time.",
         "Renovation clients depend on us for rough-in during kitchen and basement projects, pot light layouts, and smart switch installs. Landlords call us when tenants report tripping breakers, dead outlets, or outdated fixtures that fail inspection. Every job includes a written quote with scope, materials, and permit costs spelled out before we touch your panel.",
-        "Working with Home Solution Services means one accountable local contractor — not a lead sold to the lowest bidder. Our electricians carry proper licensing, respond to quote requests within 24 hours, and explain your options in plain language. We coordinate with our renovation and handyman teams when projects overlap, keeping timelines tight and responsibility clear.",
+        "Working with Home Solution Services means one accountable local contractor — not a lead sold to the lowest bidder. Our electricians carry proper credentials, respond to quote requests within 24 hours, and explain your options in plain language. We coordinate with our renovation and handyman teams when projects overlap, keeping timelines tight and responsibility clear.",
         "Whether you need a few receptacles upgraded to GFCI in a Stony Plain rental, a 200-amp panel in a Spruce Grove bungalow, or an EV charger in your Leduc garage, our Edmonton electrical team delivers code-compliant work you can trust. Request a free quote and describe your project — we will outline the safest path forward.",
       ],
     },
     commonProblems: {
       title: "Electrical problems we resolve in Edmonton",
       intro:
-        "Flickering lights and tripping breakers are symptoms — not diagnoses. Our licensed electricians find and fix the underlying issue safely.",
+        "Flickering lights and tripping breakers are symptoms — not diagnoses. Our in-house electricians find and fix the underlying issue safely.",
       problems: [
         {
           title: "Overloaded panels and tripping breakers",
@@ -788,10 +788,10 @@ export const SERVICE_PAGE_ENRICHMENTS: Record<SeoServiceSlug, ServicePageEnrichm
     whyChooseUs: {
       title: "Why choose Home Solution Services electricians",
       intro:
-        "Electrical safety demands licensed expertise and clear accountability. Our in-house electricians deliver both across the Edmonton metro.",
+        "Electrical safety demands professional expertise and clear accountability. Our in-house electricians deliver both across the Edmonton metro.",
       reasons: [
         {
-          title: "Licensed Master Electricians",
+          title: "Master Electricians",
           description:
             "Code-compliant work, proper permits, and inspection-ready installations on every project — from small fixes to panel upgrades.",
           icon: "shield-check",
@@ -850,12 +850,12 @@ export const SERVICE_PAGE_ENRICHMENTS: Record<SeoServiceSlug, ServicePageEnrichm
     serviceAreas: {
       title: "Electrical services across the Capital Region",
       intro:
-        "Our licensed electricians work throughout Edmonton, Sherwood Park, St. Albert, Spruce Grove, Stony Plain, Beaumont, and Leduc — in single-family homes, condos, rental properties, and renovation sites. Home Solution Services dispatches our own crew across the metro area with fully stocked vans for common residential work.",
+        "Our in-house electricians work throughout Edmonton, Sherwood Park, St. Albert, Spruce Grove, Stony Plain, Beaumont, and Leduc — in single-family homes, condos, rental properties, and renovation sites. Home Solution Services dispatches our own crew across the metro area with fully stocked vans for common residential work.",
     },
     cta: {
       headline: "Upgrade your Edmonton home's electrical safely",
       description:
-        "Request a free electrical quote from our licensed in-house team. We respond within 24 hours with clear scope and permit guidance — no referral runaround.",
+        "Request a free electrical quote from our in-house team. We respond within 24 hours with clear scope and permit guidance — no referral runaround.",
     },
     additionalFaq: [
       {
@@ -1332,7 +1332,7 @@ export const SERVICE_PAGE_ENRICHMENTS: Record<SeoServiceSlug, ServicePageEnrichm
         {
           title: "Skipped seasonal furnace and filter service",
           description:
-            "Dirty filters and unchecked furnaces fail during the first cold snap — often on the coldest night of the year. We replace filters, check thermostat operation, and flag issues worth a licensed HVAC follow-up.",
+            "Dirty filters and unchecked furnaces fail during the first cold snap — often on the coldest night of the year. We replace filters, check thermostat operation, and flag issues worth a specialist HVAC follow-up.",
         },
         {
           title: "Exterior water lines not winterized",

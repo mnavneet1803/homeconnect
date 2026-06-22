@@ -29,8 +29,8 @@ export const SEO_LANDING_PAGES: Record<string, SeoLandingPage> = {
     heroImage: {
       src: `${DIR}/tv-wall-mount-stereo-installation.png`,
       alt: "Professional TV wall mounting in an Edmonton living room",
-      width: 1024,
-      height: 682,
+      width: 627,
+      height: 352,
     },
     intro:
       "Get your TV mounted safely and neatly. We handle stud finding, bracket selection, cable concealment, and soundbar installs for Edmonton homes and condos.",
@@ -171,8 +171,8 @@ export const SEO_LANDING_PAGES: Record<string, SeoLandingPage> = {
     metaDescription:
       "Move-in and move-out repairs in Edmonton — patch holes, fix scuffs, baseboards, and touch-ups. Call 587-594-8575 or request a free quote.",
     heroImage: {
-      src: `${DIR}/move-out-move-in-repairs-before-after.png`,
-      alt: "Move-in and move-out wall repairs in an Edmonton rental",
+      src: `/images/homepage/move-in-move-out-repairs.jpg`,
+      alt: "Move-out and move-in repairs in Edmonton — hole and dent repair, baseboard fixes, scratch removal and touch-up painting",
       width: 1024,
       height: 682,
     },
