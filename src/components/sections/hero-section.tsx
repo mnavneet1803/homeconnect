@@ -10,21 +10,25 @@ import { HeroQuoteForm } from "@/components/forms/hero-quote-form";
 import { Reveal } from "@/components/motion/reveal";
 import { FloatingBackground } from "@/components/motion/floating-background";
 import { StaggerGrid, StaggerItem } from "@/components/motion/stagger-grid";
-import dynamic from "next/dynamic";
-
-const HeroVisual = dynamic(
-  () => import("@/components/sections/hero-visual").then((m) => m.HeroVisual),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="hidden lg:block" aria-hidden>
-        <div className="skeleton mx-auto h-[420px] w-full max-w-md rounded-2xl" />
-      </div>
-    ),
-  }
-);
+import { HeroBannerSlider } from "@/components/sections/hero-banner-slider";
+import {
+  homePromoBanner,
+  handymanServicesBanner,
+  furnitureBrandsBanner,
+  cleaningServicesBanner,
+  paintingRenovationCollage,
+  modernKitchenPhoto,
+} from "@/data/homepage-banners";
 
 export function HeroSection() {
+  const heroBanners = [
+    handymanServicesBanner,
+    furnitureBrandsBanner,
+    cleaningServicesBanner,
+    paintingRenovationCollage,
+    modernKitchenPhoto,
+  ];
+
   return (
     <Section className="relative overflow-x-clip bg-surface-0 pb-12 pt-12 md:pb-16 md:pt-20">
       <FloatingBackground />
@@ -84,7 +88,7 @@ export function HeroSection() {
             </Reveal>
           </div>
           <Reveal variant="fade-up" immediate delay={0.15}>
-            <HeroVisual />
+            <HeroBannerSlider banners={heroBanners} autoPlayInterval={5000} />
           </Reveal>
         </div>
       </Container>

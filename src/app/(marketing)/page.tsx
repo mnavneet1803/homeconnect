@@ -7,11 +7,9 @@ import { buildFAQSchema } from "@/lib/seo/json-ld";
 import { JsonLdScript } from "@/components/seo/json-ld-script";
 import { ProjectCardSkeleton, TestimonialSkeleton } from "@/components/skeletons";
 import { getFeaturedFaqs } from "@/data/faq/homepage";
-import { handymanServicesBanner } from "@/data/homepage-banners";
 import {
   HeroSection,
   TrustIndicatorsSection,
-  PromoBannerSection,
   ServicesSection,
   FurnitureBrandsSection,
   CleaningShowcaseSection,
@@ -110,10 +108,6 @@ export default function HomePage() {
       <JsonLdScript data={buildFAQSchema(faqs)} />
       <HeroSection />
       <TrustIndicatorsSection />
-      <PromoBannerSection
-        id="handyman-overview"
-        banner={handymanServicesBanner}
-      />
       <ServicesSection />
       <FurnitureBrandsSection />
       <CleaningShowcaseSection />
