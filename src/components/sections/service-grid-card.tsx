@@ -1,76 +1,44 @@
 "use client";
 
 import Link from "next/link";
-import { IMAGE_SIZES } from "@/lib/images";
-import type { ServiceSlug } from "@/constants/services";
-import { SERVICE_CARD_IMAGES } from "@/data/service-showcase";
-import { AuditImage } from "@/components/dev/audit-image";
-import { Icon } from "@/components/ui/icons";
+import { Icon, serviceIconName } from "@/components/ui/icons";
 import { HoverCard } from "@/components/motion/hover-card";
 import type { Service } from "@/types/service";
 
 interface ServiceGridCardProps {
   service: Service;
+  index: number;
 }
 
-export function ServiceGridCard({ service }: ServiceGridCardProps) {
-  const img = SERVICE_CARD_IMAGES[service.slug as ServiceSlug];
-  const ctaLabel = service.cardCta ?? "Learn more";
+export function ServiceGridCard({ service, index }: ServiceGridCardProps) {
+  const ctaLabel = service.cardCta ?? `See ${service.name.toLowerCase()}`;
+  const workOrder = String(index + 1).padStart(2, "0");
 
   return (
     <HoverCard className="h-full">
-      <Link
-        href={service.href}
-        className="card-interactive group flex h-full flex-col overflow-hidden focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-brand-500/20"
-      >
-        <div className="relative overflow-hidden bg-surface-100">
-          <AuditImage
-            auditId={`service-card-${service.slug}`}
-            src={img.src}
-            alt={img.alt}
-            width={img.width}
-            height={img.height}
-            sizes={IMAGE_SIZES.card}
-            className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-          />
-          {/* <div className="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/95 text-brand-700 shadow-sm ring-1 ring-white/80 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105">
-            <Icon name={serviceIconName(service.icon)} size={24} />
-          </div> */}
-        </div>
-        <div className="flex flex-1 flex-col p-7 md:p-8">
-          <h3 className="text-heading-sm text-ink-900 transition-colors group-hover:text-brand-800">
-            {service.name}
-          </h3>
-          <p className="mt-3 text-body-sm leading-relaxed text-ink-400">
-            {service.shortDescription}
-          </p>
-          {service.highlights && service.highlights.length > 0 && (
-            <ul className="mt-5 space-y-2">
-              {service.highlights.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-2.5 text-body-sm text-ink-600"
-                >
-                  <Icon
-                    name="check"
-                    size={16}
-                    className="mt-0.5 shrink-0 text-brand-600"
-                  />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-          <span className="mt-5 inline-flex items-center gap-1.5 text-label-sm font-medium text-brand-700">
+      <article className="svc-card group flex h-full flex-col">
+        <Link
+          href={service.href}
+          className="flex h-full flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-500 focus-visible:ring-offset-2"
+        >
+          <div className="mb-4 flex items-center justify-between">
+            <div className="svc-icon">
+              <Icon name={serviceIconName(service.icon)} size={22} className="text-brass-400" />
+            </div>
+            <span className="font-mono text-[11px] text-ink-500">WO–{workOrder}</span>
+          </div>
+          <h3 className="text-[17.5px] font-semibold text-pine-950">{service.name}</h3>
+          <p className="mt-2 flex-1 text-sm text-ink-600">{service.shortDescription}</p>
+          <span className="mt-4 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-pine-700 transition-transform group-hover:gap-2">
             {ctaLabel}
             <Icon
               name="arrow-right"
-              size={16}
+              size={14}
               className="transition-transform duration-300 group-hover:translate-x-1"
             />
           </span>
-        </div>
-      </Link>
+        </Link>
+      </article>
     </HoverCard>
   );
 }

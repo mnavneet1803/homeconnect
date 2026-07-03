@@ -10,11 +10,12 @@ export function FaqSection() {
   const faqs = getFeaturedFaqs();
 
   return (
-    <Section id="faq" className="bg-surface-0">
+    <Section id="faq">
       <Container narrow>
         <Reveal>
           <SectionHeader
-            title="Common questions"
+            eyebrow="Common questions"
+            title="Everything you're wondering, answered"
             description="Everything you need to know before requesting your free quote."
           />
         </Reveal>

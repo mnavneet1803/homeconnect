@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { getRootMetadata } from "@/lib/seo/metadata";
 import { buildOrganizationSchema, buildLocalBusinessSchema } from "@/lib/seo/json-ld";
 import { JsonLdScript } from "@/components/seo/json-ld-script";
@@ -13,12 +12,33 @@ import {
 import { MotionProvider } from "@/components/motion/motion-provider";
 import "@/styles/globals.css";
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
 export const metadata: Metadata = getRootMetadata();
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#FAFBFC" },
-    { media: "(prefers-color-scheme: dark)", color: "#0A0F14" },
+    { media: "(prefers-color-scheme: light)", color: "#F6F1E5" },
+    { media: "(prefers-color-scheme: dark)", color: "#0E2A22" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -33,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-CA"
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
       suppressHydrationWarning
     >
       <head>

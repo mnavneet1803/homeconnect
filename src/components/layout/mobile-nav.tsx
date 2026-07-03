@@ -217,7 +217,7 @@ export function DesktopNav({ className }: { className?: string }) {
         <Link
           key={link.href}
           href={link.href}
-          className="text-label-md text-ink-700 hover:text-ink-900"
+          className="nav-link"
         >
           {link.label}
         </Link>

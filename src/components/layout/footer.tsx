@@ -7,7 +7,6 @@ import { getAllServices, getAllLocations } from "@/data";
 import { SiteLogo } from "@/components/brand/site-logo";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
-import { GoogleReviewsBadge } from "@/components/trust";
 import { Container } from "@/components/ui/container";
 
 export function Footer() {
@@ -15,69 +14,73 @@ export function Footer() {
   const locations = getAllLocations();
 
   return (
-    <footer className="border-t border-border-subtle bg-surface-0">
-      <div className="bg-brand-900 py-12 md:py-14">
-        <Container className="flex flex-col items-center justify-between gap-6 text-center sm:flex-row sm:text-left">
+    <footer className="bg-pine-950 text-paper/80">
+      <section className="final-cta-bar">
+        <Container className="flex flex-wrap items-center justify-between gap-6 py-8">
           <div>
-            <p className="text-heading-sm text-white">Ready to start your project?</p>
-            <p className="mt-2 text-body-sm text-brand-100">{SERVING_AREA}</p>
-            <p className="mt-1 text-body-sm text-brand-100">
-              Free quotes from our Edmonton team — no obligation.
+            <h3 className="font-display text-[22px] font-semibold text-pine-950">
+              Ready to start your project?
+            </h3>
+            <p className="mt-1 text-sm text-pine-950/70">
+              Same-day quotes for most requests across greater Edmonton.
             </p>
           </div>
-          <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Button
-              href={ctaNavigation.secondary.href}
-              variant="secondary"
-              className="bg-white hover:bg-surface-50"
-            >
-              {ctaNavigation.secondary.label}
+          <div className="flex flex-wrap gap-3">
+            <Button href={`tel:${siteConfig.phone.tel}`} variant="ghost" size="sm">
+              <Icon name="phone" size={16} />
+              Call Now
             </Button>
-            <Button
-              href={ctaNavigation.whatsapp.href}
-              variant="secondary"
-              className="bg-white hover:bg-surface-50"
-              external
-            >
-              <Icon name="whatsapp" size={16} className="mr-2" />
-              {ctaNavigation.whatsapp.label}
-            </Button>
-            <Button href={ctaNavigation.primary.href} variant="secondary" className="bg-white hover:bg-surface-50">
+            <Button href={ctaNavigation.primary.href} variant="accent" size="sm">
               {ctaNavigation.primary.label}
             </Button>
           </div>
         </Container>
-      </div>
+      </section>
 
-      <Container className="py-16 md:py-20">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
-          <div className="lg:col-span-1">
-            <SiteLogo height={52} linked={false} />
-            <p className="mt-3 text-body-sm leading-relaxed text-ink-500">{siteConfig.tagline}</p>
-            <p className="mt-3 text-body-sm font-medium text-ink-600">{SERVING_AREA}</p>
-            <div className="mt-6">
-              <GoogleReviewsBadge />
-            </div>
-            <p className="mt-6 text-body-sm text-ink-600">
-              <a href={`tel:${siteConfig.phone.tel}`} className="hover:text-brand-700">
-                {siteConfig.phone.display}
-              </a>
-              <br />
-              <a href={`mailto:${siteConfig.email}`} className="hover:text-brand-700">
-                {siteConfig.email}
-              </a>
+      <Container className="py-16 md:py-[70px]">
+        <div className="grid gap-9 md:grid-cols-2 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
+          <div>
+            <SiteLogo height={52} linked={false} className="[&_img]:brightness-0 [&_img]:invert" />
+            <p className="mt-3.5 max-w-[280px] text-sm leading-relaxed text-paper/75">
+              {siteConfig.tagline}
             </p>
+            <p className="mt-3 text-sm text-paper/75">{SERVING_AREA}</p>
+            <div className="mt-5 flex gap-2.5">
+              <a
+                href={`tel:${siteConfig.phone.tel}`}
+                aria-label="Phone"
+                className="flex h-[34px] w-[34px] items-center justify-center rounded-full border border-paper/20 transition-colors hover:border-paper/40 hover:bg-paper/10"
+              >
+                <Icon name="phone" size={15} className="text-paper" />
+              </a>
+              <a
+                href={ctaNavigation.whatsapp.href}
+                aria-label="WhatsApp"
+                className="flex h-[34px] w-[34px] items-center justify-center rounded-full border border-paper/20 transition-colors hover:border-paper/40 hover:bg-paper/10"
+              >
+                <Icon name="whatsapp" size={15} className="text-paper" />
+              </a>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                aria-label="Email"
+                className="flex h-[34px] w-[34px] items-center justify-center rounded-full border border-paper/20 transition-colors hover:border-paper/40 hover:bg-paper/10"
+              >
+                <svg viewBox="0 0 24 24" className="h-[15px] w-[15px] text-paper" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <rect x="3" y="5" width="18" height="14" rx="1.5" />
+                  <path d="M4 6.5l8 6.5 8-6.5" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           <div>
-            <p className="text-label-md text-ink-900">Services</p>
-            <ul className="mt-5 space-y-3">
+            <p className="mb-4 font-mono text-xs font-medium uppercase tracking-wider text-brass-400">
+              Services
+            </p>
+            <ul className="flex flex-col gap-2.5">
               {services.map((s) => (
                 <li key={s.slug}>
-                  <Link
-                    href={s.href}
-                    className="text-body-sm text-ink-500 transition-colors hover:text-brand-700"
-                  >
+                  <Link href={s.href} className="footer-link text-sm">
                     {s.name}
                   </Link>
                 </li>
@@ -86,14 +89,13 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-label-md text-ink-900">Locations</p>
-            <ul className="mt-5 space-y-3">
+            <p className="mb-4 font-mono text-xs font-medium uppercase tracking-wider text-brass-400">
+              Locations
+            </p>
+            <ul className="flex flex-col gap-2.5">
               {locations.map((l) => (
                 <li key={l.slug}>
-                  <Link
-                    href={l.href}
-                    className="text-body-sm text-ink-500 transition-colors hover:text-brand-700"
-                  >
+                  <Link href={l.href} className="footer-link text-sm">
                     {l.name}
                   </Link>
                 </li>
@@ -102,8 +104,10 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-label-md text-ink-900">Company</p>
-            <ul className="mt-5 space-y-3">
+            <p className="mb-4 font-mono text-xs font-medium uppercase tracking-wider text-brass-400">
+              Company
+            </p>
+            <ul className="flex flex-col gap-2.5">
               {[
                 ["About", ROUTES.about],
                 ["How It Works", ROUTES.howItWorks],
@@ -111,30 +115,23 @@ export function Footer() {
                 ["Contact", ROUTES.contact],
               ].map(([label, href]) => (
                 <li key={href}>
-                  <Link
-                    href={href}
-                    className="text-body-sm text-ink-500 transition-colors hover:text-brand-700"
-                  >
+                  <Link href={href} className="footer-link text-sm">
                     {label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div>
-            <p className="text-label-md text-ink-900">Legal</p>
-            <ul className="mt-5 space-y-3">
+            <p className="mb-4 mt-8 font-mono text-xs font-medium uppercase tracking-wider text-brass-400">
+              Legal
+            </p>
+            <ul className="flex flex-col gap-2.5">
               {[
                 ["Privacy", ROUTES.legal.privacy],
                 ["Terms", ROUTES.legal.terms],
                 ["Disclaimer", ROUTES.legal.disclaimer],
               ].map(([label, href]) => (
                 <li key={href}>
-                  <Link
-                    href={href}
-                    className="text-body-sm text-ink-500 transition-colors hover:text-brand-700"
-                  >
+                  <Link href={href} className="footer-link text-sm">
                     {label}
                   </Link>
                 </li>
@@ -143,11 +140,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-border-subtle pt-8">
-          <p className="text-caption leading-relaxed text-ink-400">
-            © {new Date().getFullYear()} {siteConfig.name}.{" "}
-            {siteConfig.business.marketplaceDisclaimer}
-          </p>
+        <div className="mt-12 flex flex-wrap justify-between gap-4 border-t border-paper/10 pt-5 font-mono text-[12.5px] text-paper/60">
+          <span>
+            © {new Date().getFullYear()} {siteConfig.name}. {siteConfig.business.marketplaceDisclaimer}
+          </span>
+          <span>Edmonton, Alberta, Canada</span>
         </div>
       </Container>
     </footer>

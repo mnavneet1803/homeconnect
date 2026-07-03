@@ -1,61 +1,60 @@
-import Image from "next/image";
-import { paintingHighRiseLiving, paintingRenovationCollage } from "@/data/homepage-banners";
 import { ROUTES } from "@/constants/routes";
-import { IMAGE_SIZES } from "@/lib/images";
-import { Container, Section, SectionHeader } from "@/components/ui/container";
+import { Container, Section } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { Icon } from "@/components/ui/icons";
 import { Reveal } from "@/components/motion/reveal";
+
+const FINISH_TYPES = ["Interior painting", "Drywall repair", "Staining", "Flooring", "Decking", "Fencing"];
 
 export function WorkShowcaseSection() {
   return (
-    <Section id="our-work" className="bg-surface-50">
+    <Section id="our-work" className="spotlight">
       <Container>
-        <Reveal>
-          <SectionHeader
-            eyebrow="Painting & renovation"
-            title="Quality finishes across Edmonton"
-            description="Interior and exterior painting, drywall repair, decking, fencing and full home improvements — done right the first time."
-          />
-        </Reveal>
-
-        <div className="grid gap-6 lg:grid-cols-5 lg:gap-8">
-          <Reveal className="lg:col-span-3" delay={0.05}>
-            <div className="overflow-hidden rounded-3xl border border-border-subtle shadow-card">
-              <Image
-                src={paintingRenovationCollage.src}
-                alt={paintingRenovationCollage.alt}
-                width={paintingRenovationCollage.width}
-                height={paintingRenovationCollage.height}
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                loading="lazy"
-                className="h-auto w-full"
-              />
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
+          <Reveal variant="fade-up" className="spotlight-copy">
+            <p className="section-eyebrow text-rust-600 before:bg-rust-600">Finishing &amp; renovation</p>
+            <h2 className="mt-3.5 text-balance text-display-sm text-pine-950 md:text-[clamp(26px,3.2vw,36px)]">
+              Quality finishes across Edmonton
+            </h2>
+            <p className="mt-3.5 max-w-[460px] text-ink-600">
+              Interior painting, drywall repair, staining, flooring and small home improvements — done
+              neatly, on schedule, the first time.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {FINISH_TYPES.map((type) => (
+                <span key={type} className="chip">
+                  {type}
+                </span>
+              ))}
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href={ROUTES.services.detail("painters")}>Get a finishing quote</Button>
+              <Button href={ROUTES.services.detail("renovators")} variant="secondary">
+                Renovation services
+              </Button>
             </div>
           </Reveal>
 
-          <Reveal className="lg:col-span-2" delay={0.1}>
-            <div className="overflow-hidden rounded-3xl border border-border-subtle shadow-card">
-              <Image
-                src={paintingHighRiseLiving.src}
-                alt={paintingHighRiseLiving.alt}
-                width={paintingHighRiseLiving.width}
-                height={paintingHighRiseLiving.height}
-                sizes={IMAGE_SIZES.card}
-                loading="lazy"
-                className="h-auto w-full"
-              />
+          <Reveal variant="fade-up" delay={0.08}>
+            <div className="relative aspect-[4/3.1] overflow-hidden rounded-lg bg-gradient-to-b from-pine-950 to-pine-700 shadow-card">
+              <svg viewBox="0 0 480 380" className="absolute inset-0 h-full w-full" aria-hidden="true">
+                <path
+                  d="M0 260 Q120 220 240 255 T480 250 V380 H0 Z"
+                  fill="#DBB459"
+                  opacity="0.14"
+                />
+                <g stroke="#DBB459" strokeWidth="1.7" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="120" y="120" width="240" height="150" rx="4" />
+                  <path d="M120 190h240M170 120v150M310 120v150" />
+                </g>
+              </svg>
+              <div className="absolute bottom-[18px] left-[18px] flex items-center gap-2 rounded-pill bg-paper/95 px-4 py-2 font-mono text-[12.5px] text-ink-900 shadow-card">
+                <Icon name="home" size={14} className="text-pine-700" />
+                Interior finishing crew
+              </div>
             </div>
           </Reveal>
         </div>
-
-        <Reveal className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row" delay={0.12}>
-          <Button href={ROUTES.services.detail("painters")} size="lg">
-            Painting services
-          </Button>
-          <Button href={ROUTES.services.detail("renovators")} variant="secondary" size="lg">
-            Renovation services
-          </Button>
-        </Reveal>
       </Container>
     </Section>
   );

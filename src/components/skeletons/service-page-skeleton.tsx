@@ -8,7 +8,7 @@ export function ServicePageSkeleton() {
   return (
     <>
       {/* Hero */}
-      <Section className="relative overflow-hidden bg-gradient-hero pb-10 pt-8 md:pb-14 md:pt-10">
+      <Section className="relative overflow-hidden border-b border-border bg-surface-50 pb-10 pt-8 md:pb-14 md:pt-10">
         <div className="relative mx-auto max-w-content px-gutter lg:px-gutter-lg">
           <Skeleton className="mb-6 h-4 w-64" />
           <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">

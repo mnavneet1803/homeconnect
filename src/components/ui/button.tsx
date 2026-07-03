@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils/cn";
 import Link from "next/link";
 import type { ComponentPropsWithoutRef, MouseEventHandler } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "accent" | "destructive" | "link";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "accent" | "destructive" | "link" | "line";
 type ButtonSize = "sm" | "md" | "lg";
 
 const variantClasses: Record<ButtonVariant, string> = {
@@ -12,6 +12,7 @@ const variantClasses: Record<ButtonVariant, string> = {
   accent: "btn-accent",
   destructive: "btn-destructive",
   link: "btn-link",
+  line: "btn-line",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

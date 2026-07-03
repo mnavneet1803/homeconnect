@@ -51,13 +51,13 @@ export function LocationPageTemplate({ location }: LocationPageTemplateProps) {
 
   return (
     <>
-      <Section className="bg-gradient-hero pt-16 pb-12">
+      <Section className="border-b border-border bg-surface-50 pt-16 pb-12">
         <Container>
           <p className="section-eyebrow">{location.region}</p>
-          <h1 className="mt-2 text-display-sm text-ink-950 md:text-display-md">
+          <h1 className="mt-2 text-display-sm text-pine-950 md:text-display-md">
             Home services in {location.name}
           </h1>
-          <p className="mt-4 max-w-prose text-body-lg text-ink-500">
+          <p className="mt-4 max-w-prose text-body-lg text-ink-600">
             Our team serves {location.name} and the surrounding
             Capital Region directly. Free quote — no obligation.
           </p>

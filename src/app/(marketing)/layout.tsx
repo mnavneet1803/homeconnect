@@ -1,4 +1,5 @@
 import { Header, Footer } from "@/components/layout";
+import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { StickyCtaBar } from "@/components/layout/sticky-cta";
 import { FloatingCta } from "@/components/layout/floating-cta";
 
@@ -9,9 +10,10 @@ export default function MarketingLayout({
 }) {
   return (
     <div className="overflow-x-clip">
+      <ScrollProgress />
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-toast focus:rounded-lg focus:bg-brand-700 focus:px-4 focus:py-2 focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-toast focus:rounded-lg focus:bg-pine-700 focus:px-4 focus:py-2 focus:text-paper"
       >
         Skip to main content
       </a>

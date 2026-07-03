@@ -6,7 +6,7 @@ import { ServiceCardSkeleton } from "@/components/skeletons/service-card-skeleto
 export function LocationPageSkeleton() {
   return (
     <>
-      <Section className="bg-gradient-hero pt-16 pb-12">
+      <Section className="border-b border-border bg-surface-50 pt-16 pb-12">
         <Container>
           <Skeleton className="h-4 w-40 rounded-pill" />
           <Skeleton className="mt-4 h-10 w-2/3 max-w-xl" />

@@ -3,7 +3,6 @@ import { ctaNavigation } from "@/config/navigation";
 import { DesktopNav, MobileNav } from "@/components/layout/mobile-nav";
 import { SiteLogo } from "@/components/brand/site-logo";
 import { Button } from "@/components/ui/button";
-import { Icon } from "@/components/ui/icons";
 import { TrackedPhoneLink } from "@/components/analytics/tracked-link";
 import { cn } from "@/lib/utils/cn";
 
@@ -11,42 +10,23 @@ export function Header({ className }: { className?: string }) {
   return (
     <header
       className={cn(
-        "sticky top-0 z-sticky w-full max-w-[100vw] border-b border-border-subtle/80 bg-surface-0/95 backdrop-blur-lg",
+        "sticky top-[5px] z-sticky w-full max-w-[100vw] border-b border-border bg-surface-50/90 backdrop-blur-md",
         "pt-[env(safe-area-inset-top,0px)]",
         className
       )}
     >
-      <div className="mx-auto flex h-16 max-w-content items-center justify-between px-gutter lg:px-gutter-lg">
+      <div className="mx-auto flex h-16 max-w-content items-center justify-between px-gutter">
         <SiteLogo height={44} priority className="sm:hidden" />
         <SiteLogo height={48} priority className="hidden sm:inline-flex" />
         <DesktopNav />
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-3.5">
           <TrackedPhoneLink
             tel={siteConfig.phone.tel}
             display={siteConfig.phone.display}
             location="header"
-            className="hidden text-label-md text-ink-600 transition-colors hover:text-brand-700 md:inline-flex"
+            className="nav-link hidden font-mono text-sm font-medium md:inline-flex"
           />
-          <Button
-            href={ctaNavigation.secondary.href}
-            variant="secondary"
-            size="sm"
-            className="hidden sm:inline-flex"
-          >
-            {ctaNavigation.secondary.label}
-          </Button>
-          <Button
-            href={ctaNavigation.whatsapp.href}
-            variant="secondary"
-            size="sm"
-            className="hidden sm:inline-flex"
-            external
-            aria-label={ctaNavigation.whatsapp.label}
-          >
-            <Icon name="whatsapp" size={16} className="lg:mr-1.5" />
-            <span className="hidden lg:inline">{ctaNavigation.whatsapp.label}</span>
-          </Button>
           <Button
             href={ctaNavigation.primary.href}
             size="sm"

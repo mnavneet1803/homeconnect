@@ -10,7 +10,6 @@ import type { ServicePageImages } from "@/data/service-showcase";
 import { Badge } from "@/components/ui/badge";
 import { Icon } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
-import { FloatingBackground } from "@/components/motion/floating-background";
 import { Reveal } from "@/components/motion/reveal";
 import type { ServicePageContent } from "@/types/service-page";
 import type { Service } from "@/types/service";
@@ -25,8 +24,7 @@ interface ServicePageHeroProps {
 
 export function ServicePageHero({ content, service, breadcrumbs, images }: ServicePageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-surface-0 pb-10 pt-8 md:pb-14 md:pt-10">
-      <FloatingBackground />
+    <section className="relative overflow-hidden border-b border-border bg-surface-50 pb-10 pt-8 md:pb-14 md:pt-10">
       <div className="relative mx-auto max-w-content px-gutter lg:px-gutter-lg">
         <Reveal variant="fade" immediate>
           <nav aria-label="Breadcrumb" className="mb-6">
@@ -35,7 +33,7 @@ export function ServicePageHero({ content, service, breadcrumbs, images }: Servi
                 <li key={crumb.href} className="flex items-center gap-2">
                   {i > 0 && <span aria-hidden="true">/</span>}
                   {i < breadcrumbs.length - 1 ? (
-                    <Link href={crumb.href} className="hover:text-brand-700">
+                    <Link href={crumb.href} className="text-ink-600 hover:text-pine-700">
                       {crumb.name}
                     </Link>
                   ) : (
@@ -53,7 +51,7 @@ export function ServicePageHero({ content, service, breadcrumbs, images }: Servi
               <p className="section-eyebrow">{content.hero.eyebrow}</p>
             </Reveal>
             <Reveal variant="fade-up" immediate delay={0.06}>
-              <h1 className="mt-4 text-balance text-display-sm text-ink-900 md:text-display-md">
+              <h1 className="mt-4 text-balance text-display-sm text-pine-950 md:text-display-md">
                 {content.hero.headline}
               </h1>
             </Reveal>

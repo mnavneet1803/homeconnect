@@ -45,30 +45,36 @@ export function ServiceLocationTemplate({ page }: ServiceLocationTemplateProps) 
 
   return (
     <>
-      <Section className="bg-gradient-hero pt-16 pb-12">
+      <Section className="border-b border-border bg-surface-50 pt-16 pb-12">
         <Container>
           <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex flex-wrap items-center gap-2 text-caption text-ink-500">
+            <ol className="flex flex-wrap items-center gap-2 text-caption text-ink-600">
               <li>
-                <Link href={ROUTES.home}>Home</Link>
+                <Link href={ROUTES.home} className="text-ink-600 hover:text-pine-700">
+                  Home
+                </Link>
               </li>
               <li aria-hidden>/</li>
               <li>
-                <Link href={ROUTES.services.index}>Services</Link>
+                <Link href={ROUTES.services.index} className="text-ink-600 hover:text-pine-700">
+                  Services
+                </Link>
               </li>
               <li aria-hidden>/</li>
               <li>
-                <Link href={service.href}>{service.name}</Link>
+                <Link href={service.href} className="text-ink-600 hover:text-pine-700">
+                  {service.name}
+                </Link>
               </li>
               <li aria-hidden>/</li>
-              <li className="text-ink-700">{location.name}</li>
+              <li className="text-pine-950">{location.name}</li>
             </ol>
           </nav>
           <p className="section-eyebrow">
             {service.name} · {location.name}
           </p>
-          <h1 className="mt-2 text-display-sm text-ink-950">{page.headline}</h1>
-          <p className="mt-4 max-w-prose text-body-lg text-ink-500">
+          <h1 className="mt-2 text-display-sm text-pine-950">{page.headline}</h1>
+          <p className="mt-4 max-w-prose text-body-lg text-ink-600">
             {page.description}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

@@ -21,31 +21,38 @@ export function NeighbourhoodPageTemplate({
 
   return (
     <>
-      <Section className="bg-gradient-hero pt-16 pb-12">
+      <Section className="border-b border-border bg-surface-50 pt-16 pb-12">
         <Container>
           <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex flex-wrap items-center gap-2 text-caption text-ink-500">
+            <ol className="flex flex-wrap items-center gap-2 text-caption text-ink-600">
               <li>
-                <Link href={ROUTES.home}>Home</Link>
+                <Link href={ROUTES.home} className="text-ink-600 hover:text-pine-700">
+                  Home
+                </Link>
               </li>
               <li aria-hidden>/</li>
               <li>
-                <Link href={ROUTES.locations.index}>Locations</Link>
+                <Link href={ROUTES.locations.index} className="text-ink-600 hover:text-pine-700">
+                  Locations
+                </Link>
               </li>
               <li aria-hidden>/</li>
               <li>
-                <Link href={ROUTES.locations.detail(neighbourhood.citySlug)}>
+                <Link
+                  href={ROUTES.locations.detail(neighbourhood.citySlug)}
+                  className="text-ink-600 hover:text-pine-700"
+                >
                   {neighbourhood.cityName}
                 </Link>
               </li>
               <li aria-hidden>/</li>
-              <li className="text-ink-700">{neighbourhood.name}</li>
+              <li className="text-pine-950">{neighbourhood.name}</li>
             </ol>
           </nav>
-          <h1 className="text-display-sm text-ink-950">
+          <h1 className="text-display-sm text-pine-950">
             Home services in {neighbourhood.name}, {neighbourhood.cityName}
           </h1>
-          <p className="mt-4 max-w-prose text-body-lg text-ink-500">
+          <p className="mt-4 max-w-prose text-body-lg text-ink-600">
             Our handyman, painting, plumbing, and other crews serve{" "}
             {neighbourhood.name} homeowners directly. Request a free quote — no obligation.
           </p>
