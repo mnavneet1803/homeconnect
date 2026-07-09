@@ -466,6 +466,11 @@
     @apply border border-paper/30 bg-paper/85 backdrop-blur-xl;
   }
 
+  /* Glassmorphism navbar on scroll */
+  .glass-nav {
+    @apply border-b border-white/10 bg-white/80 shadow-sm backdrop-blur-xl;
+  }
+
   .touch-target {
     @apply min-h-[44px] min-w-[44px];
   }
@@ -494,4 +499,117 @@
     mask-image: radial-gradient(80% 70% at 70% 30%, black, transparent 80%);
     pointer-events: none;
   }
+
+  /* Hero floating badge cards */
+  .hero-badge {
+    @apply absolute z-10 flex items-center gap-2.5 rounded-xl
+      border border-white/20 bg-white/90 px-4 py-3
+      shadow-lg backdrop-blur-md;
+  }
+
+  /* Timeline connector for How It Works */
+  .timeline-step {
+    @apply relative;
+  }
+
+  .timeline-step::after {
+    content: "";
+    @apply absolute right-0 top-6 hidden h-px w-[calc(100%-2rem)]
+      translate-x-full bg-gradient-to-r from-border to-transparent md:block;
+  }
+
+  .timeline-step:last-child::after {
+    display: none;
+  }
+
+  /* Stat card hover tilt */
+  .stat-card {
+    @apply relative overflow-hidden rounded-xl border border-border bg-surface-0
+      p-7 shadow-card transition-all duration-300 ease-smooth;
+  }
+
+  .stat-card:hover {
+    @apply -translate-y-1 shadow-card-hover;
+  }
+
+  /* Premium service card with gradient image header */
+  .svc-card-premium {
+    @apply relative overflow-hidden rounded-xl border border-border bg-surface-0
+      shadow-card transition-all duration-500 ease-smooth;
+  }
+
+  .svc-card-premium:hover {
+    @apply -translate-y-2 shadow-card-hover;
+    border-color: var(--color-brass-500);
+  }
+
+  .svc-card-premium:hover .svc-image-area {
+    transform: scale(1.05);
+  }
+
+  .svc-image-area {
+    @apply transition-transform duration-700 ease-smooth;
+  }
+
+  /* Premium testimonial card */
+  .testimonial-card {
+    @apply relative overflow-hidden rounded-xl border border-border bg-surface-0
+      p-8 shadow-card transition-all duration-300 ease-smooth;
+  }
+
+  .testimonial-card:hover {
+    @apply -translate-y-1.5 shadow-card-hover;
+    border-left: 3px solid var(--color-brass-500);
+  }
+
+  /* Process timeline number */
+  .process-number {
+    @apply font-display text-[56px] font-bold leading-none text-brass-400/20
+      transition-colors duration-300;
+  }
+
+  .step-card:hover .process-number {
+    @apply text-brass-400/40;
+  }
+
+  /* Animated underline for nav */
+  .nav-animated-link {
+    @apply relative text-ink-900 transition-colors duration-200;
+  }
+
+  .nav-animated-link::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-[2px] w-0 rounded-full bg-brass-500
+      transition-all duration-300 ease-smooth;
+  }
+
+  .nav-animated-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Benefit list item with hover */
+  .benefit-item {
+    @apply flex gap-4 rounded-lg p-4 transition-all duration-200 ease-smooth
+      hover:bg-pine-50;
+  }
+
+  /* Gold glow on badge hover */
+  .glow-badge {
+    @apply animate-glow-pulse;
+  }
+
+  /* Smooth backdrop for hero */
+  .hero-image-mask {
+    mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, black 60%, transparent 100%);
+  }
+
+  /* CTA arrow transition */
+  .arrow-btn .arrow-icon {
+    @apply transition-transform duration-300;
+  }
+
+  .arrow-btn:hover .arrow-icon {
+    @apply translate-x-1;
+  }
 }
+

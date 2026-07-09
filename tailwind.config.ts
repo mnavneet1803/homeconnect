@@ -264,6 +264,41 @@ const config: Config = {
           "70%": { transform: "scale(1.15)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
+        // Premium additions
+        "continuous-zoom": {
+          "0%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.06)" },
+          "100%": { transform: "scale(1)" },
+        },
+        "float-up": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "float-right": {
+          "0%": { opacity: "0", transform: "translateX(-16px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        "float-left": {
+          "0%": { opacity: "0", transform: "translateX(16px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(200,155,60,0)" },
+          "50%": { boxShadow: "0 0 0 6px rgba(200,155,60,0.18)" },
+        },
+        "image-reveal": {
+          "0%": { opacity: "0", transform: "scale(1.08)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        "badge-bounce": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-4px)" },
+        },
+        "stat-tilt": {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(-0.5deg)" },
+          "75%": { transform: "rotate(0.5deg)" },
+        },
       },
       animation: {
         "fade-in": "fade-in 300ms ease-out forwards",
@@ -275,6 +310,15 @@ const config: Config = {
         "stamp-in": "stamp-in 700ms cubic-bezier(0.19, 1, 0.22, 1) 500ms forwards",
         "card-in": "card-in 700ms cubic-bezier(0.19, 1, 0.22, 1) 900ms forwards",
         "pin-pop": "pin-pop 600ms cubic-bezier(0.19, 1, 0.22, 1) both",
+        // Premium additions
+        "continuous-zoom": "continuous-zoom 12s ease-in-out infinite",
+        "float-up": "float-up 700ms cubic-bezier(0.19, 1, 0.22, 1) forwards",
+        "float-right": "float-right 700ms cubic-bezier(0.19, 1, 0.22, 1) forwards",
+        "float-left": "float-left 700ms cubic-bezier(0.19, 1, 0.22, 1) forwards",
+        "glow-pulse": "glow-pulse 2.5s ease-in-out infinite",
+        "image-reveal": "image-reveal 900ms cubic-bezier(0.19, 1, 0.22, 1) forwards",
+        "badge-bounce": "badge-bounce 3s ease-in-out infinite",
+        "stat-tilt": "stat-tilt 0.3s ease-in-out",
       },
 
       screens: {

@@ -15,10 +15,11 @@ export function Footer() {
 
   return (
     <footer className="bg-pine-950 text-paper/80">
+      {/* Final CTA bar — brass */}
       <section className="final-cta-bar">
-        <Container className="flex flex-wrap items-center justify-between gap-6 py-8">
+        <Container className="flex flex-wrap items-center justify-between gap-6 py-9">
           <div>
-            <h3 className="font-display text-[22px] font-semibold text-pine-950">
+            <h3 className="font-display text-[22px] font-bold text-pine-950">
               Ready to start your project?
             </h3>
             <p className="mt-1 text-sm text-pine-950/70">
@@ -37,7 +38,7 @@ export function Footer() {
         </Container>
       </section>
 
-      <Container className="py-16 md:py-[70px]">
+      <Container className="animate-in fade-in duration-1000 py-16 md:py-[70px]">
         <div className="grid gap-9 md:grid-cols-2 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
           <div>
             <SiteLogo height={52} linked={false} className="[&_img]:brightness-0 [&_img]:invert" />
@@ -45,27 +46,27 @@ export function Footer() {
               {siteConfig.tagline}
             </p>
             <p className="mt-3 text-sm text-paper/75">{SERVING_AREA}</p>
-            <div className="mt-5 flex gap-2.5">
+            <div className="mt-6 flex gap-2.5">
               <a
                 href={`tel:${siteConfig.phone.tel}`}
                 aria-label="Phone"
-                className="flex h-[34px] w-[34px] items-center justify-center rounded-full border border-paper/20 transition-colors hover:border-paper/40 hover:bg-paper/10"
+                className="group flex h-9 w-9 items-center justify-center rounded-full border border-paper/20 transition-all duration-300 hover:border-brass-400 hover:bg-brass-500/15"
               >
-                <Icon name="phone" size={15} className="text-paper" />
+                <Icon name="phone" size={15} className="text-paper/70 transition-colors group-hover:text-brass-400" />
               </a>
               <a
                 href={ctaNavigation.whatsapp.href}
                 aria-label="WhatsApp"
-                className="flex h-[34px] w-[34px] items-center justify-center rounded-full border border-paper/20 transition-colors hover:border-paper/40 hover:bg-paper/10"
+                className="group flex h-9 w-9 items-center justify-center rounded-full border border-paper/20 transition-all duration-300 hover:border-brass-400 hover:bg-brass-500/15"
               >
-                <Icon name="whatsapp" size={15} className="text-paper" />
+                <Icon name="whatsapp" size={15} className="text-paper/70 transition-colors group-hover:text-brass-400" />
               </a>
               <a
                 href={`mailto:${siteConfig.email}`}
                 aria-label="Email"
-                className="flex h-[34px] w-[34px] items-center justify-center rounded-full border border-paper/20 transition-colors hover:border-paper/40 hover:bg-paper/10"
+                className="group flex h-9 w-9 items-center justify-center rounded-full border border-paper/20 transition-all duration-300 hover:border-brass-400 hover:bg-brass-500/15"
               >
-                <svg viewBox="0 0 24 24" className="h-[15px] w-[15px] text-paper" fill="none" stroke="currentColor" strokeWidth="1.6">
+                <svg viewBox="0 0 24 24" className="h-[15px] w-[15px] text-paper/70 transition-colors group-hover:text-brass-400" fill="none" stroke="currentColor" strokeWidth="1.6">
                   <rect x="3" y="5" width="18" height="14" rx="1.5" />
                   <path d="M4 6.5l8 6.5 8-6.5" />
                 </svg>

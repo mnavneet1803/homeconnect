@@ -14,7 +14,6 @@ import {
   FurnitureBrandsSection,
   CleaningShowcaseSection,
   WorkShowcaseSection,
-  // BeforeAfterSection,
   HowItWorksSection,
   WhyChooseUsSection,
   ServiceAreasSection,
@@ -22,33 +21,7 @@ import {
   FaqSection,
   LeadFormSection,
 } from "@/components/sections";
-
-const FeaturedProjectsSection = dynamic(
-  () =>
-    import("@/components/sections/featured-projects-section").then(
-      (m) => m.FeaturedProjectsSection
-    ),
-  {
-    loading: () => (
-      <section className="bg-surface-0 py-section">
-        <div className="mx-auto max-w-content px-gutter lg:px-gutter-lg">
-          <div className="mb-10 space-y-3">
-            <div className="skeleton h-8 w-2/3 max-w-xl" />
-            <div className="skeleton h-4 w-2/3 max-w-2xl" />
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {Array.from({ length: 3 }).map((_, i) => (
-              <ProjectCardSkeleton key={i} />
-            ))}
-          </div>
-          <div className="mt-12 flex justify-center">
-            <div className="skeleton h-12 w-64 rounded-lg" />
-          </div>
-        </div>
-      </section>
-    ),
-  }
-);
+// import { StatsSection } from "@/components/sections/stats-section"; // TODO: Enable once real stats are verified
 
 const TestimonialsSection = dynamic(
   () =>
@@ -57,7 +30,7 @@ const TestimonialsSection = dynamic(
     ),
   {
     loading: () => (
-      <section className="py-section">
+      <section className="bg-surface-50 py-section">
         <div className="mx-auto max-w-content px-gutter lg:px-gutter-lg">
           <div className="mb-10 space-y-3">
             <div className="skeleton h-8 w-2/3 max-w-xl" />
@@ -81,7 +54,6 @@ const TestimonialsSection = dynamic(
   }
 );
 
-// TODO: Enable testimonials after receiving verified customer reviews.
 export const metadata: Metadata = buildMetadata({
   title: "Home Solution Services",
   description:
@@ -108,16 +80,15 @@ export default function HomePage() {
       <JsonLdScript data={buildFAQSchema(faqs)} />
       <HeroSection />
       <TrustIndicatorsSection />
+      {/* <StatsSection /> */}
+      {/* TODO: Enable StatsSection once real jobs/years/rating data is available */}
       <ServicesSection />
       <FurnitureBrandsSection />
       <CleaningShowcaseSection />
       <WorkShowcaseSection />
       <HowItWorksSection />
       <WhyChooseUsSection />
-      {/* <FeaturedProjectsSection /> */}
-      {/* <BeforeAfterSection /> */}
-      {/* TODO: Enable before/after gallery after verified project photos are available. */}
-      {/* <TestimonialsSection /> */}
+      <TestimonialsSection />
       <ServiceAreasSection />
       <LocalServicesSection />
       <FaqSection />

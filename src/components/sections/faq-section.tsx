@@ -10,7 +10,7 @@ export function FaqSection() {
   const faqs = getFeaturedFaqs();
 
   return (
-    <Section id="faq">
+    <Section id="faq" className="bg-surface-50">
       <Container narrow>
         <Reveal>
           <SectionHeader
@@ -19,6 +19,7 @@ export function FaqSection() {
             description="Everything you need to know before requesting your free quote."
           />
         </Reveal>
+
         <Reveal delay={0.06}>
           <Accordion
             items={faqs.map((f) => ({
@@ -28,7 +29,8 @@ export function FaqSection() {
             }))}
           />
         </Reveal>
-        <Reveal className="mt-12 flex flex-col items-center gap-5 text-center" delay={0.12}>
+
+        <Reveal className="mt-14 flex flex-col items-center gap-5 text-center" delay={0.12}>
           <Link href={ROUTES.contact} className="btn-link">
             Still have questions? Contact us →
           </Link>
