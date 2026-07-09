@@ -242,7 +242,7 @@ export function HeroSection() {
               </div>
             </m.div>
 
-            {/* Floating badge card 2 — bottom right */}
+            {/* Floating badge card 2 — bottom right — commented out until ratings are verified
             <m.div
               className="absolute -right-4 bottom-[15%] z-10 hidden lg:block"
               initial={reducedMotion ? false : { opacity: 0, x: 20 }}
@@ -259,6 +259,7 @@ export function HeroSection() {
                 </div>
               </div>
             </m.div>
+            */}
 
             {/* Decorative background blob */}
             <div
