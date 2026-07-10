@@ -13,7 +13,6 @@ import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 const easePremium = [0.19, 1, 0.22, 1];
 
 const HERO_TRUST_BADGES = [
-  { icon: "shield-check" as const, label: "Licensed & Insured" },
   // { icon: "star" as const, label: "4.9★ Rating" },        // TODO: enable once reviews collected
   // { icon: "clock" as const, label: "24h Response" },      // TODO: enable once response time is confirmed
 ] as const;
@@ -78,7 +77,7 @@ export function HeroSection() {
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-brass-100 bg-brass-50 px-4 py-1.5 font-mono text-[11.5px] font-medium uppercase tracking-[0.14em] text-brass-500">
               <span className="h-1.5 w-1.5 animate-glow-pulse rounded-full bg-brass-500" />
-              Edmonton · Licensed &amp; Insured
+              Edmonton
             </span>
           </m.div>
 

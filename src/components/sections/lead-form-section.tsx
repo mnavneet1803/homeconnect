@@ -13,7 +13,6 @@ function FormFallback() {
 const QUOTE_POINTS = [
   { icon: "gift" as const, label: "No obligation to book", sub: "Get your quote, then decide" },
   { icon: "shield-check" as const, label: "Fixed-price estimate", sub: "No hidden surprises" },
-  { icon: "award" as const, label: "Licensed & insured crew", sub: "Every visit, every job" },
 ] as const;
 
 export function LeadFormSection() {

@@ -41,29 +41,7 @@ export function HeroHouseIllustration() {
           <circle cx="59" cy="59" r="44" fill="none" stroke="#DBB459" strokeWidth="1" />
           <text
             x="59"
-            y="50"
-            textAnchor="middle"
-            fill="#F6F1E5"
-            fontFamily="IBM Plex Mono, monospace"
-            fontSize="10.5"
-            letterSpacing="1"
-          >
-            LICENSED
-          </text>
-          <text
-            x="59"
-            y="65"
-            textAnchor="middle"
-            fill="#F6F1E5"
-            fontFamily="IBM Plex Mono, monospace"
-            fontSize="10.5"
-            letterSpacing="1"
-          >
-            &amp; INSURED
-          </text>
-          <text
-            x="59"
-            y="80"
+            y="62"
             textAnchor="middle"
             fill="#DBB459"
             fontFamily="IBM Plex Mono, monospace"

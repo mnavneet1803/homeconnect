@@ -10,7 +10,6 @@ import { StaggerGrid, StaggerItem } from "@/components/motion/stagger-grid";
 const comparison = [
   { feature: "Free on-site quote", franchise: false, independent: true, us: true },
   { feature: "Fixed-price estimate", franchise: true, independent: false, us: true },
-  { feature: "Licensed & insured", franchise: true, independent: false, us: true },
   { feature: "Same crew start-to-finish", franchise: false, independent: true, us: true },
   { feature: "Local Edmonton team", franchise: false, independent: true, us: true },
   { feature: "Response within 24h", franchise: false, independent: false, us: true },
