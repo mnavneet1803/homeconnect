@@ -7,15 +7,16 @@ import { SERVING_AREA } from "@/constants/launch";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
+import type { IconName } from "@/components/ui/icons";
 import { m } from "framer-motion";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
 const easePremium = [0.19, 1, 0.22, 1];
 
-const HERO_TRUST_BADGES = [
-  // { icon: "star" as const, label: "4.9★ Rating" },        // TODO: enable once reviews collected
-  // { icon: "clock" as const, label: "24h Response" },      // TODO: enable once response time is confirmed
-] as const;
+const HERO_TRUST_BADGES: { icon: IconName; label: string }[] = [
+  // { icon: "star", label: "4.9★ Rating" },        // TODO: enable once reviews collected
+  // { icon: "clock", label: "24h Response" },      // TODO: enable once response time is confirmed
+];
 
 // TODO: Enable HERO_STATS once real data is verified (jobs, years, rating)
 // const HERO_STATS = [
