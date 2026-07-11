@@ -59,7 +59,7 @@ export function Button({
   }
 
   return (
-    <button className={classes} type="button" {...props}>
+    <button className={classes} type="button" onClick={onClick} {...props}>
       {children}
     </button>
   );

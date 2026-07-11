@@ -15,11 +15,10 @@ export function Header({ className }: { className?: string }) {
   return (
     <header
       className={cn(
-        "fixed top-0 z-sticky w-full max-w-[100vw] transition-all duration-500 ease-smooth",
+        // Always solid/frosted so nav links stay readable over any hero
+        // (dark video or light page) with no scroll-dependent contrast flash.
+        "fixed top-0 z-sticky w-full max-w-[100vw] glass-nav transition-all duration-500 ease-smooth",
         "pt-[env(safe-area-inset-top,0px)]",
-        scrolled
-          ? "glass-nav"
-          : "border-b border-transparent bg-transparent",
         className
       )}
     >

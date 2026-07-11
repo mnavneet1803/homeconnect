@@ -30,7 +30,9 @@ export type IconName =
   | "check"
   | "lock"
   | "clock"
-  | "award";
+  | "award"
+  | "play"
+  | "pause";
 
 interface IconProps extends SVGProps<SVGSVGElement> {
   name: IconName;
@@ -231,6 +233,12 @@ const paths: Record<IconName, React.ReactNode> = {
       <circle cx="12" cy="8" r="6" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M15.477 12.89l1.515 8.526a.5.5 0 01-.81.47l-3.58-2.687a1 1 0 00-1.197 0l-3.586 2.686a.5.5 0 01-.81-.469l1.514-8.526" />
     </>
+  ),
+  play: (
+    <path strokeLinecap="round" strokeLinejoin="round" d="M6 4.75l12.5 7.25L6 19.25V4.75z" />
+  ),
+  pause: (
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7v14h2V5zm8 0h-2v14h2V5z" />
   ),
 };
 

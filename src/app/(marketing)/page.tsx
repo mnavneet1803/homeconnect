@@ -11,6 +11,8 @@ import {
   HeroSection,
   TrustIndicatorsSection,
   ServicesSection,
+  WorkReelSection,
+  FeatureVideosSection,
   FurnitureBrandsSection,
   CleaningShowcaseSection,
   WorkShowcaseSection,
@@ -83,6 +85,8 @@ export default function HomePage() {
       {/* <StatsSection /> */}
       {/* TODO: Enable StatsSection once real jobs/years/rating data is available */}
       <ServicesSection />
+      <WorkReelSection />
+      <FeatureVideosSection />
       <FurnitureBrandsSection />
       <CleaningShowcaseSection />
       <WorkShowcaseSection />

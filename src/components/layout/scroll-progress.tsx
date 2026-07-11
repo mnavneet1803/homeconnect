@@ -19,7 +19,7 @@ export function ScrollProgress() {
 
   return (
     <div
-      className="fixed inset-x-0 top-0 z-tape h-[5px] bg-tape-track bg-surface-50/50"
+      className="fixed inset-x-0 top-0 z-tape h-[5px] bg-transparent"
       aria-hidden="true"
     >
       <div

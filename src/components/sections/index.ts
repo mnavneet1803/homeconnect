@@ -5,6 +5,8 @@ export { FurnitureBrandsSection } from "./furniture-brands-section";
 export { CleaningShowcaseSection } from "./cleaning-showcase-section";
 export { WorkShowcaseSection } from "./work-showcase-section";
 export { ServicesSection } from "./services-section";
+export { WorkReelSection } from "./work-reel-section";
+export { FeatureVideosSection } from "./feature-videos-section";
 export { BeforeAfterSection } from "./before-after-section";
 export { HowItWorksSection } from "./how-it-works-section";
 export { WhyChooseUsSection } from "./why-choose-us-section";

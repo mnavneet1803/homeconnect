@@ -23,7 +23,7 @@ export function ServicesSection() {
 
         <StaggerGrid className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <StaggerItem key={service.slug}>
+            <StaggerItem key={service.slug} className="h-full">
               <ServiceGridCard service={service} index={index} />
             </StaggerItem>
           ))}

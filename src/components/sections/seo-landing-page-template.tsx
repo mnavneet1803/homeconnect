@@ -6,6 +6,9 @@ import { ctaNavigation } from "@/config/navigation";
 import { SERVING_AREA } from "@/constants/launch";
 import { ROUTES } from "@/constants/routes";
 import { getSeoLandingPage } from "@/data/seo-landing";
+import { getSeoLandingMedia, isPortrait } from "@/data/service-media";
+import { AutoplayVideo } from "@/components/media/autoplay-video";
+import { ServiceGallerySection } from "@/components/sections/service-gallery-section";
 import { buildFAQSchema } from "@/lib/seo/json-ld";
 import { JsonLdScript } from "@/components/seo/json-ld-script";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
@@ -25,6 +28,8 @@ interface SeoLandingPageTemplateProps {
 export function SeoLandingPageTemplate({ slug }: SeoLandingPageTemplateProps) {
   const page = getSeoLandingPage(slug);
   if (!page) notFound();
+
+  const media = getSeoLandingMedia(slug);
 
   const faqItems = page.faq.map((item, i) => ({
     id: `${slug}-faq-${i}`,
@@ -69,16 +74,35 @@ export function SeoLandingPageTemplate({ slug }: SeoLandingPageTemplateProps) {
                 </Button>
               </div>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-border-subtle shadow-card">
-              <Image
-                src={page.heroImage.src}
-                alt={page.heroImage.alt}
-                width={page.heroImage.width}
-                height={page.heroImage.height}
-                className="h-auto w-full"
-                priority
-              />
-            </div>
+            {media ? (
+              <div
+                className={`relative overflow-hidden rounded-2xl border border-border-subtle shadow-card ${
+                  isPortrait(media.primary) ? "mx-auto aspect-[9/16] max-w-[340px]" : "aspect-video"
+                }`}
+              >
+                <AutoplayVideo
+                  src={media.primary.src}
+                  poster={media.primary.poster}
+                  alt={page.heroImage.alt}
+                  label={page.h1}
+                  orientation={isPortrait(media.primary) ? "portrait" : "landscape"}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sound
+                  priority
+                />
+              </div>
+            ) : (
+              <div className="overflow-hidden rounded-2xl border border-border-subtle shadow-card">
+                <Image
+                  src={page.heroImage.src}
+                  alt={page.heroImage.alt}
+                  width={page.heroImage.width}
+                  height={page.heroImage.height}
+                  className="h-auto w-full"
+                  priority
+                />
+              </div>
+            )}
           </div>
         </Container>
       </Section>
@@ -136,6 +160,8 @@ export function SeoLandingPageTemplate({ slug }: SeoLandingPageTemplateProps) {
           </ul>
         </Container>
       </Section>
+
+      {media && <ServiceGallerySection media={media} serviceName={page.h1} className="bg-surface-0" />}
 
       <Section>
         <Container>

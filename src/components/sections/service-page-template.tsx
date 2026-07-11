@@ -7,6 +7,9 @@ import { SERVICE_BY_SLUG } from "@/constants/services";
 import { ROUTES } from "@/constants/routes";
 import { getServicePageContent } from "@/data/services/pages";
 import { getServicePageImages } from "@/data/service-showcase";
+import { getServicePageMedia, isPortrait } from "@/data/service-media";
+import { AutoplayVideo } from "@/components/media/autoplay-video";
+import { ServiceGallerySection } from "@/components/sections/service-gallery-section";
 import { IMAGE_SIZES } from "@/lib/images";
 import { getAreaHref } from "@/lib/utils/local-links";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
@@ -43,6 +46,8 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
     .filter(Boolean);
 
   const images = getServicePageImages(slug);
+  const media = getServicePageMedia(slug);
+  const primaryVideo = media?.primary;
 
   return (
     <>
@@ -68,18 +73,36 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
               </div>
             </Reveal>
             <Reveal variant="fade-up" delay={0.08}>
-              <div className="overflow-hidden rounded-2xl border border-border-subtle shadow-card">
-                <AuditImage
-                  auditId={`service-detail-${slug}`}
-                  src={images.detail.src}
-                  alt={images.detail.alt}
-                  width={images.detail.width}
-                  height={images.detail.height}
-                  sizes={IMAGE_SIZES.hero}
-                  loading="lazy"
-                  className="h-auto w-full"
-                />
-              </div>
+              {primaryVideo ? (
+                <div
+                  className={`relative overflow-hidden rounded-2xl border border-border-subtle shadow-card ${
+                    isPortrait(primaryVideo) ? "mx-auto aspect-[9/16] max-w-[340px]" : "aspect-video"
+                  }`}
+                >
+                  <AutoplayVideo
+                    src={primaryVideo.src}
+                    poster={primaryVideo.poster}
+                    alt={images.detail.alt}
+                    label={`${service.name} in action`}
+                    orientation={isPortrait(primaryVideo) ? "portrait" : "landscape"}
+                    sizes={IMAGE_SIZES.hero}
+                    sound
+                  />
+                </div>
+              ) : (
+                <div className="overflow-hidden rounded-2xl border border-border-subtle shadow-card">
+                  <AuditImage
+                    auditId={`service-detail-${slug}`}
+                    src={images.detail.src}
+                    alt={images.detail.alt}
+                    width={images.detail.width}
+                    height={images.detail.height}
+                    sizes={IMAGE_SIZES.hero}
+                    loading="lazy"
+                    className="h-auto w-full"
+                  />
+                </div>
+              )}
               <p className="mt-3 text-caption text-ink-500">{images.detail.caption}</p>
             </Reveal>
           </div>
@@ -107,6 +130,9 @@ export function ServicePageTemplate({ slug }: ServicePageTemplateProps) {
           </StaggerGrid>
         </Container>
       </Section>
+
+      {/* Video gallery — short in-view autoplay clips */}
+      {media && <ServiceGallerySection media={media} serviceName={service.name} />}
 
       {/* 2. Common Problems We Solve */}
       <Section>

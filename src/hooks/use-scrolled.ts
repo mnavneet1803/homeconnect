@@ -1,20 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
+
+/** Avoids the SSR warning while still syncing before the browser paints. */
+const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 /**
  * Returns true once the window has scrolled past the given threshold (px).
- * Used for the sticky navbar glass transition.
+ * Syncs immediately (before paint) on mount so a reload mid-scroll — or with
+ * browser scroll restoration — starts in the correct state with no flash.
  */
 export function useScrolled(threshold = 60): boolean {
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const checkScroll = () => {
-      setScrolled(window.scrollY > threshold);
-    };
+  useIsomorphicLayoutEffect(() => {
+    const checkScroll = () => setScrolled(window.scrollY > threshold);
 
-    // Check on mount (in case page is already scrolled on navigation)
+    // Sync immediately (covers reload mid-scroll + scroll restoration).
     checkScroll();
 
     window.addEventListener("scroll", checkScroll, { passive: true });

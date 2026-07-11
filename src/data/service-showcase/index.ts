@@ -280,8 +280,7 @@ export function getServicePageImages(slug: ServiceSlug): ServicePageImages {
 
 /**
  * Thumbnail image shown on the homepage service-card grid (one per service).
- * Cards use each image's intrinsic width/height — nothing is cropped.
- * For a uniform grid look, export assets near **1200×800** (3:2) or **1024×683**.
+ * Cards crop to a fixed **3:2** frame (`object-cover`). Prefer assets near **1200×800**.
  */
 export const SERVICE_CARD_IMAGES: Record<
   ServiceSlug,
