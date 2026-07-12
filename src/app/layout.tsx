@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
 import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { getRootMetadata } from "@/lib/seo/metadata";
 import { buildOrganizationSchema, buildLocalBusinessSchema } from "@/lib/seo/json-ld";
 import { JsonLdScript } from "@/components/seo/json-ld-script";
@@ -67,6 +68,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <MotionProvider>{children}</MotionProvider>
         </Suspense>
+        <Analytics />
       </body>
     </html>
   );
