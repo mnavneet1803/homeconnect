@@ -70,7 +70,7 @@ export function CoverageMap({ className, activeSlug, onCityHover }: CoverageMapP
     <div
       className={cn("relative aspect-[640/520] w-full select-none", className)}
       role="img"
-      aria-label="Service coverage map of the Edmonton metro area, centred on Edmonton with a roughly 50 kilometre service radius covering St. Albert, Sherwood Park, Spruce Grove, Stony Plain, Leduc, and Beaumont"
+      aria-label="Service coverage map of the Edmonton metro area, centred on Edmonton with a roughly 50 kilometre service radius covering St. Albert, Sherwood Park, Fort Saskatchewan, Spruce Grove, Stony Plain, Leduc, and Beaumont"
     >
       <m.svg
         viewBox={`0 0 ${VB_W} ${VB_H}`}

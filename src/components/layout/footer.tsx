@@ -14,7 +14,7 @@ export function Footer() {
   const locations = getAllLocations();
 
   return (
-    <footer className="bg-pine-950 text-paper/80">
+    <footer className="bg-pine-950 text-paper/80 pb-[calc(var(--sticky-cta-height)+env(safe-area-inset-bottom,0px))] md:pb-0">
       {/* Final CTA bar — brass */}
       <section className="final-cta-bar">
         <Container className="flex flex-wrap items-center justify-between gap-6 py-9">
@@ -112,8 +112,11 @@ export function Footer() {
               {[
                 ["About", ROUTES.about],
                 ["How It Works", ROUTES.howItWorks],
+                ["Reviews", ROUTES.reviews],
+                ["Blog", ROUTES.blog.index],
                 ["Vetting Process", ROUTES.vetting],
                 ["Contact", ROUTES.contact],
+                ["Book Online", ROUTES.quote],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link href={href} className="footer-link text-sm">

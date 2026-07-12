@@ -47,6 +47,14 @@ export const SERVICE_PAGE_MEDIA: Partial<Record<ServiceSlug, ServiceVideoMedia>>
     primary: V("reel-house-condo", P),
     gallery: [V("reel-house-condo-2", P)],
   },
+  "drywall-repair": {
+    primary: CARD_VIDEOS.painters!,
+    gallery: [],
+  },
+  "shed-assembly": {
+    primary: CARD_VIDEOS["furniture-assembly"]!,
+    gallery: [V("reel-furniture", P)],
+  },
 };
 
 /** SEO landing template pages (keyed by landing slug) */
@@ -66,6 +74,30 @@ export const SEO_LANDING_MEDIA: Record<string, ServiceVideoMedia> = {
   "move-in-move-out-repairs-edmonton": {
     primary: CARD_VIDEOS["move-in-move-out-repairs"]!,
     gallery: [V("feature-move-in-out", L)],
+  },
+  "house-cleaning-edmonton": {
+    primary: CARD_VIDEOS.cleaners!,
+    gallery: [V("feature-cleaning", L), V("reel-cleaning", P)],
+  },
+  "painting-services-edmonton": {
+    primary: CARD_VIDEOS.painters!,
+    gallery: [],
+  },
+  "drywall-repair-edmonton": {
+    primary: CARD_VIDEOS.painters!,
+    gallery: [V("gallery-handyman-4", L)],
+  },
+  "plumbing-services-edmonton": {
+    primary: CARD_VIDEOS.plumbers!,
+    gallery: [V("gallery-plumbing", L)],
+  },
+  "electrical-services-edmonton": {
+    primary: CARD_VIDEOS.electricians!,
+    gallery: [V("gallery-electrical", P)],
+  },
+  "shed-assembly-edmonton": {
+    primary: CARD_VIDEOS["furniture-assembly"]!,
+    gallery: [V("reel-furniture", P), V("reel-furniture-2", P)],
   },
 };
 

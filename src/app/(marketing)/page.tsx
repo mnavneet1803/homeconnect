@@ -5,7 +5,7 @@ import { DEFAULT_OG_IMAGE_ALT } from "@/constants/seo-social";
 import { SEO } from "@/constants/app";
 import { buildFAQSchema } from "@/lib/seo/json-ld";
 import { JsonLdScript } from "@/components/seo/json-ld-script";
-import { ProjectCardSkeleton, TestimonialSkeleton } from "@/components/skeletons";
+import { TestimonialSkeleton } from "@/components/skeletons";
 import { getFeaturedFaqs } from "@/data/faq/homepage";
 import {
   HeroSection,
@@ -18,6 +18,7 @@ import {
   WorkShowcaseSection,
   HowItWorksSection,
   WhyChooseUsSection,
+  // BeforeAfterSection, // TODO: Enable once true Edmonton before/after job photos are ready
   ServiceAreasSection,
   LocalServicesSection,
   FaqSection,
@@ -59,18 +60,19 @@ const TestimonialsSection = dynamic(
 export const metadata: Metadata = buildMetadata({
   title: "Home Solution Services",
   description:
-    "Edmonton home service contractor — handyman, TV mounting, furniture assembly, professional cleaning, plumbing and electrical maintenance, and move-in/out repairs. Request a free quote.",
+    "Edmonton home service contractor — handyman, furniture assembly, painting, drywall, TV mounting, cleaning, plumbing and electrical. Request a free quote.",
   path: "/",
   ogTitle: SEO.defaultTitle,
   ogImageAlt: DEFAULT_OG_IMAGE_ALT,
   keywords: [
     "home services Edmonton",
     "handyman Edmonton",
+    "furniture assembly Edmonton",
     "contractors Edmonton",
-    "home renovation Edmonton",
     "plumber Edmonton",
     "electrician Edmonton",
     "cleaning services Edmonton",
+    "drywall repair Edmonton",
   ],
 });
 
@@ -92,6 +94,8 @@ export default function HomePage() {
       <WorkShowcaseSection />
       <HowItWorksSection />
       <WhyChooseUsSection />
+      {/* <BeforeAfterSection /> */}
+      {/* TODO: Enable Before & After once true Edmonton job photo pairs are ready */}
       <TestimonialsSection />
       <ServiceAreasSection />
       <LocalServicesSection />

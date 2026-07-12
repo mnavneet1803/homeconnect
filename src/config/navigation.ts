@@ -18,6 +18,10 @@ export const mainNavigation: NavItem[] = [
     href: ROUTES.howItWorks,
   },
   {
+    label: "Reviews",
+    href: ROUTES.reviews,
+  },
+  {
     label: "About",
     href: ROUTES.about,
   },
@@ -54,7 +58,7 @@ export const footerNavigation: FooterColumn[] = [
 ];
 
 export const ctaNavigation = {
-  primary: { label: "Request a Free Quote", href: "/#quote" },
+  primary: { label: "Get a Free Quote", href: "/#quote" },
   secondary: { label: "Call Now", href: `tel:${siteConfig.phone.tel}` },
   whatsapp: { label: "WhatsApp", href: getWhatsAppUrl() },
 } as const;

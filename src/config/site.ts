@@ -20,7 +20,11 @@ export const siteConfig = {
     defaultMessage:
       "Hi! I'd like to request a quote from Home Solution Services.",
   },
-  email: "homehelp0789@gmail.com",
+  /** Display/contact email — override via env; form delivery still uses SMTP_* */
+  email:
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL ??
+    process.env.CONTACT_EMAIL ??
+    "homehelp0789@gmail.com",
   address: {
     street: "",
     city: "Edmonton",
@@ -39,12 +43,28 @@ export const siteConfig = {
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "",
     googleBusiness: process.env.NEXT_PUBLIC_GBP_URL ?? "",
   },
+  maps: {
+    /** Full Google Maps embed iframe src (no API secret required for basic embeds) */
+    embedUrl: process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED ?? "",
+    /** Outbound Maps / GBP link used as fallback and “Open in Maps” */
+    openUrl:
+      process.env.NEXT_PUBLIC_GOOGLE_MAPS_URL ??
+      process.env.NEXT_PUBLIC_GBP_URL ??
+      "",
+  },
   reviews: {
     googleRating: parseFloat(process.env.NEXT_PUBLIC_GOOGLE_RATING ?? "4.9"),
     googleReviewCount: parseInt(
       process.env.NEXT_PUBLIC_GOOGLE_REVIEW_COUNT ?? "127",
       10
     ),
+    /** Direct “Write a review” link when available; falls back to GBP URL */
+    writeReviewUrl:
+      process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ??
+      process.env.NEXT_PUBLIC_GBP_URL ??
+      "",
+    /** Optional third-party reviews embed (Elfsight etc.) — paste full embed HTML via env in a later phase */
+    embedEnabled: process.env.NEXT_PUBLIC_REVIEWS_EMBED_ENABLED === "true",
   },
   business: {
     type: "HomeImprovementContractor" as const,

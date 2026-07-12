@@ -29,7 +29,7 @@ export function WorkShowcaseSection() {
               ))}
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href={ROUTES.services.detail("painters")}>Get a finishing quote</Button>
+              <Button href={ROUTES.seoLanding.painting}>Get a finishing quote</Button>
               <Button href={ROUTES.services.detail("renovators")} variant="secondary">
                 Renovation services
               </Button>

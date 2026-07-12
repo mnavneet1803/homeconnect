@@ -3,7 +3,7 @@ import Link from "next/link";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
 import { ROUTES } from "@/constants/routes";
-import { getAllServices } from "@/data";
+import { getCatalogServices } from "@/data";
 
 export const metadata: Metadata = buildMetadata({
   title: "Home Services",
@@ -13,7 +13,7 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function ServicesIndexPage() {
-  const services = getAllServices();
+  const services = getCatalogServices();
 
   return (
     <Section className="pt-16">

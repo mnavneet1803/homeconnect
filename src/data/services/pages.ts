@@ -13,6 +13,7 @@ const LOCAL_AREAS = [
   "Stony Plain",
   "Leduc",
   "Beaumont",
+  "Fort Saskatchewan",
   "Terwillegar",
   "Windermere",
   "Mill Woods",
@@ -75,45 +76,46 @@ export const SERVICE_PAGES: Record<string, ServicePageBase> = {
 
   painters: {
     slug: "painters",
-    metaTitle: "House Painters Edmonton | Interior & Exterior Painting Quotes",
+    metaTitle: "Painting & Drywall Edmonton | Interior, Exterior & Wall Repair",
     metaDescription:
-      "Looking for house painters in Edmonton? Our team handles interior and exterior painting with professional prep and finish. Free quote — no obligation.",
+      "Looking for painting and drywall in Edmonton? Our team handles interior and exterior paint plus drywall repair and prep. Free quote — no obligation.",
     keywords: [
       "painters Edmonton",
       "house painters Edmonton",
       "interior painting Edmonton",
       "exterior painting Edmonton",
+      "drywall repair Edmonton",
       "painting contractors Edmonton",
     ],
     hero: {
-      eyebrow: "Painting Services · Edmonton",
-      headline: "Professional house painters in Edmonton",
+      eyebrow: "Painting & Drywall · Edmonton",
+      headline: "Painting and drywall services in Edmonton",
       subheadline:
-        "Interior, exterior, and cabinet painting — done by our own crew.",
+        "Interior, exterior, and cabinet painting — plus drywall repair and paint-ready wall finishes by our own crew.",
       intro:
-        "A quality paint job transforms your home and protects Alberta's harsh climate from damaging your exterior. Tell us about your project and our Edmonton painting team will provide a free quote — fast and no obligation.",
+        "A quality finish starts with solid walls. Our Edmonton team patches drywall, primes, and paints so you get one accountable crew from prep to final coat. Request a free quote — fast and no obligation.",
     },
     subServices: [
       { name: "Interior painting", description: "Walls, ceilings, trim, and full-room refreshes" },
       { name: "Exterior painting", description: "Siding, stucco, trim, and weather-resistant coatings" },
+      { name: "Drywall repair", description: "Holes, dents, seams, texture matching, and paint-ready prep" },
+      { name: "Patch & paint", description: "Combine wall repairs and painting in one visit" },
       { name: "Cabinet painting", description: "Kitchen and bathroom cabinet refinishing" },
       { name: "Deck & fence staining", description: "Protect outdoor wood from Edmonton winters" },
-      { name: "Commercial painting", description: "Offices, retail, and rental turnovers" },
-      { name: "Colour consultation", description: "Expert guidance on finishes and palettes" },
     ],
     details: {
-      title: "Edmonton painting services for every surface",
+      title: "Edmonton painting and drywall for every surface",
       paragraphs: [
-        "Edmonton's freeze-thaw cycles and dry winters take a toll on exterior paint. Professional painters understand surface prep — the difference between a finish that lasts five years and one that peels after one winter.",
-        "Whether you're refreshing a downtown condo in Oliver, repainting a weatherboard home in Strathearn, or preparing a rental for turnover in Mill Woods, our painting crew has experience with Edmonton housing stock.",
+        "Edmonton's freeze-thaw cycles and dry winters take a toll on exterior paint — and everyday living leaves drywall dents that show through a fresh coat. Professional prep is the difference between a finish that lasts and one that peels or telegraphing patches.",
+        "Whether you're refreshing a downtown condo in Oliver, repairing walls before a Terwillegar repaint, or preparing a rental for turnover in Mill Woods, our painting & drywall crew handles Edmonton housing stock end to end.",
         "Request a free quote from our team. One company, one crew, accountable from estimate to final coat.",
       ],
     },
     benefits: [
-      { title: "Quality prep & finish", description: "Our painters prioritize surface preparation and durable materials.", icon: "shield-check" },
+      { title: "Drywall + paint together", description: "Patch, texture, and paint scoped as one project when you need both.", icon: "layers" },
+      { title: "Quality prep & finish", description: "Surface preparation and durable materials on every job.", icon: "shield-check" },
       { title: "Free written quote", description: "Upfront pricing and timeline before you commit.", icon: "gift" },
       { title: "Climate-aware work", description: "We schedule exterior work around Edmonton's weather windows.", icon: "calendar" },
-      { title: "Professional crew", description: "Professional workmanship on every job.", icon: "check-circle" },
     ],
     localAreas: LOCAL_AREAS,
     faq: [
@@ -538,6 +540,106 @@ export const SERVICE_PAGES: Record<string, ServicePageBase> = {
       { question: "Can I schedule recurring maintenance?", answer: "Yes — we offer monthly, quarterly, or seasonal maintenance plans at discounted rates." },
     ],
     relatedSlugs: ["handyman", "cleaners", "landscapers"],
+  },
+
+  "drywall-repair": {
+    slug: "drywall-repair",
+    metaTitle: "Drywall Repair Edmonton | Patch, Texture & Paint-Ready Walls",
+    metaDescription:
+      "Need drywall repair in Edmonton? Our crew patches holes, smooths seams, and preps walls for paint. Free quote — no obligation.",
+    keywords: [
+      "drywall repair Edmonton",
+      "drywall patching Edmonton",
+      "hole repair walls Edmonton",
+      "drywall contractor Edmonton",
+    ],
+    hero: {
+      eyebrow: "Drywall Repair · Edmonton",
+      headline: "Professional drywall repair in Edmonton",
+      subheadline:
+        "Clean patches, proper tape and mud, and paint-ready finishes — done by our own crew.",
+      intro:
+        "From doorknob dents to larger water-damage patches, we restore walls so they look finished — not like a temporary fix. Request a free quote with no obligation.",
+    },
+    subServices: [
+      { name: "Hole & dent patching", description: "Small to medium wall repairs blended to the surrounding surface" },
+      { name: "Seam & corner repairs", description: "Tape, mud, and corner bead fixes for smooth edges" },
+      { name: "Texture matching", description: "Knockdown and orange-peel blending where needed" },
+      { name: "Paint-ready prep", description: "Sanded, primed surfaces ready for finishing coats" },
+      { name: "Water-damage patches", description: "Cut out, replace, and finish drywall after leaks" },
+      { name: "Rental punch-list walls", description: "Turnover wall repairs for landlords and property managers" },
+    ],
+    details: {
+      title: "Drywall repair across Edmonton and the Capital Region",
+      paragraphs: [
+        "Damaged drywall makes rooms look unfinished and can delay rental turnovers or painting projects. Our in-house crew handles patching, taping, mudding, and finish prep so walls are ready for paint.",
+        "We work in houses, condos, and rental units throughout Edmonton, Sherwood Park, St. Albert, Beaumont, Leduc, Fort Saskatchewan, and Spruce Grove.",
+      ],
+    },
+    benefits: [
+      { title: "Clean, paint-ready finishes", description: "Proper prep so patches disappear under paint.", icon: "shield-check" },
+      { title: "Free quotes", description: "No-obligation pricing before work begins.", icon: "gift" },
+      { title: "Local Edmonton crew", description: "One accountable team — no middlemen.", icon: "map-pin" },
+      { title: "Fast turnaround", description: "Most requests get a response within 24 hours.", icon: "clock" },
+    ],
+    localAreas: LOCAL_AREAS,
+    faq: [
+      { question: "How much does drywall repair cost in Edmonton?", answer: "Pricing depends on hole size, texture matching, and whether paint is included. We provide a written quote after reviewing photos or an on-site look." },
+      { question: "Can you match existing texture?", answer: "Yes — we blend common textures such as knockdown and orange peel so repairs disappear once painted." },
+      { question: "Do you paint after patching?", answer: "We can include paint or leave walls primer-ready for your painter. Tell us your preference when you request a quote." },
+    ],
+    relatedSlugs: ["painters", "handyman", "move-in-move-out-repairs"],
+  },
+
+  "shed-assembly": {
+    slug: "shed-assembly",
+    metaTitle: "Shed Assembly Edmonton | Garden Shed & Outdoor Storage Setup",
+    metaDescription:
+      "Need shed assembly in Edmonton? Garden sheds and outdoor storage kits are part of our furniture & shed assembly service. Free quote — no obligation.",
+    keywords: [
+      "shed assembly Edmonton",
+      "garden shed install Edmonton",
+      "outdoor storage assembly Edmonton",
+      "furniture and shed assembly Edmonton",
+      "shed builder Edmonton",
+    ],
+    hero: {
+      eyebrow: "Furniture & Shed Assembly · Edmonton",
+      headline: "Shed and outdoor storage assembly in Edmonton",
+      subheadline:
+        "Flat-pack sheds and storage kits built square, level, and ready for Alberta weather — by the same crew that assembles your furniture.",
+      intro:
+        "From backyard garden sheds to larger storage kits, our furniture & shed assembly crew handles unboxing, assembly, anchoring, and finishing so you do not spend a weekend wrestling panels alone. Request a free quote with no obligation.",
+    },
+    subServices: [
+      { name: "Garden shed kits", description: "Assemble popular retail and online shed kits" },
+      { name: "Outdoor storage units", description: "Resin and wood storage buildings set up on-site" },
+      { name: "Leveling & base prep", description: "Square, level installs on prepared pads" },
+      { name: "Anchoring & doors", description: "Secure fastening, door alignment, and hardware" },
+      { name: "Shelf & accessory installs", description: "Interior shelving and hooks as needed" },
+      { name: "Indoor furniture too", description: "IKEA and flat-pack furniture from the same assembly team" },
+    ],
+    details: {
+      title: "Professional shed assembly across the Capital Region",
+      paragraphs: [
+        "Shed kits look simple on the box and turn into a multi-day project without the right tools and a second set of hands. Our team builds outdoor storage correctly the first time — as part of our furniture & shed assembly service.",
+        "We serve Edmonton and surrounding communities including Sherwood Park, St. Albert, Beaumont, Leduc, Fort Saskatchewan, Spruce Grove, and Stony Plain.",
+      ],
+    },
+    benefits: [
+      { title: "Built square and secure", description: "Level assembly with proper fastening and door fit.", icon: "shield-check" },
+      { title: "Same assembly crew", description: "Furniture and sheds quoted together when you need both.", icon: "layers" },
+      { title: "Free quotes", description: "Clear pricing before we start.", icon: "gift" },
+      { title: "Fast scheduling", description: "Typical response within 24 hours.", icon: "clock" },
+    ],
+    localAreas: LOCAL_AREAS,
+    faq: [
+      { question: "Is shed assembly separate from furniture assembly?", answer: "No — shed assembly is part of our furniture & shed assembly service. You can book furniture, a shed, or both on one quote." },
+      { question: "Do you assemble sheds from big-box stores?", answer: "Yes — we assemble common retail and online shed kits. Share the brand/model and site photos when requesting a quote." },
+      { question: "Do I need a concrete pad?", answer: "Many kits need a level base. Tell us what you have on site and we will confirm requirements in the quote." },
+      { question: "How long does shed assembly take?", answer: "Most backyard kits are completed in one visit, depending on size and site conditions." },
+    ],
+    relatedSlugs: ["furniture-assembly", "handyman", "deck-fence"],
   },
 };
 

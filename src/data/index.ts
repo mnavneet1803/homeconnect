@@ -9,6 +9,11 @@ export function getAllServices() {
   return [...SERVICES].filter((s) => s.featured).sort((a, b) => a.sortOrder - b.sortOrder);
 }
 
+/** Full service catalog for /services (includes non-featured entries). */
+export function getCatalogServices() {
+  return [...SERVICES].sort((a, b) => a.sortOrder - b.sortOrder);
+}
+
 export function getServiceBySlug(slug: string) {
   return SERVICE_BY_SLUG[slug as ServiceSlug] ?? null;
 }

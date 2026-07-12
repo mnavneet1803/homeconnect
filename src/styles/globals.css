@@ -53,7 +53,7 @@
 
   --header-height: 4rem;
   --header-height-mobile: 3.5rem;
-  --sticky-cta-height: 5.5rem;
+  --sticky-cta-height: 4.75rem;
   --tape-height: 5px;
   --container-padding: clamp(1.25rem, 5vw, 3rem);
   --section-gap: clamp(3.5rem, 9vw, 7rem);
@@ -105,11 +105,11 @@
     @apply text-body-md text-ink-600;
   }
 
-  a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-ghost):not(.btn-accent):not(.btn-destructive):not(.btn-line):not(.nav-link):not(.footer-link):not(.btn-link) {
+  a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-ghost):not(.btn-accent):not(.btn-destructive):not(.btn-line):not(.nav-link):not(.footer-link):not(.btn-link):not(.hero-phone-chip) {
     @apply text-pine-700 transition-colors duration-normal ease-out;
   }
 
-  a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-ghost):not(.btn-accent):not(.btn-destructive):not(.btn-line):not(.nav-link):not(.footer-link):not(.btn-link):hover {
+  a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-ghost):not(.btn-accent):not(.btn-destructive):not(.btn-line):not(.nav-link):not(.footer-link):not(.btn-link):not(.hero-phone-chip):hover {
     @apply text-pine-600;
   }
 
@@ -417,23 +417,34 @@
 
   .mobile-sticky-cta {
     @apply fixed inset-x-0 bottom-0 z-sticky
-      flex items-stretch gap-2 border-t border-border
-      bg-surface-50/95 shadow-sticky
+      flex items-center gap-2
+      border-t border-border bg-paper
+      shadow-[0_-8px_32px_rgba(26,46,36,0.12)]
       backdrop-blur-xl md:hidden;
     padding-top: 0.625rem;
     padding-bottom: max(0.625rem, env(safe-area-inset-bottom, 0px));
-    padding-left: max(1rem, env(safe-area-inset-left, 0px));
-    padding-right: max(1rem, env(safe-area-inset-right, 0px));
+    padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
+    padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
     width: 100%;
     max-width: 100vw;
     will-change: transform;
+    background-color: rgba(246, 241, 229, 0.95);
   }
 
-  .mobile-sticky-cta .btn {
-    @apply min-w-0 flex-1 px-2.5 text-[0.8125rem] leading-tight;
-    min-height: 2.75rem;
-    height: auto;
-    white-space: normal;
+  .mobile-sticky-cta__action {
+    @apply flex min-h-12 min-w-0 flex-1 items-center justify-center gap-1.5
+      rounded-xl border border-border bg-paper
+      px-2 py-2.5 text-[13px] font-medium leading-none text-pine-950
+      shadow-sm transition-colors duration-200
+      active:bg-surface-100;
+  }
+
+  .mobile-sticky-cta__quote {
+    @apply flex min-h-12 min-w-0 flex-[1.35] items-center justify-center gap-1.5
+      rounded-xl bg-brass-500 px-2.5 py-2.5
+      text-[13px] font-semibold leading-none text-pine-950
+      shadow-brass transition-colors duration-200
+      active:bg-brass-400;
   }
 
   .skeleton {
@@ -505,6 +516,19 @@
     @apply absolute z-10 flex items-center gap-2.5 rounded-xl
       border border-white/20 bg-white/90 px-4 py-3
       shadow-lg backdrop-blur-md;
+  }
+
+  .hero-phone-chip {
+    @apply inline-flex items-center gap-3 rounded-2xl
+      border border-white/25 px-3.5 py-2.5
+      text-paper shadow-[0_8px_28px_rgba(14,42,34,0.35)]
+      backdrop-blur-md transition-colors duration-200;
+    background-color: rgba(14, 42, 34, 0.55);
+  }
+
+  .hero-phone-chip:hover {
+    border-color: rgba(219, 180, 89, 0.5);
+    background-color: rgba(14, 42, 34, 0.7);
   }
 
   /* Timeline connector for How It Works */

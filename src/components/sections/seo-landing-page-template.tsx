@@ -62,15 +62,15 @@ export function SeoLandingPageTemplate({ slug }: SeoLandingPageTemplateProps) {
               </h1>
               <p className="mt-5 text-body-lg text-ink-500">{page.intro}</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <Button href={ctaNavigation.secondary.href} size="lg">
+                <Button href="#seo-quote" size="lg">
+                  {ctaNavigation.primary.label}
+                </Button>
+                <Button href={ctaNavigation.secondary.href} variant="secondary" size="lg">
                   {ctaNavigation.secondary.label}
                 </Button>
                 <Button href={ctaNavigation.whatsapp.href} variant="secondary" size="lg" external>
                   <Icon name="whatsapp" size={18} className="mr-2" />
                   {ctaNavigation.whatsapp.label}
-                </Button>
-                <Button href="#seo-quote" variant="secondary" size="lg">
-                  {ctaNavigation.primary.label}
                 </Button>
               </div>
             </div>

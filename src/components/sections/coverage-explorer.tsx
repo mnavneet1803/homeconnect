@@ -78,8 +78,10 @@ export function CoverageExplorer({ cities, neighbourhoods, quoteHref }: Coverage
       </div>
 
       <Reveal variant="fade-up" delay={0.1}>
-        <div className="overflow-hidden rounded-lg border border-border bg-surface-0 shadow-card">
-          <CoverageMap activeSlug={active} onCityHover={setActive} />
+        <div className="space-y-4">
+          <div className="overflow-hidden rounded-lg border border-border bg-surface-0 shadow-card">
+            <CoverageMap activeSlug={active} onCityHover={setActive} />
+          </div>
         </div>
       </Reveal>
     </div>

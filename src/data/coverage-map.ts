@@ -19,6 +19,7 @@ export const COVERAGE_CITIES: CoverageCity[] = [
   { slug: "edmonton", name: "Edmonton", lat: 53.5461, lon: -113.4938, isHub: true, labelSide: "bottom" },
   { slug: "st-albert", name: "St. Albert", lat: 53.6305, lon: -113.6256, labelSide: "top" },
   { slug: "sherwood-park", name: "Sherwood Park", lat: 53.5417, lon: -113.2958, labelSide: "right" },
+  { slug: "fort-saskatchewan", name: "Fort Saskatchewan", lat: 53.7119, lon: -113.2128, labelSide: "right" },
   { slug: "spruce-grove", name: "Spruce Grove", lat: 53.545, lon: -113.911, labelSide: "top" },
   { slug: "stony-plain", name: "Stony Plain", lat: 53.5263, lon: -113.9922, labelSide: "bottom" },
   { slug: "leduc", name: "Leduc", lat: 53.2634, lon: -113.5519, labelSide: "bottom" },

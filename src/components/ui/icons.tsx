@@ -275,6 +275,7 @@ export function serviceIconName(icon: string): IconName {
     tree: "tree",
     fence: "fence",
     "shield-check": "shield-check",
+    "clipboard-list": "clipboard-list",
   };
   return map[icon] ?? "wrench";
 }
@@ -294,6 +295,12 @@ export function benefitIconName(icon: string): IconName {
     zap: "zap",
     "clipboard-list": "clipboard-list",
     users: "users",
+    wrench: "wrench",
+    layers: "layers",
+    home: "home",
+    paintbrush: "paintbrush",
+    droplets: "droplets",
+    lock: "lock",
   };
   return map[icon] ?? "check-circle";
 }

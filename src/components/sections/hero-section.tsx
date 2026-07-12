@@ -2,17 +2,23 @@
 
 import { useState } from "react";
 import { ctaNavigation } from "@/config/navigation";
+import { siteConfig } from "@/config/site";
 import { SERVING_AREA } from "@/constants/launch";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
+import { TrackedPhoneLink } from "@/components/analytics/tracked-link";
 import { m } from "framer-motion";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { HeroMedia } from "@/components/media/hero-media";
 import { VideoLightbox } from "@/components/media/video-lightbox";
 import { HERO_MEDIA } from "@/data/homepage-media";
+import { trackPhoneClick, trackCtaClick } from "@/lib/analytics/events";
 
 const easePremium = [0.19, 1, 0.22, 1];
+
+const HERO_SERVICE_LINE =
+  "Furniture & Shed Assembly • Plumbing • Electrical • Painting & Drywall • Cleaning • Home Repairs";
 
 export function HeroSection() {
   const reducedMotion = usePrefersReducedMotion();
@@ -49,7 +55,7 @@ export function HeroSection() {
       />
 
       <Container className="relative z-10 flex min-h-[calc(100svh-76px)] flex-col justify-end pb-20 pt-10 lg:justify-center lg:pb-24">
-        <div className="max-w-[620px]">
+        <div className="max-w-[640px]">
           {/* Location badge */}
           <m.div
             initial={reducedMotion ? false : { opacity: 0, y: 16 }}
@@ -64,31 +70,55 @@ export function HeroSection() {
 
           {/* Headline */}
           <m.h1
-            className="mt-6 font-display text-[clamp(2.5rem,6vw,4.25rem)] font-bold leading-[1.04] tracking-[-0.03em] text-paper [text-shadow:0_2px_24px_rgba(14,42,34,0.35)]"
+            className="mt-6 font-display text-[clamp(2.25rem,5.5vw,3.75rem)] font-bold leading-[1.05] tracking-[-0.03em] text-paper [text-shadow:0_2px_24px_rgba(14,42,34,0.35)]"
             initial={reducedMotion ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: easePremium, delay: 0.08 }}
           >
-            Trusted home service
-            <br />
-            contractor in{" "}
+            Professional Handyman &amp; Home Services in{" "}
             <em className="not-italic text-brass-400">Edmonton</em>
           </m.h1>
 
-          {/* Body */}
+          {/* Services line */}
           <m.p
-            className="mt-5 max-w-[500px] text-[18px] leading-relaxed text-paper/85"
-            initial={reducedMotion ? false : { opacity: 0, y: 18 }}
+            className="mt-5 max-w-[520px] text-[13.5px] font-medium leading-[1.65] tracking-[0.01em] text-paper/85 [text-shadow:0_1px_12px_rgba(14,42,34,0.45)] sm:text-[14.5px]"
+            initial={reducedMotion ? false : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: easePremium, delay: 0.15 }}
+            transition={{ duration: 0.65, ease: easePremium, delay: 0.12 }}
           >
-            One call for handyman work, furniture assembly, cleaning, plumbing and electrical
-            maintenance — done right, by the same crew every time.
+            {HERO_SERVICE_LINE}
           </m.p>
+
+          {/* Phone — high-contrast chip so it stays readable on video */}
+          <m.div
+            className="mt-5"
+            initial={reducedMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, ease: easePremium, delay: 0.16 }}
+          >
+            <TrackedPhoneLink
+              tel={siteConfig.phone.tel}
+              display={siteConfig.phone.display}
+              location="hero"
+              className="hero-phone-chip"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brass-500 text-pine-950 shadow-brass">
+                <Icon name="phone" size={16} aria-hidden />
+              </span>
+              <span className="flex min-w-0 flex-col items-start leading-tight">
+                <span className="font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-paper/65">
+                  Call us
+                </span>
+                <span className="text-[17px] font-semibold tracking-wide text-paper">
+                  {siteConfig.phone.display}
+                </span>
+              </span>
+            </TrackedPhoneLink>
+          </m.div>
 
           {/* CTA Buttons */}
           <m.div
-            className="mt-8 flex flex-wrap gap-3.5"
+            className="mt-8 flex flex-wrap gap-3"
             initial={reducedMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: easePremium, delay: 0.22 }}
@@ -99,35 +129,52 @@ export function HeroSection() {
               <Icon name="arrow-right" size={14} className="arrow-icon" />
             </Button>
             <Button
-              href={ctaNavigation.secondary.href}
+              href={`tel:${siteConfig.phone.tel}`}
               variant="line"
               size="lg"
               className="border-white/45 bg-white/10 text-paper backdrop-blur-sm hover:border-white/70 hover:bg-white/20 hover:text-paper"
+              onClick={() => trackPhoneClick({ location: "hero_cta" })}
             >
               <Icon name="phone" size={16} />
-              {ctaNavigation.secondary.label}
+              Call Now
             </Button>
             <Button
+              href={ctaNavigation.whatsapp.href}
               variant="line"
               size="lg"
-              onClick={() => setVideoOpen(true)}
-              aria-haspopup="dialog"
-              className="border-white/35 text-paper hover:border-white/60 hover:bg-white/10 hover:text-paper"
+              external
+              className="border-white/35 bg-white/5 text-paper hover:border-white/60 hover:bg-white/10 hover:text-paper"
+              onClick={() =>
+                trackCtaClick({
+                  location: "hero_cta",
+                  text: ctaNavigation.whatsapp.label,
+                  href: ctaNavigation.whatsapp.href,
+                })
+              }
             >
-              <Icon name="play" size={15} className="translate-x-[1px]" />
-              Watch Video
+              <Icon name="whatsapp" size={16} />
+              WhatsApp
             </Button>
           </m.div>
 
-          {/* Serving area caption */}
-          <m.p
-            className="mt-6 text-[12px] text-paper/60"
+          {/* Serving area + watch video */}
+          <m.div
+            className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2"
             initial={reducedMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease: easePremium, delay: 0.32 }}
           >
-            {SERVING_AREA}
-          </m.p>
+            <p className="text-[12px] text-paper/60">{SERVING_AREA}</p>
+            <button
+              type="button"
+              onClick={() => setVideoOpen(true)}
+              aria-haspopup="dialog"
+              className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-paper/70 transition-colors hover:text-brass-300"
+            >
+              <Icon name="play" size={12} className="translate-x-[0.5px]" />
+              Watch video
+            </button>
+          </m.div>
         </div>
       </Container>
 

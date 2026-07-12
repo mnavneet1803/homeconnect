@@ -163,24 +163,29 @@ export const SERVICE_PAGE_ENRICHMENTS: Record<SeoServiceSlug, ServicePageEnrichm
 
   painters: {
     overview: {
-      title: "Professional painting for Edmonton homes and rentals",
+      title: "Professional painting and drywall for Edmonton homes and rentals",
       paragraphs: [
-        "A fresh coat of paint does more than update a room — it protects your home from Alberta's harsh climate, improves curb appeal before a sale, and helps rental units show well between tenants. Home Solution Services provides interior and exterior painting across Edmonton with our own professional crew, so your project stays on one timeline with one team accountable for prep, application, and cleanup.",
-        "Edmonton exteriors face extreme freeze-thaw cycles, intense summer UV, and long dry winters that stress paint films on stucco, wood siding, and trim. Interior projects in older neighbourhoods like Strathearn and Highlands often involve plaster repairs, oil-to-latex conversions, and careful masking around heritage trim. Our painters understand these local conditions and build proper surface preparation into every job — because in Alberta, prep is what separates a finish that lasts from one that peels after a single winter.",
-        "We paint single-family homes, condos, townhouses, and commercial spaces throughout the Capital Region. Landlords and property managers call us for turnover repaints, while homeowners trust us for full interior refreshes, cabinet refinishing, deck staining, and exterior repaints timed around Edmonton's weather windows. You receive a detailed written quote before work begins, with scope covering prep, primer, coats, and materials.",
-        "Working directly with Home Solution Services means no subcontractor surprises — the painters on your estimate are the painters on your walls. We protect floors and furniture, ventilate properly during interior work, and schedule exterior projects when temperatures and humidity meet manufacturer specifications. Our team responds to quote requests within 24 hours and keeps communication clear from colour selection through final walkthrough.",
-        "Whether you are refreshing a downtown condo in Oliver, repainting a weathered bungalow in St. Albert, or preparing a duplex in Mill Woods for new tenants, our Edmonton painting team delivers consistent, professional results. Request a free quote today and tell us about your surfaces, timeline, and any colour goals — we will take it from there.",
+        "A fresh coat of paint does more than update a room — it protects your home from Alberta's harsh climate, improves curb appeal before a sale, and helps rental units show well between tenants. Home Solution Services provides interior and exterior painting plus drywall repair across Edmonton with our own professional crew, so patching, priming, and painting stay on one timeline with one team.",
+        "Edmonton exteriors face extreme freeze-thaw cycles, intense summer UV, and long dry winters that stress paint films on stucco, wood siding, and trim. Interior projects often need drywall patches for dents, anchor holes, and seams before colour goes on. Our painters build proper surface preparation — including drywall repair — into every job.",
+        "We paint single-family homes, condos, townhouses, and commercial spaces throughout the Capital Region. Landlords and property managers call us for turnover wall repairs and repaints, while homeowners trust us for full interior refreshes, cabinet refinishing, deck staining, and exterior repaints timed around Edmonton's weather windows. You receive a detailed written quote before work begins.",
+        "Working directly with Home Solution Services means no subcontractor surprises — the painters on your estimate are the painters on your walls. We protect floors and furniture, ventilate properly during interior work, and schedule exterior projects when temperatures and humidity meet manufacturer specifications.",
+        "Whether you are refreshing a downtown condo in Oliver, repairing drywall before a St. Albert repaint, or preparing a duplex in Mill Woods for new tenants, our Edmonton painting & drywall team delivers consistent results. Request a free quote today.",
       ],
     },
     commonProblems: {
-      title: "Common painting problems in Edmonton homes",
+      title: "Common painting and drywall problems in Edmonton homes",
       intro:
-        "Alberta's climate and aging housing stock create painting challenges that shortcuts cannot fix. These are the issues our Edmonton painters address every week.",
+        "Alberta's climate and everyday wear create challenges that shortcuts cannot fix. These are the issues our Edmonton painting & drywall crew addresses every week.",
       problems: [
         {
           title: "Peeling exterior paint after winter",
           description:
             "Moisture trapped under failing paint film expands during freeze-thaw cycles and causes bubbling, cracking, and peeling on siding and trim. We strip loose material, repair substrate damage, prime properly, and apply coatings rated for Alberta weather.",
+        },
+        {
+          title: "Drywall holes and uneven patches",
+          description:
+            "Doorknob dents, picture-hanger holes, and botched DIY patches telegraph through new paint. We cut clean patches, tape and mud properly, blend texture, and sand so the finish looks seamless.",
         },
         {
           title: "Stains bleeding through new paint",
@@ -190,30 +195,31 @@ export const SERVICE_PAGE_ENRICHMENTS: Record<SeoServiceSlug, ServicePageEnrichm
         {
           title: "Cracked caulking and trim gaps",
           description:
-            "Exterior caulking fails around windows, doors, and corner boards, leaving gaps that let water behind siding. We remove old caulk, seal joints correctly, and paint trim as a unified system rather than masking structural gaps with colour.",
+            "Exterior caulking fails around windows, doors, and corner boards, leaving gaps that let water behind siding. We remove old caulk, seal joints correctly, and paint trim as a unified system.",
         },
         {
           title: "Outdated or uneven interior finishes",
           description:
-            "Patchy roller marks, visible cut lines, and dated colour schemes make rooms feel tired even when walls are technically intact. We sand imperfections, apply consistent coats, and help you choose modern palettes that suit Edmonton natural light.",
-        },
-        {
-          title: "Worn kitchen and bathroom cabinets",
-          description:
-            "Replacing cabinetry is expensive when surfaces are structurally sound but cosmetically dated. Our painters degrease, sand, prime, and spray or brush cabinet doors and frames for a durable finish that transforms the room at a fraction of replacement cost.",
+            "Patchy roller marks, visible cut lines, and dated colour schemes make rooms feel tired. We sand imperfections, apply consistent coats, and help you choose modern palettes that suit Edmonton natural light.",
         },
         {
           title: "Rental unit wear between tenants",
           description:
-            "Scuffed walls, nail holes, and marked trim accumulate quickly in rental properties. We provide fast turnover painting with durable washable finishes so units photograph well and pass inspection without delaying move-in dates.",
+            "Scuffed walls, nail holes, and marked trim accumulate quickly in rental properties. We provide fast turnover drywall repair and painting with durable washable finishes so units photograph well without delaying move-in dates.",
         },
       ],
     },
     whyChooseUs: {
-      title: "Why choose Home Solution Services for painting",
+      title: "Why choose Home Solution Services for painting & drywall",
       intro:
-        "Quality painting starts with preparation and ends with a crew that respects your home. Here is why Edmonton clients trust our in-house painters.",
+        "Quality finishes start with preparation and end with a crew that respects your home. Here is why Edmonton clients trust our in-house painters.",
       reasons: [
+        {
+          title: "Drywall and paint, one crew",
+          description:
+            "Wall repairs and painting are scoped together when you need both — no juggling separate contractors.",
+          icon: "layers",
+        },
         {
           title: "Prep-first approach",
           description:
@@ -229,14 +235,8 @@ export const SERVICE_PAGE_ENRICHMENTS: Record<SeoServiceSlug, ServicePageEnrichm
         {
           title: "Weather-smart scheduling",
           description:
-            "Exterior work is booked during Edmonton's reliable painting windows so coatings cure properly and warranties stay valid.",
+            "Exterior work is booked during Edmonton's reliable painting windows so coatings cure properly.",
           icon: "calendar",
-        },
-        {
-          title: "Consistent professional finish",
-          description:
-            "Our employed painters follow the same quality standards on every job, from a single accent wall to a full exterior repaint.",
-          icon: "check-circle",
         },
       ],
     },
@@ -1453,6 +1453,189 @@ export const SERVICE_PAGE_ENRICHMENTS: Record<SeoServiceSlug, ServicePageEnrichm
         question: "How does recurring maintenance pricing compare to one-time visits?",
         answer:
           "Recurring seasonal or quarterly plans are priced lower per visit than ad-hoc bookings because we route efficiently and know your property history. We outline both options in your quote.",
+      },
+    ],
+  },
+
+  "drywall-repair": {
+    overview: {
+      title: "Drywall repair for Edmonton homes and rentals",
+      paragraphs: [
+        "Holes, dents, and uneven patches make rooms look unfinished — and they delay painting or rental turnovers. Home Solution Services provides professional drywall repair across Edmonton and the Capital Region with our own in-house crew.",
+        "We cut clean patches, tape and mud properly, sand smooth, and blend common textures so repairs disappear once painted. Whether you need a handful of doorknob dents fixed or larger water-damage sections replaced, you get a written quote before work begins.",
+        "Landlords use us for punch-list wall repairs between tenants. Homeowners use us before a paint refresh or after a renovation. Either way, you deal directly with the people doing the work.",
+      ],
+    },
+    commonProblems: {
+      title: "Drywall problems we fix most often",
+      intro: "If your walls look unfinished or a DIY patch shows through paint, we can help.",
+      problems: [
+        {
+          title: "Doorknob dents and anchor holes",
+          description:
+            "Small holes and dents from hardware, furniture, or failed anchors are common in hallways and bedrooms. We patch and finish them so they disappear under paint.",
+        },
+        {
+          title: "Water-damaged drywall",
+          description:
+            "After a leak, soft or stained drywall needs to be cut out and replaced — not just painted over. We remove damaged sections and finish to a paint-ready surface.",
+        },
+        {
+          title: "Visible seams and corner damage",
+          description:
+            "Cracked seams and crushed corners show every time the light hits. We re-tape, re-mud, and restore clean edges.",
+        },
+        {
+          title: "Botched DIY patches",
+          description:
+            "Uneven mud and missing tape leave ridges that paint cannot hide. We rework patches so walls look professional again.",
+        },
+      ],
+    },
+    whyChooseUs: {
+      title: "Why choose our drywall crew",
+      intro: "One accountable Edmonton team — not a rotating cast of subcontractors.",
+      reasons: [
+        {
+          title: "Paint-ready finishes",
+          description: "Proper tape, mud, and sanding so patches blend once painted.",
+          icon: "shield-check",
+        },
+        {
+          title: "Free written quotes",
+          description: "Clear scope and pricing before anyone starts cutting drywall.",
+          icon: "gift",
+        },
+        {
+          title: "Rental-friendly turnaround",
+          description: "Efficient punch-list repairs for landlords and property managers.",
+          icon: "home",
+        },
+        {
+          title: "Capital Region coverage",
+          description: "Edmonton, Sherwood Park, St. Albert, Beaumont, Leduc, Fort Saskatchewan, and more.",
+          icon: "map-pin",
+        },
+      ],
+    },
+    process: {
+      title: "How drywall repair works",
+      intro: "Simple steps from request to finished walls.",
+      steps: [
+        { step: 1, title: "Share photos & scope", description: "Tell us room count, hole sizes, and whether paint is included." },
+        { step: 2, title: "Get a free quote", description: "We confirm materials, labour, and timeline in writing." },
+        { step: 3, title: "Patch & finish", description: "Our crew repairs on site and leaves surfaces paint-ready." },
+        { step: 4, title: "Optional paint", description: "Add touch-up or full wall paint if you want a complete finish." },
+      ],
+    },
+    serviceAreas: {
+      title: "Drywall repair across the Edmonton metro",
+      intro:
+        "We serve Edmonton, Sherwood Park, St. Albert, Beaumont, Leduc, Fort Saskatchewan, Spruce Grove, and Stony Plain.",
+    },
+    cta: {
+      headline: "Need drywall repaired in Edmonton?",
+      description: "Request a free quote — photos help us price accurately.",
+    },
+    additionalFaq: [
+      {
+        question: "How soon can you patch drywall?",
+        answer:
+          "Most requests receive a response within 24 hours. Same-day or next-day options depend on schedule — ask when you request a quote.",
+      },
+    ],
+  },
+
+  "shed-assembly": {
+    overview: {
+      title: "Shed and outdoor storage assembly in Edmonton",
+      paragraphs: [
+        "Shed kits promise a weekend project and often become a multi-day struggle with missing parts, uneven bases, and doors that will not latch. Home Solution Services assembles garden sheds and outdoor storage kits across Edmonton as part of our furniture & shed assembly service.",
+        "We level, square, fasten, and finish so your shed is secure for Alberta weather. Share the kit brand and site photos and we will quote labour clearly before we arrive — furniture and sheds can be booked together.",
+        "Homeowners and landlords use us when they want outdoor storage done correctly without recruiting neighbours for a panel-lifting party.",
+      ],
+    },
+    commonProblems: {
+      title: "Shed assembly challenges we solve",
+      intro: "These are the issues that turn DIY shed builds into unfinished eyesores.",
+      problems: [
+        {
+          title: "Uneven bases and out-of-square walls",
+          description:
+            "An unlevel pad causes doors to bind and roofs to gap. We check the base and assemble square so the structure sits true.",
+        },
+        {
+          title: "Misaligned doors and hardware",
+          description:
+            "Doors that scrape or will not latch usually mean rushed assembly. We align hinges, latches, and weather seals properly.",
+        },
+        {
+          title: "Incomplete kit builds",
+          description:
+            "Partially assembled sheds are hard to finish alone. We complete the build and tidy the site.",
+        },
+        {
+          title: "Insecure anchoring",
+          description:
+            "Alberta wind can shift lightweight sheds. We fasten per kit guidance for a more secure install.",
+        },
+      ],
+    },
+    whyChooseUs: {
+      title: "Why book our shed assembly team",
+      intro: "Direct local service with clear pricing — furniture and sheds from one crew.",
+      reasons: [
+        {
+          title: "Built to last",
+          description: "Square assembly, proper fastening, and door fit that works.",
+          icon: "shield-check",
+        },
+        {
+          title: "Free estimates",
+          description: "Know the labour cost before we unpack the crate.",
+          icon: "gift",
+        },
+        {
+          title: "Furniture + sheds together",
+          description: "One assembly team for indoor flat-pack and outdoor storage kits.",
+          icon: "users",
+        },
+        {
+          title: "Metro-wide coverage",
+          description: "Edmonton and surrounding communities including Fort Saskatchewan and Spruce Grove.",
+          icon: "map-pin",
+        },
+      ],
+    },
+    process: {
+      title: "How shed assembly works",
+      intro: "From kit delivery to a finished outdoor building.",
+      steps: [
+        { step: 1, title: "Send kit & site details", description: "Brand, model, pad type, and access photos help us quote accurately." },
+        { step: 2, title: "Approve the quote", description: "Clear labour pricing and scheduling — no obligation until you approve." },
+        { step: 3, title: "We assemble on site", description: "Our crew builds, aligns doors, and leaves packaging tidy." },
+        { step: 4, title: "Walkthrough", description: "We confirm doors, latches, and overall fit before we leave." },
+      ],
+    },
+    serviceAreas: {
+      title: "Shed assembly across the Capital Region",
+      intro:
+        "Available in Edmonton, Sherwood Park, St. Albert, Beaumont, Leduc, Fort Saskatchewan, Spruce Grove, and Stony Plain.",
+    },
+    cta: {
+      headline: "Ready to get your shed built?",
+      description: "Request a free furniture & shed assembly quote today.",
+    },
+    additionalFaq: [
+      {
+        question: "Is shed assembly part of furniture assembly?",
+        answer:
+          "Yes — shed and outdoor storage kit assembly is included in our furniture & shed assembly service. Book a shed alone or with indoor furniture on one quote.",
+      },
+      {
+        question: "Can you assemble resin and wood sheds?",
+        answer:
+          "Yes — we assemble common resin and wood kit styles. Confirm brand and size when requesting a quote.",
       },
     ],
   },

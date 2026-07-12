@@ -2,14 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { ctaNavigation } from "@/config/navigation";
-import { Button } from "@/components/ui/button";
+import { Icon } from "@/components/ui/icons";
 import { useQuoteAnchor } from "@/hooks/use-quote-anchor";
-import { useHideStickyCta } from "@/hooks/use-hide-sticky-cta";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { slideUpDrawer } from "@/lib/motion/variants";
 import { trackPhoneClick, trackCtaClick } from "@/lib/analytics/events";
+import { cn } from "@/lib/utils/cn";
 
 function useMobileNavOpen(): boolean {
   const [open, setOpen] = useState(false);
@@ -29,40 +30,36 @@ function useMobileNavOpen(): boolean {
 
 export function StickyCtaBar() {
   const quoteAnchor = useQuoteAnchor();
-  const hiddenByForm = useHideStickyCta();
   const navOpen = useMobileNavOpen();
   const reducedMotion = usePrefersReducedMotion();
 
-  const hidden = hiddenByForm || navOpen;
-
   return (
     <AnimatePresence>
-      {!hidden && (
+      {!navOpen && (
         <m.div
           key="mobile-sticky-cta"
           role="region"
-          aria-label="Contact actions"
+          aria-label="Quick contact"
           initial={reducedMotion ? false : "hidden"}
           animate="visible"
           exit="exit"
           variants={slideUpDrawer}
           className="mobile-sticky-cta"
         >
-          <Button
+          <Link
             href={`tel:${siteConfig.phone.tel}`}
-            variant="secondary"
-            size="sm"
-            className="min-w-0 flex-1"
+            className="mobile-sticky-cta__action"
             onClick={() => trackPhoneClick({ location: "sticky_cta" })}
           >
-            Call Now
-          </Button>
-          <Button
+            <Icon name="phone" size={18} className="shrink-0 text-pine-800" aria-hidden />
+            <span>Call</span>
+          </Link>
+
+          <Link
             href={ctaNavigation.whatsapp.href}
-            variant="secondary"
-            size="sm"
-            className="min-w-0 flex-1"
-            external
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mobile-sticky-cta__action"
             onClick={() =>
               trackCtaClick({
                 location: "sticky_cta",
@@ -71,22 +68,24 @@ export function StickyCtaBar() {
               })
             }
           >
-            WhatsApp
-          </Button>
-          <Button
+            <Icon name="whatsapp" size={18} className="shrink-0 text-pine-800" aria-hidden />
+            <span>WhatsApp</span>
+          </Link>
+
+          <Link
             href={quoteAnchor}
-            size="sm"
-            className="min-w-0 flex-[1.2] leading-tight"
+            className={cn("mobile-sticky-cta__quote")}
             onClick={() =>
               trackCtaClick({
                 location: "sticky_cta",
-                text: "Request a Free Quote",
+                text: ctaNavigation.primary.label,
                 href: quoteAnchor,
               })
             }
           >
-            Request a Free Quote
-          </Button>
+            <Icon name="clipboard-list" size={17} className="shrink-0" aria-hidden />
+            <span>Free Quote</span>
+          </Link>
         </m.div>
       )}
     </AnimatePresence>

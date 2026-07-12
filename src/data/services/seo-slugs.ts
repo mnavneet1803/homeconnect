@@ -9,6 +9,8 @@ export const SEO_SERVICE_SLUGS = [
   "cleaners",
   "deck-fence",
   "home-maintenance",
+  "drywall-repair",
+  "shed-assembly",
 ] as const;
 
 export type SeoServiceSlug = (typeof SEO_SERVICE_SLUGS)[number];

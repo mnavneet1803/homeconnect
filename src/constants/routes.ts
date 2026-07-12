@@ -63,6 +63,12 @@ export const ROUTES = {
     furnitureAssembly: "/furniture-assembly-edmonton",
     doorLockRepair: "/door-lock-repair-edmonton",
     moveInMoveOut: "/move-in-move-out-repairs-edmonton",
+    houseCleaning: "/house-cleaning-edmonton",
+    painting: "/painting-services-edmonton",
+    drywallRepair: "/drywall-repair-edmonton",
+    plumbing: "/plumbing-services-edmonton",
+    electrical: "/electrical-services-edmonton",
+    shedAssembly: "/shed-assembly-edmonton",
   },
 } as const;
 

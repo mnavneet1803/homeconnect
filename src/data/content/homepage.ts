@@ -26,33 +26,39 @@ export const howItWorksSteps: HowItWorksStep[] = [
 
 export const whyChooseUsBenefits: BenefitItem[] = [
   {
-    title: "Experienced local team",
+    title: "Same-Day Service Available",
     description:
-      "Our crew handles handyman, maintenance, and repair work across Edmonton every day.",
-    icon: "shield-check",
+      "Need help today? Ask about same-day availability when you request a quote.",
+    icon: "clock",
   },
   {
-    title: "Free quotes",
+    title: "Affordable Prices",
     description:
-      "Request a quote at no cost and no obligation. Upfront pricing before work begins.",
+      "Clear, competitive pricing for Edmonton homes — no surprise add-ons after the work starts.",
     icon: "gift",
   },
   {
-    title: "Edmonton-native expertise",
+    title: "Professional Workmanship",
     description:
-      "A team that knows local housing — from Terwillegar bungalows to downtown condos.",
+      "Experienced crew, careful prep, and clean finishes on every job.",
+    icon: "shield-check",
+  },
+  {
+    title: "Friendly Service",
+    description:
+      "Respectful communication, on-time arrivals, and a team that treats your home like their own.",
+    icon: "users",
+  },
+  {
+    title: "Free Estimates",
+    description:
+      "Request a free quote with no obligation. Upfront pricing before work begins.",
+    icon: "check-circle",
+  },
+  {
+    title: "Edmonton & Surrounding Areas",
+    description:
+      "We serve Edmonton, Sherwood Park, St. Albert, Beaumont, Leduc, Fort Saskatchewan, Spruce Grove, and more.",
     icon: "map-pin",
-  },
-  {
-    title: "Direct accountability",
-    description:
-      "You work with us directly — one contractor, one team, no third-party handoffs.",
-    icon: "ban",
-  },
-  {
-    title: "Season-smart guidance",
-    description:
-      "We help you plan repairs and maintenance at the right time for Edmonton homes.",
-    icon: "calendar",
   },
 ];

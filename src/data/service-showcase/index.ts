@@ -271,6 +271,26 @@ const SERVICE_PAGE_IMAGES: Record<ServiceSlug, ServicePageImages> = {
     hero: homeMaintenance,
     detail: completeHomeCare,
   },
+  "drywall-repair": {
+    hero: {
+      ...repairStrip,
+      alt: "Drywall repair and wall patching in Edmonton homes by Home Solution Services",
+      title: "Drywall repair",
+      caption: "Clean patches, smooth seams, paint-ready walls.",
+    },
+    detail: handymanOverview,
+  },
+  "shed-assembly": {
+    hero: {
+      src: `${HOMEPAGE_DIR}/furniture-assembly-workshop.jpg`,
+      alt: "Shed and outdoor storage assembly in Edmonton by Home Solution Services",
+      title: "Shed assembly",
+      caption: "Garden sheds and outdoor storage — part of our furniture & shed assembly service.",
+      width: 1024,
+      height: 558,
+    },
+    detail: handymanPromo,
+  },
 };
 
 /** Resolve hero + detail images for a service detail page. */
@@ -363,5 +383,17 @@ export const SERVICE_CARD_IMAGES: Record<
     alt: "Preventative home maintenance and post-construction cleaning in Edmonton",
     width: 248,
     height: 176,
+  },
+  "drywall-repair": {
+    src: `${DIR}/handyman-repair-services-overview.png`,
+    alt: "Drywall repair and wall patching services in Edmonton",
+    width: 1024,
+    height: 709,
+  },
+  "shed-assembly": {
+    src: `${HOMEPAGE_DIR}/furniture-assembly-workshop.jpg`,
+    alt: "Shed and outdoor storage assembly in Edmonton",
+    width: 1024,
+    height: 558,
   },
 };

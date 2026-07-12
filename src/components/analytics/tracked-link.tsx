@@ -68,6 +68,7 @@ interface TrackedPhoneLinkProps {
   display: string;
   location: string;
   className?: string;
+  children?: React.ReactNode;
 }
 
 export function TrackedPhoneLink({
@@ -75,6 +76,7 @@ export function TrackedPhoneLink({
   display,
   location,
   className,
+  children,
 }: TrackedPhoneLinkProps) {
   return (
     <a
@@ -82,7 +84,7 @@ export function TrackedPhoneLink({
       className={cn(className)}
       onClick={() => trackPhoneClick({ location })}
     >
-      {display}
+      {children ?? display}
     </a>
   );
 }
