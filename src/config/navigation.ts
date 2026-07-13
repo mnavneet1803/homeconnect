@@ -17,10 +17,7 @@ export const mainNavigation: NavItem[] = [
     label: "How It Works",
     href: ROUTES.howItWorks,
   },
-  {
-    label: "Reviews",
-    href: ROUTES.reviews,
-  },
+  // { label: "Reviews", href: ROUTES.reviews }, // TODO: Enable once Google reviews are available
   {
     label: "About",
     href: ROUTES.about,

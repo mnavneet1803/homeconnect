@@ -112,7 +112,7 @@ export function Footer() {
               {[
                 ["About", ROUTES.about],
                 ["How It Works", ROUTES.howItWorks],
-                ["Reviews", ROUTES.reviews],
+                // ["Reviews", ROUTES.reviews], // TODO: Enable once Google reviews are available
                 ["Blog", ROUTES.blog.index],
                 ["Vetting Process", ROUTES.vetting],
                 ["Contact", ROUTES.contact],

@@ -56,7 +56,7 @@
   --sticky-cta-height: 4.75rem;
   --tape-height: 5px;
   --container-padding: clamp(1.25rem, 5vw, 3rem);
-  --section-gap: clamp(3.5rem, 9vw, 7rem);
+  --section-gap: clamp(2.5rem, 6vw, 4.5rem);
 }
 
 @layer base {

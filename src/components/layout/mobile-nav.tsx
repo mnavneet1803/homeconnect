@@ -19,7 +19,7 @@ const navLinks = [
   { label: "Services", href: ROUTES.services.index },
   { label: "Service Areas", href: ROUTES.locations.index },
   { label: "How It Works", href: ROUTES.howItWorks },
-  { label: "Reviews", href: ROUTES.reviews },
+  // { label: "Reviews", href: ROUTES.reviews }, // TODO: Enable once Google reviews are available
   { label: "Blog", href: ROUTES.blog.index },
   { label: "About", href: ROUTES.about },
 ];

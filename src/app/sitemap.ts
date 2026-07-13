@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl(ROUTES.vetting, baseUrl), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: absoluteUrl(ROUTES.faq, baseUrl), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: absoluteUrl(ROUTES.contact, baseUrl), lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: absoluteUrl(ROUTES.reviews, baseUrl), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    // { url: absoluteUrl(ROUTES.reviews, baseUrl), lastModified: now, changeFrequency: "weekly", priority: 0.7 }, // TODO: Enable once Google reviews are available
     { url: absoluteUrl(ROUTES.blog.index, baseUrl), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: absoluteUrl(ROUTES.services.index, baseUrl), lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: absoluteUrl(ROUTES.locations.index, baseUrl), lastModified: now, changeFrequency: "weekly", priority: 0.9 },
