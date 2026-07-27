@@ -69,6 +69,7 @@ export const ROUTES = {
     plumbing: "/plumbing-services-edmonton",
     electrical: "/electrical-services-edmonton",
     shedAssembly: "/shed-assembly-edmonton",
+    customBoxBeds: "/custom-box-beds-edmonton",
   },
 } as const;
 

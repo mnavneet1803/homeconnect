@@ -2,6 +2,7 @@ export { HeroSection } from "./hero-section";
 export { TrustIndicatorsSection } from "./trust-indicators-section";
 export { PromoBannerSection } from "./promo-banner-section";
 export { FurnitureBrandsSection } from "./furniture-brands-section";
+export { CustomBoxBedsSection } from "./custom-box-beds-section";
 export { CleaningShowcaseSection } from "./cleaning-showcase-section";
 export { WorkShowcaseSection } from "./work-showcase-section";
 export { ServicesSection } from "./services-section";

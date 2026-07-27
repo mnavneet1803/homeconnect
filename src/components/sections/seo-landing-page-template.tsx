@@ -9,6 +9,7 @@ import { getSeoLandingPage } from "@/data/seo-landing";
 import { getSeoLandingMedia, isPortrait } from "@/data/service-media";
 import { AutoplayVideo } from "@/components/media/autoplay-video";
 import { ServiceGallerySection } from "@/components/sections/service-gallery-section";
+import { PhotoGallerySection } from "@/components/sections/photo-gallery-section";
 import { buildFAQSchema } from "@/lib/seo/json-ld";
 import { JsonLdScript } from "@/components/seo/json-ld-script";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
@@ -107,6 +108,31 @@ export function SeoLandingPageTemplate({ slug }: SeoLandingPageTemplateProps) {
         </Container>
       </Section>
 
+      {page.subServices && page.subServices.length > 0 && (
+        <Section className="bg-surface-50">
+          <Container>
+            <SectionHeader title={page.subServicesTitle ?? "What we offer"} />
+            <StaggerGrid className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {page.subServices.map((item) => (
+                <StaggerItem key={item.title}>
+                  <div className="h-full rounded-2xl border border-border-subtle bg-surface-0 p-6 shadow-card">
+                    <Icon
+                      name={benefitIconName(item.icon)}
+                      size={22}
+                      className="text-brand-600"
+                    />
+                    <h3 className="mt-4 text-heading-sm text-ink-900">{item.title}</h3>
+                    <p className="mt-2 text-body-sm leading-relaxed text-ink-500">
+                      {item.description}
+                    </p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerGrid>
+          </Container>
+        </Section>
+      )}
+
       <Section>
         <Container>
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
@@ -162,6 +188,15 @@ export function SeoLandingPageTemplate({ slug }: SeoLandingPageTemplateProps) {
       </Section>
 
       {media && <ServiceGallerySection media={media} serviceName={page.h1} className="bg-surface-0" />}
+
+      {page.gallery && page.gallery.length > 0 && (
+        <PhotoGallerySection
+          images={page.gallery}
+          title={page.galleryTitle ?? "See our work"}
+          description={page.galleryDescription}
+          className="bg-surface-50"
+        />
+      )}
 
       <Section>
         <Container>

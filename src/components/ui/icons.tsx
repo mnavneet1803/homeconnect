@@ -32,7 +32,8 @@ export type IconName =
   | "clock"
   | "award"
   | "play"
-  | "pause";
+  | "pause"
+  | "bed";
 
 interface IconProps extends SVGProps<SVGSVGElement> {
   name: IconName;
@@ -240,6 +241,13 @@ const paths: Record<IconName, React.ReactNode> = {
   pause: (
     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7v14h2V5zm8 0h-2v14h2V5z" />
   ),
+  bed: (
+    <>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 18v-6a2 2 0 012-2h14a2 2 0 012 2v6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 18v2M21 18v2M3 13V7a1 1 0 011-1h6a1 1 0 011 1v3" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V8a1 1 0 011-1h5a2 2 0 012 2v3" />
+    </>
+  ),
 };
 
 export function Icon({ name, size = 20, className, ...props }: IconProps) {
@@ -276,6 +284,7 @@ export function serviceIconName(icon: string): IconName {
     fence: "fence",
     "shield-check": "shield-check",
     "clipboard-list": "clipboard-list",
+    bed: "bed",
   };
   return map[icon] ?? "wrench";
 }
@@ -301,6 +310,8 @@ export function benefitIconName(icon: string): IconName {
     paintbrush: "paintbrush",
     droplets: "droplets",
     lock: "lock",
+    bed: "bed",
+    award: "award",
   };
   return map[icon] ?? "check-circle";
 }
