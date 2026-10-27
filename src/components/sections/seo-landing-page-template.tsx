@@ -10,7 +10,12 @@ import { getSeoLandingMedia, isPortrait } from "@/data/service-media";
 import { AutoplayVideo } from "@/components/media/autoplay-video";
 import { ServiceGallerySection } from "@/components/sections/service-gallery-section";
 import { PhotoGallerySection } from "@/components/sections/photo-gallery-section";
-import { buildFAQSchema } from "@/lib/seo/json-ld";
+import { getServiceBySlug } from "@/data";
+import {
+  buildFAQSchema,
+  buildBreadcrumbSchema,
+  buildServiceSchema,
+} from "@/lib/seo/json-ld";
 import { JsonLdScript } from "@/components/seo/json-ld-script";
 import { Container, Section, SectionHeader } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
@@ -31,6 +36,7 @@ export function SeoLandingPageTemplate({ slug }: SeoLandingPageTemplateProps) {
   if (!page) notFound();
 
   const media = getSeoLandingMedia(slug);
+  const service = page.defaultServiceSlug ? getServiceBySlug(page.defaultServiceSlug) : null;
 
   const faqItems = page.faq.map((item, i) => ({
     id: `${slug}-faq-${i}`,
@@ -38,9 +44,16 @@ export function SeoLandingPageTemplate({ slug }: SeoLandingPageTemplateProps) {
     answer: item.answer,
   }));
 
+  const breadcrumbs = [
+    { name: "Home", href: ROUTES.home },
+    { name: page.h1, href: page.path },
+  ];
+
   return (
     <>
       <JsonLdScript data={buildFAQSchema(faqItems)} />
+      <JsonLdScript data={buildBreadcrumbSchema(breadcrumbs)} />
+      {service && <JsonLdScript data={buildServiceSchema(service)} />}
       <Section className="bg-surface-0 pb-10 pt-8 md:pb-14 md:pt-10">
         <Container>
           <nav aria-label="Breadcrumb" className="mb-6">

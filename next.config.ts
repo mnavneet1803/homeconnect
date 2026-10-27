@@ -23,6 +23,25 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["framer-motion"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/tv-mounting-edmonton",
+        destination: "/tv-wall-mounting-edmonton",
+        permanent: true,
+      },
+      {
+        source: "/move-out-cleaning-edmonton",
+        destination: "/move-in-move-out-repairs-edmonton",
+        permanent: true,
+      },
+      {
+        source: "/painting-drywall-repair-edmonton",
+        destination: "/painting-services-edmonton",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
