@@ -12,7 +12,6 @@ import {
   WorkReelSection,
   FeatureVideosSection,
   FurnitureBrandsSection,
-  CustomBoxBedsSection,
   CleaningShowcaseSection,
   WorkShowcaseSection,
   HowItWorksSection,
@@ -42,7 +41,6 @@ export const metadata: Metadata = buildMetadata({
     "electrician Edmonton",
     "cleaning services Edmonton",
     "drywall repair Edmonton",
-    "custom box beds Edmonton",
   ],
 });
 
@@ -60,7 +58,6 @@ export default function HomePage() {
       <WorkReelSection />
       <FeatureVideosSection />
       <FurnitureBrandsSection />
-      <CustomBoxBedsSection />
       <CleaningShowcaseSection />
       <WorkShowcaseSection />
       <HowItWorksSection />

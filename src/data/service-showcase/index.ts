@@ -291,24 +291,6 @@ const SERVICE_PAGE_IMAGES: Record<ServiceSlug, ServicePageImages> = {
     },
     detail: handymanPromo,
   },
-  "custom-box-beds": {
-    hero: {
-      src: `${DIR}/custom-box-beds/custom-box-beds-promo-flyer.png`,
-      alt: "Custom box bed with hydraulic storage, matching nightstands and headboard built by Home Solutions Edmonton",
-      title: "Custom box beds",
-      caption: "Storage, hydraulic lift, and platform beds built to your exact size and style.",
-      width: 1024,
-      height: 682,
-    },
-    detail: {
-      src: `${DIR}/custom-box-beds/custom-box-bed-mirrored-headboard-grey.png`,
-      alt: "Custom grey storage box bed with mirrored headboard panel and matching nightstands",
-      title: "Custom box beds",
-      caption: "Workshop-built or installed on site across Edmonton.",
-      width: 1024,
-      height: 771,
-    },
-  },
 };
 
 /** Resolve hero + detail images for a service detail page. */
@@ -413,11 +395,5 @@ export const SERVICE_CARD_IMAGES: Record<
     alt: "Shed and outdoor storage assembly in Edmonton",
     width: 1024,
     height: 558,
-  },
-  "custom-box-beds": {
-    src: `${DIR}/custom-box-beds/custom-box-bed-storage-grey-finished.png`,
-    alt: "Finished grey custom storage box bed with under-bed drawers, built by Home Solutions Edmonton",
-    width: 1024,
-    height: 748,
   },
 };

@@ -17,7 +17,6 @@ export const SERVICE_SLUGS = [
   "deck-fence",
   "drywall-repair",
   "shed-assembly",
-  "custom-box-beds",
 ] as const;
 
 export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
@@ -34,18 +33,6 @@ export const SERVICES: Service[] = [
     sortOrder: 1,
     cardCta: "Get a Free Assembly Quote",
     quoteCta: "Get a Free Furniture & Shed Assembly Quote",
-  },
-  {
-    slug: "custom-box-beds",
-    name: "Custom Box Beds",
-    pluralName: "Custom Box Bed Builders",
-    shortDescription: "Custom storage, hydraulic lift-up and platform box beds, built in our workshop or on-site",
-    icon: "bed",
-    href: ROUTES.seoLanding.customBoxBeds,
-    featured: true,
-    sortOrder: 1.5,
-    cardCta: "Get a Free Custom Bed Quote",
-    quoteCta: "Get a Free Custom Box Bed Quote",
   },
   {
     slug: "handyman",

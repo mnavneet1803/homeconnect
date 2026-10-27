@@ -99,10 +99,6 @@ export const SEO_LANDING_MEDIA: Record<string, ServiceVideoMedia> = {
     primary: CARD_VIDEOS["furniture-assembly"]!,
     gallery: [V("reel-furniture", P), V("reel-furniture-2", P)],
   },
-  "custom-box-beds-edmonton": {
-    primary: V("feature-custom-box-beds", P),
-    gallery: [],
-  },
 };
 
 export function getServicePageMedia(slug: ServiceSlug): ServiceVideoMedia | null {
